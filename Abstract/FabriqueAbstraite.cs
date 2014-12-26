@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using ThreePlaySim.FootballPlaySim;
 
 namespace ThreePlaySim.Abstract
 {
@@ -15,8 +16,8 @@ namespace ThreePlaySim.Abstract
 	/// </summary>
 	abstract public class FabriqueAbstraite
 	{		
- 		public abstract ProduitAbstraitA CreerProduitA();
- 		public abstract ProduitAbstraitB CreerProduitB();
+ 		public abstract SimulationAbstraite CreerSimulationFootball(Equipe equipe1,Equipe equipe2);
+ 		//public abstract ProduitAbstraitB CreerProduitB();
 	}
 	
  }

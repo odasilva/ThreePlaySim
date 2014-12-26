@@ -1,0 +1,5 @@
+C:\Users\Q6600\Documents\GitHub\ThreePlaySim\obj\Debug\ThreePlaySim.csprojResolveAssemblyReference.cache
+C:\Users\Q6600\Documents\GitHub\ThreePlaySim\bin\Debug\ThreePlaySim.exe
+C:\Users\Q6600\Documents\GitHub\ThreePlaySim\bin\Debug\ThreePlaySim.pdb
+C:\Users\Q6600\Documents\GitHub\ThreePlaySim\obj\Debug\ThreePlaySim.exe
+C:\Users\Q6600\Documents\GitHub\ThreePlaySim\obj\Debug\ThreePlaySim.pdb

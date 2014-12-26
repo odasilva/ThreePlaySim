@@ -46,20 +46,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\Composant.cs" />
-    <Compile Include="Abstract\Fabrique.cs" />
+    <Compile Include="Abstract\FabriqueAbstraite.cs" />
     <Compile Include="Abstract\Obersvateur.cs" />
+    <Compile Include="Abstract\SimulationAbstraite.cs" />
+    <Compile Include="Abstract\SimulationFabrique.cs" />
     <Compile Include="Abstract\Strategie.cs" />
-    <Compile Include="FootballPlaySim\Class1.cs" />
+    <Compile Include="FootballPlaySim\Equipe.cs" />
+    <Compile Include="FootballPlaySim\Joueur.cs" />
+    <Compile Include="FootballPlaySim\SimulationFootball.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TraficPlaySim\Class1.cs" />
     <Compile Include="WarPlaySim\Class1.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstract" />
-    <Folder Include="FootballPlaySim" />
-    <Folder Include="TraficPlaySim" />
-    <Folder Include="WarPlaySim" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

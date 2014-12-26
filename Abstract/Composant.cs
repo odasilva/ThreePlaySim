@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 
 namespace ThreePlaySim.Abstract
 {
@@ -38,7 +39,6 @@ namespace ThreePlaySim.Abstract
 
 		public Composite(string name) : base(name)
 	 	{
-	 	
 		}
 		
 	 	public override void Ajoute(ComposantAbstrait component)
@@ -50,14 +50,14 @@ namespace ThreePlaySim.Abstract
 	 	{
 	 		enfants.Remove(component);
 	 	}
-	 
-	 	public override void Affichage(int profondeur)
+
+        public override void AffichageRecursif(int profondeur)
 	 	{
 	 		Console.WriteLine(new String('-', profondeur) + nom);
 	 	
 	 		foreach (ComposantAbstrait component in enfants)
 			 {
-				 component.Affichage(profondeur + 2);
+                 component.AffichageRecursif(profondeur + 2);
 			 }
 	 	}
 	 }
