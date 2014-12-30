@@ -16,11 +16,18 @@ namespace ThreePlaySim.FootballPlaySim
 	{
         public Equipe Equipe1 { get; set; }
         public Equipe Equipe2 { get; set; }
+        
 
 
 		public SimulationFootball()
 		{
             
 		}
+
+        public override void RenderMap()
+        {
+            map = new FootballMap(this);
+            System.Windows.Forms.Application.Run();
+        }
 	}
 }

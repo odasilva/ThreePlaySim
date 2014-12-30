@@ -34,6 +34,7 @@ namespace ThreePlaySim
             equipe2.AddJoueur(new Joueur { Prenom = "Dimitri", Nom = "PAYET", Numero = 8, Poste = EPosteJoueur.Millieu });
             equipe2.AddJoueur(new Joueur { Prenom = "Alain", Nom = "MENDY", Numero = 3, Poste = EPosteJoueur.Defenseur });
             var footballSimulation = fabrique.CreerSimulationFootball(equipe1, equipe2);
+            footballSimulation.RenderMap();
 
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);

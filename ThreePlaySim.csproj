@@ -39,6 +39,8 @@
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -52,13 +54,38 @@
     <Compile Include="Abstract\SimulationFabrique.cs" />
     <Compile Include="Abstract\Strategie.cs" />
     <Compile Include="FootballPlaySim\Equipe.cs" />
+    <Compile Include="FootballPlaySim\FootballMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FootballPlaySim\FootballMap.Designer.cs">
+      <DependentUpon>FootballMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FootballPlaySim\Joueur.cs" />
     <Compile Include="FootballPlaySim\SimulationFootball.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TraficPlaySim\Class1.cs" />
     <Compile Include="WarPlaySim\Class1.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="FootballPlaySim\FootballMap.resx">
+      <DependentUpon>FootballMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FootballPlaySim\images\ball.png" />
+    <Content Include="FootballPlaySim\images\bluePawn.png" />
+    <Content Include="FootballPlaySim\images\field.png" />
+    <Content Include="FootballPlaySim\images\redPawn.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
