@@ -9,13 +9,16 @@ namespace ThreePlaySim.FootballPlaySim
     {
         public string Prenom { get; set; }
         public string Nom { get; set; }
-        public int Numero { get; set; }
-        public EPosteJoueur Poste {get;set;}
+        public string Numero { get; set; }
+        public string Poste {get;set;}
         public Equipe Equipe { get; set; }
 
-        public Joueur()
+        public Joueur(string prenom,string nom,string numero,string poste )
         {
-
+            Prenom = prenom;
+            Nom = nom;
+            Numero = numero;
+            Poste = poste;
         }
 
 
@@ -24,8 +27,8 @@ namespace ThreePlaySim.FootballPlaySim
 
     public enum EPosteJoueur
     {
-        Attaquant,
-        Millieu,
-        Defenseur
+        attaquant,
+        millieu,
+        defenseur
     }
 }

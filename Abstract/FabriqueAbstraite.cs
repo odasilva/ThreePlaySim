@@ -16,7 +16,7 @@ namespace ThreePlaySim.Abstract
 	/// </summary>
 	abstract public class FabriqueAbstraite
 	{		
- 		public abstract SimulationAbstraite CreerSimulationFootball(Equipe equipe1,Equipe equipe2);
+ 		public abstract SimulationAbstraite CreerSimulationFootball();
  		//public abstract ProduitAbstraitB CreerProduitB();
 	}
 	
