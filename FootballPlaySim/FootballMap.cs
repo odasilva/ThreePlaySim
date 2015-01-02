@@ -16,6 +16,12 @@ namespace ThreePlaySim.FootballPlaySim
         {
             InitializeComponent();
             sim = simFoot;
+            Controls.Add(new MapItem());
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
         }
     }
 }

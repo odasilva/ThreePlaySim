@@ -61,6 +61,9 @@
       <DependentUpon>FootballMap.cs</DependentUpon>
     </Compile>
     <Compile Include="FootballPlaySim\Joueur.cs" />
+    <Compile Include="FootballPlaySim\MapItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FootballPlaySim\SimulationFootball.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +89,7 @@
     <Content Include="FootballPlaySim\images\bluePawn.png" />
     <Content Include="FootballPlaySim\images\field.png" />
     <Content Include="FootballPlaySim\images\redPawn.png" />
+    <Content Include="FootballPlaySim\SimulationFootball.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

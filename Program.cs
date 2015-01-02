@@ -21,19 +21,10 @@ namespace ThreePlaySim
 		{
 			Console.WriteLine("Hello World!");
 			
-			// TODO: Implement Functionality Here
+			
             SimulationFabrique fabrique = new SimulationFabrique();
 
-            var equipe1 = new Equipe("PSG");
-            equipe1.AddJoueur(new Joueur{Prenom = "Jean-Christophe", Nom = "BAHEBECK", Numero = 32, Poste = EPosteJoueur.Attaquant});
-            equipe1.AddJoueur((new Joueur {Prenom = "Marco", Nom = "VERRATTI", Numero = 6, Poste = EPosteJoueur.Millieu}));
-            equipe1.AddJoueur(new Joueur{ Prenom ="Gregory", Nom = "VAN DER WIEL", Numero = 4, Poste = EPosteJoueur.Defenseur});
-
-            var equipe2 = new Equipe("OM");
-            equipe2.AddJoueur(new Joueur { Prenom = "andre-Pierre", Nom = "Gignac", Numero = 10, Poste = EPosteJoueur.Attaquant });
-            equipe2.AddJoueur(new Joueur { Prenom = "Dimitri", Nom = "PAYET", Numero = 8, Poste = EPosteJoueur.Millieu });
-            equipe2.AddJoueur(new Joueur { Prenom = "Alain", Nom = "MENDY", Numero = 3, Poste = EPosteJoueur.Defenseur });
-            var footballSimulation = fabrique.CreerSimulationFootball(equipe1, equipe2);
+            var footballSimulation = fabrique.CreerSimulationFootball();
             footballSimulation.RenderMap();
 
 			Console.Write("Press any key to continue . . . ");

@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FootballMap));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.joueur = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueur)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -44,15 +48,32 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // joueur
+            // 
+            this.joueur.Image = ((System.Drawing.Image)(resources.GetObject("joueur.Image")));
+            this.joueur.Location = new System.Drawing.Point(192, 257);
+            this.joueur.Name = "joueur";
+            this.joueur.Size = new System.Drawing.Size(12, 15);
+            this.joueur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.joueur.TabIndex = 1;
+            this.joueur.TabStop = false;
+            // 
             // FootballMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 457);
+            this.Controls.Add(this.joueur);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FootballMap";
             this.Text = "FootballMap";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joueur)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -60,5 +81,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox joueur;
     }
 }

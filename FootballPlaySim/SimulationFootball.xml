@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SimulationFootball>
+  <equipe nom="PSG">
+    <joueur nom="VERRATTI" prenom ="Marco" poste ="millieu" numero ="6"/>
+    <joueur nom ="BAHEBECK" prenom="Jean-Christophe" poste="attaquant" numero="32"/>
+    <joueur nom="VAN DER WIEL" prenom="Gregory" poste="defenseur" numero="4"/>
+  </equipe>
+  <equipe nom ="OM">
+    <joueur nom ="MENDY" prenom ="Alain" poste="defenseur" numero="4"/>
+    <joueur nom="PAYET" prenom ="Dimitri" poste="millieu" numero="8"/>
+    <joueur nom="GIGNAC" prenom="André-Pierre" poste="attaquant" numero="10"/>
+  </equipe>
+</SimulationFootball>
