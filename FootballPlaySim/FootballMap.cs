@@ -22,6 +22,9 @@ namespace ThreePlaySim.FootballPlaySim
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            var point = joueur.Location;
+            point.Y++;
+            joueur.Location = new Point(point.X,point.Y);
         }
     }
 }

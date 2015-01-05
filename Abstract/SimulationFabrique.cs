@@ -13,7 +13,7 @@ namespace ThreePlaySim.Abstract
         {
             Equipe equipe1, equipe2;
             var doc = new XmlDocument();
-            doc.Load(@"C:\Users\Q6600\Documents\GitHub\ThreePlaySim\FootballPlaySim\SimulationFootball.xml");
+            doc.Load(@"C:\Users\jerome\Documents\GitHub\ThreePlaySim\FootballPlaySim\SimulationFootball.xml");
             var xmlEquipeList = doc.GetElementsByTagName("equipe");
             var xmlEquipe1JoueursList = xmlEquipeList[0].ChildNodes;
             var xmlEquipe2JoueursList = xmlEquipeList[1].ChildNodes;
