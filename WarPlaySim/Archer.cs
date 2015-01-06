@@ -7,37 +7,42 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.WarPlaySim
 {
 	/// <summary>
 	/// Description of Archer.
 	/// </summary>
-	public class Archer : Personnage
-	{
-		public Archer()
-		{
-		}
-		
-		override public afficher()
-		{
-			
-		}
-		
-		override public string Confrontation()
-		{
-			
-		}
-			
-		override public string EmmettreUnSon()
-		{
-				
-		}
-			
-		override public string SeDeplacer()
-		{
-				
-		}
+    public class Archer : Personnage
+    {
+        public Archer(string nom)
+            : base(nom)
+        {
 
-	}
+        }
+
+
+
+
+        public override string Afficher()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string Confrontation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string EmmettreUnSon()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string SeDeplacer()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

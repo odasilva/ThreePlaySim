@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.WarPlaySim
 {
@@ -15,29 +16,28 @@ namespace ThreePlaySim.WarPlaySim
 	/// </summary>
 	public class Cavalier : Personnage
 	{
-		public Cavalier()
+		public Cavalier(string nom) : base (nom)
 		{
-		}
-		
-		override public afficher()
-		{
-			
-		}
-		
-		override public string Confrontation()
-		{
-			
-		}
-			
-		override public string EmmettreUnSon()
-		{
-				
-		}
-			
-		override public string SeDeplacer()
-		{
-				
 		}
 
-	}
+        public override string Afficher()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string Confrontation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string EmmettreUnSon()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string SeDeplacer()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

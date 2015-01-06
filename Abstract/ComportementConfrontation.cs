@@ -19,8 +19,8 @@ namespace ThreePlaySim.Abstract
 		{
 			
 		}
-		
-		public string Confrontation();
+
+        public abstract string Confrontation();
 		
 	}
 }
