@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.FootballPlaySim
 {
-    public class Joueur
+    public class Joueur : Personnage
     {
         public string Prenom { get; set; }
-        public string Nom { get; set; }
         public string Numero { get; set; }
         public string Poste {get;set;}
         public Equipe Equipe { get; set; }
 
-        public Joueur(string prenom,string nom,string numero,string poste )
+        public Joueur(string prenom,string nom,string numero,string poste)
+            : base(nom)
         {
             Prenom = prenom;
             Nom = nom;
@@ -23,6 +24,26 @@ namespace ThreePlaySim.FootballPlaySim
 
 
 
+
+        public override string Afficher()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string Confrontation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string EmmettreUnSon()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string SeDeplacer()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public enum EPosteJoueur

@@ -8,12 +8,12 @@
  */
 using System;
 
-namespace ThreePlaySim.WarPlaySim
+namespace ThreePlaySim.Abstract
 {
 	/// <summary>
 	/// Description of Personnage.
 	/// </summary>
-	public class Personnage
+	public abstract class Personnage
 	{
 		
 		public string Nom { get; set; }
@@ -23,25 +23,15 @@ namespace ThreePlaySim.WarPlaySim
 		{
 			this.Nom = nom;
 		}
+
+        public abstract string Afficher();
+
 		
-		public string Afficher()
-		{
-			
-		}
-		
-		public string Confrontation()
-		{
-			
-		}
-		
-		public string EmmettreUnSon()
-		{
-			
-		}
-		
-		public string SeDeplacer()
-		{
-			
-		}
+		public abstract string Confrontation();
+
+
+        public abstract string EmmettreUnSon();
+
+        public abstract string SeDeplacer();
 	}
 }
