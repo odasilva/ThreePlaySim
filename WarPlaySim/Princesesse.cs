@@ -18,5 +18,27 @@ namespace ThreePlaySim.WarPlaySim
 		public Princesesse()
 		{
 		}
+		
+		override public afficher()
+		{
+			
+		}
+		
+		override public string Confrontation()
+		{
+			
+		}
+			
+		override public string EmmettreUnSon()
+		{
+				
+		}
+			
+		override public string SeDeplacer()
+		{
+				
+		}
 	}
+	
+
 }

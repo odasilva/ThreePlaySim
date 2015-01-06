@@ -13,7 +13,7 @@ namespace ThreePlaySim.WarPlaySim
 	/// <summary>
 	/// Description of Personnage.
 	/// </summary>
-	public class Personnage
+	public abstract class Personnage
 	{
 		
 		public string Nom { get; set; }
