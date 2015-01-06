@@ -1,8 +1,8 @@
 ﻿/*
  * Created by SharpDevelop.
  * User: odasilva
- * Date: 15/12/2014
- * Time: 14:36
+ * Date: 06/01/2015
+ * Time: 15:05
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
@@ -11,11 +11,11 @@ using System;
 namespace ThreePlaySim.WarPlaySim
 {
 	/// <summary>
-	/// Description of Class1.
+	/// Description of Cavalier.
 	/// </summary>
-	public class Class1
+	public class Cavalier : Personnage
 	{
-		public Class1()
+		public Cavalier()
 		{
 		}
 	}
