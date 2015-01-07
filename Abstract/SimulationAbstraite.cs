@@ -9,7 +9,7 @@ namespace ThreePlaySim.Abstract
     {
         protected System.Windows.Forms.Form map;
         abstract public void RenderMap();       
-        public List<Personnage> ListPersonnage {get;set}
+        public List<Personnage> ListPersonnage {get;set;}
 		 
 		public SimulationAbstraite()
 		{

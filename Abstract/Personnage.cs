@@ -28,11 +28,17 @@ namespace ThreePlaySim.Abstract
         public abstract string Afficher();
 
 		
-        public abstract string Confrontation();
+        public string Confrontation(){
+        	return comportementConfrontation.Confrontation();
+        }
 
 
-        public abstract string EmmettreUnSon();
+        public string EmmettreUnSon(){
+        	return ComportementEmettreUnSon.EmmettreSon();
+        }
 
-        public abstract string SeDeplacer();
+        public string SeDeplacer(){
+        	return "";
+        }
 	}
 }

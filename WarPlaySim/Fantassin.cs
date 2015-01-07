@@ -25,19 +25,5 @@ namespace ThreePlaySim.WarPlaySim
             return "F";
         }
 
-        public override string Confrontation()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string EmmettreUnSon()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string SeDeplacer()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
