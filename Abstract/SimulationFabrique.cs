@@ -29,16 +29,10 @@ namespace ThreePlaySim.Abstract
             var xmlEquipe1JoueursList = xmlEquipeList[0].ChildNodes;
             var xmlEquipe2JoueursList = xmlEquipeList[1].ChildNodes;
 
-            var eq = equipeFactory.CreerEquipe(1);
+            var eq = equipeFactory.CreerEquipe1();
 
-            equipe1 = new Equipe(xmlEquipeList[0].Attributes["nom"].Value);
-            equipe2 = new Equipe(xmlEquipeList[1].Attributes["nom"].Value);
-
-            foreach(XmlNode node in xmlEquipe1JoueursList)
-                equipe1.AddJoueur(new Joueur(node.Attributes["prenom"].Value, node.Attributes["nom"].Value, node.Attributes["numero"].Value, node.Attributes["poste"].Value));
-
-            foreach (XmlNode node in xmlEquipe2JoueursList)
-                equipe2.AddJoueur(new Joueur(node.Attributes["prenom"].Value, node.Attributes["nom"].Value, node.Attributes["numero"].Value, node.Attributes["poste"].Value));
+            equipe1 = equipeFactory.CreerEquipe1();
+            equipe2 = equipeFactory.CreerEquipe2();
 
             return new SimulationFootball(equipe1,equipe2);
         }
@@ -63,6 +57,7 @@ namespace ThreePlaySim.Abstract
 
             //var nbJoueurRequest = String.Format("//equipe[{0}])", i);
             //var equipeNode = xmlDoc.SelectSingleNode(nbJoueurRequest);
+
             var nbJoueurs = 3;
 
             for (int j = 1; j < nbJoueurs;j++ )
@@ -70,6 +65,26 @@ namespace ThreePlaySim.Abstract
                 equipe.AddJoueur(joueurFactory.CreerJoueur(equipe.Nom, j));
             }
                 return equipe;
+        }
+
+        public Equipe CreerEquipe1()
+        {
+            xmlDoc.Load(xmlFile);
+            var equipeNode = xmlDoc.SelectSingleNode("//equipe[1]");
+            var equipe = new Equipe(equipeNode.Attributes["nom"].Value);
+            
+            foreach(XmlNode joueurNode in equipeNode.ChildNodes)
+            {
+                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value,joueurNode.Attributes["nom"].Value,joueurNode.Attributes["numero"].Value,joueurNode.Attributes["poste"].Value));
+            }
+            return equipe;
+        }
+
+        public Equipe CreerEquipe2()
+        {
+            xmlDoc.Load(xmlFile);
+            var xpathRequest = String.Format("//equipe[2]/@nom");
+            return new Equipe(xmlDoc.SelectSingleNode(xpathRequest).Value);
         }
     }
 
@@ -92,6 +107,7 @@ namespace ThreePlaySim.Abstract
             var nom = joueurNode.Attributes["nom"].Value;
             var numero = joueurNode.Attributes["numero"].Value;
             var poste = joueurNode.Attributes["poste"].Value;
+
             return new Joueur(prenom, nom, numero, poste);
         }
     }

@@ -42,6 +42,7 @@ namespace ThreePlaySim.Abstract
 			{
 				perso.EmmettreUnSon();
 			}
+            return "";
 		}
 		
 		public string LancerCombat()

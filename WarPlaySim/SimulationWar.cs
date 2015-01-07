@@ -20,6 +20,11 @@ namespace ThreePlaySim.WarPlaySim
 		public SimulationWar()
 		{
 		}
-		
-	}
+
+
+        public override void RenderMap()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
