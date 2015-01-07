@@ -13,7 +13,7 @@ namespace ThreePlaySim.Abstract
 	/// <summary>
 	/// Description of ComportementConfrontation.
 	/// </summary>
-	public abstract class ComportementConfrontation
+	public abstract class ComportementConfrontation 
 	{
 		public ComportementConfrontation()
 		{

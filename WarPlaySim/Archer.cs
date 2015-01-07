@@ -11,7 +11,7 @@ using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.WarPlaySim
 {
-	/// <summary>
+	/// <summary
 	/// Description of Archer.
 	/// </summary>
     public class Archer : Personnage
@@ -23,11 +23,9 @@ namespace ThreePlaySim.WarPlaySim
         }
 
 
-
-
         public override string Afficher()
         {
-            throw new NotImplementedException();
+            return "A";
         }
 
         public override string Confrontation()

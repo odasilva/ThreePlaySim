@@ -7,6 +7,8 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
+using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.WarPlaySim
 {
@@ -15,9 +17,11 @@ namespace ThreePlaySim.WarPlaySim
 	/// </summary>
 	public class SimulationWar
 	{
+		public List<Personnage> ListPersonnage;
+		 
 		public SimulationWar()
 		{
-			
+			ListPersonnage = new List<Personnage>();
 		}
 		
 		public string AfficherTous()
@@ -30,9 +34,9 @@ namespace ThreePlaySim.WarPlaySim
 			
 		}
 		
-		public void CreationPersonnages()
+		public void CreationPersonnages(Personnage personnage)
 		{
-			
+			ListPersonnage.Add(personnage);
 		}
 		
 		public string EmmettreSontous()

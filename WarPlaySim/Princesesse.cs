@@ -22,7 +22,7 @@ namespace ThreePlaySim.WarPlaySim
 
         public override string Afficher()
         {
-            throw new NotImplementedException();
+            return "P";
         }
 
         public override string Confrontation()
