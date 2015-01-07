@@ -16,6 +16,7 @@ namespace ThreePlaySim.Abstract
 	public abstract class Personnage
 	{
 		public ComportementConfrontation comportementConfrontation;
+		public ComportementEmettreUnSon comportementEmmettreUnSon;
 		public string Nom { get; set; }
 				
 		
