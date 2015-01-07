@@ -29,9 +29,13 @@ namespace ThreePlaySim.WarPlaySim
 			return "";
 		}
 		
-		public void ChangerComportement()
+		public void ChangerComportement(Personnage personnage, ComportementConfrontation comportementConfrontation)
 		{
-			
+			foreach(Personnage perso in ListPersonnage)
+			{
+				if(perso.GetType().Name == personnage.GetType().Name && perso.Nom == personnage.Nom)
+					perso.comportementConfrontation = comportementConfrontation;
+			}
 		}
 		
 		public void CreationPersonnages(Personnage personnage)
@@ -41,7 +45,10 @@ namespace ThreePlaySim.WarPlaySim
 		
 		public string EmmettreSontous()
 		{
-			return "";
+			foreach(Personnage perso in ListPersonnage)
+			{
+				perso.EmmettreUnSon();
+			}
 		}
 		
 		public string LancerCombat()
