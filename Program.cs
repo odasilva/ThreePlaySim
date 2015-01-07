@@ -20,9 +20,9 @@ namespace ThreePlaySim
 		public static void Main(string[] args)
 		{
 			//Console.WriteLine("Hello World!");
-			
-			
-            SimulationFabrique fabrique = new SimulationFabrique();
+
+
+            SimulationFabrique fabrique = new SimulationFabrique(@"C:\Users\jerome\Documents\GitHub\ThreePlaySim\FootballPlaySim\SimulationFootball.xml");
 
             var footballSimulation = fabrique.CreerSimulationFootball();
             footballSimulation.RenderMap();
