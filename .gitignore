@@ -34,3 +34,17 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+bin/Debug/ThreePlaySim.exe
+bin/Debug/ThreePlaySim.exe
+bin/Debug/ThreePlaySim.pdb
+bin/Debug/ThreePlaySim.vshost.exe.manifest
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/ThreePlaySim.csproj.FileListAbsolute.txt
+obj/Debug/ThreePlaySim.csproj.FileListAbsolute.txt
+*.suo
+*.sln
+*.exe
+obj/Debug/ThreePlaySim.csproj.GenerateResource.Cache
+obj/Debug/ThreePlaySim.csproj.FileListAbsolute.txt
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
