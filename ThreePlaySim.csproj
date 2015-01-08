@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ComportementConfrontation.cs" />
+    <Compile Include="Abstract\ComportementEmettreUnSon.cs" />
     <Compile Include="Abstract\Composant.cs" />
     <Compile Include="Abstract\FabriqueAbstraite.cs" />
     <Compile Include="Abstract\Obersvateur.cs" />
@@ -77,6 +78,12 @@
     <Compile Include="TraficPlaySim\Class1.cs" />
     <Compile Include="WarPlaySim\Archer.cs" />
     <Compile Include="WarPlaySim\Cavalier.cs" />
+    <Compile Include="WarPlaySim\ComportementACheval.cs" />
+    <Compile Include="WarPlaySim\ComportementAPied.cs" />
+    <Compile Include="WarPlaySim\ComportementAvecArc.cs" />
+    <Compile Include="WarPlaySim\ComportementParler.cs" />
+    <Compile Include="WarPlaySim\ComportementParlerCrier.cs" />
+    <Compile Include="WarPlaySim\ComportementParlerPrincesse.cs" />
     <Compile Include="WarPlaySim\Fantassin.cs" />
     <Compile Include="WarPlaySim\Princesesse.cs" />
     <Compile Include="WarPlaySim\SimulationWar.cs" />
@@ -96,6 +103,9 @@
     <Content Include="FootballPlaySim\images\field.png" />
     <Content Include="FootballPlaySim\images\redPawn.png" />
     <Content Include="FootballPlaySim\SimulationFootball.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WarPlaySim\SimulationWar.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

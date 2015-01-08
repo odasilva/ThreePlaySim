@@ -38,10 +38,12 @@ namespace ThreePlaySim.Abstract
 		
 		public string EmmettreSontous()
 		{
+			string sonTous = "";
 			foreach(Personnage perso in ListPersonnage)
 			{
-				perso.EmmettreUnSon();
+				sonTous += perso.EmmettreUnSon()+"\n";
 			}
+			return sonTous;
 		}
 		
 		public string LancerCombat()

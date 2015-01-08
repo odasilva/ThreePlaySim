@@ -22,11 +22,14 @@ namespace ThreePlaySim
 			//Console.WriteLine("Hello World!");
 			
 			
-            SimulationFabrique fabrique = new SimulationFabrique();
+            //SimulationFabrique fabrique = new SimulationFabrique();
 
-            var footballSimulation = fabrique.CreerSimulationFootball();
-            footballSimulation.RenderMap();
+            //var footballSimulation = fabrique.CreerSimulationFootball();
+            //footballSimulation.RenderMap();
 
+            var simulationWar = new SimulationWar();
+            simulationWar.RenderMap();
+            
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}

@@ -16,13 +16,15 @@ namespace ThreePlaySim.Abstract
 	public abstract class Personnage
 	{
 		public ComportementConfrontation comportementConfrontation { get; set; }
-		public ComportementEmettreUnSon comportementEmmettreUnSon { get; set; }
+		public ComportementEmettreUnSon comportementEmettreUnSon { get; set; }
 		public string Nom { get; set; }
 				
 		
 		public Personnage(string nom)
 		{
 			this.Nom = nom;
+			comportementConfrontation = null;
+			comportementEmettreUnSon = null;
 		}
 
         public abstract string Afficher();
@@ -34,7 +36,7 @@ namespace ThreePlaySim.Abstract
 
 
         public string EmmettreUnSon(){
-        	return ComportementEmettreUnSon.EmmettreSon();
+        	return comportementEmettreUnSon.EmmettreSon();
         }
 
         public string SeDeplacer(){

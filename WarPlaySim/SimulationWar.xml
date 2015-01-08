@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SimulationWar>
+  <armee nom="A">
+    <personnage nom="VERRATTI" type="Princesse" />
+    <personnage nom ="BAHEBECK" type="Archer"/>
+    <personnage nom="VAN DER WIEL" poste="Cavalier"/>
+  </armee>
+  <armee nom ="B">
+    <personnage nom ="MENDY" poste="Princesse" />
+    <personnage nom="PAYET" poste="Fantassin" />
+    <personnage nom="GIGNAC" poste="Cavalier" />
+  </armee>
+</SimulationWar>
