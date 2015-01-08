@@ -21,18 +21,9 @@ namespace ThreePlaySim.Abstract
         }
         public SimulationAbstraite CreerSimulationFootball()
         {
-            Equipe equipe1, equipe2;
             xmlDoc.Load(xmlFile);
-            //var doc = new XmlDocument();
-            //doc.Load(xmlFile);
-            var xmlEquipeList = xmlDoc.GetElementsByTagName("equipe");
-            var xmlEquipe1JoueursList = xmlEquipeList[0].ChildNodes;
-            var xmlEquipe2JoueursList = xmlEquipeList[1].ChildNodes;
-
-            var eq = equipeFactory.CreerEquipe1();
-
-            equipe1 = equipeFactory.CreerEquipe1();
-            equipe2 = equipeFactory.CreerEquipe2();
+            var equipe1 = equipeFactory.CreerEquipe1();
+            var equipe2 = equipeFactory.CreerEquipe2();
 
             return new SimulationFootball(equipe1,equipe2);
         }

@@ -13,7 +13,7 @@ namespace ThreePlaySim.Abstract
 	/// <summary>
 	/// Description of Personnage.
 	/// </summary>
-	public abstract class Personnage
+	public abstract class Personnage : SujetAbstrait
 	{
 		public ComportementConfrontation comportementConfrontation { get; set; }
 		public ComportementEmettreUnSon comportementEmettreUnSon { get; set; }
@@ -40,5 +40,8 @@ namespace ThreePlaySim.Abstract
         public string SeDeplacer(){
         	return "";
         }
+
+        
+      
 	}
 }
