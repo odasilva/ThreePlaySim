@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<simulation>
+  <equipe>
+    <joueur prenom="Marco" nom="VERRATTI" numero="6" poste="millieu" />
+    <joueur prenom="Zlatan" nom="IBRAHIMOVIC" numero="10" poste="attaquant"/>
+    <joueur prenom="Gregory" nom="WAN DER WIEL" numero="4" poste="defenseur"/>
+  </equipe>
+  <equipe>
+    <joueur prenom="André-Pierre" nom="GIGNAC" numero="10" poste="attaquant"/>
+    <joueur prenom="Marco" nom="VERRATTI" numero="6" poste="millieu"/>
+    <joueur prenom="Nicolas" nom="N'KOULOU" numero="2" poste="defenseur"/>
+  </equipe>
+</simulation>
