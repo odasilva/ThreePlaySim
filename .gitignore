@@ -48,3 +48,6 @@ obj/Debug/ThreePlaySim.csproj.FileListAbsolute.txt
 obj/Debug/ThreePlaySim.csproj.GenerateResource.Cache
 obj/Debug/ThreePlaySim.csproj.FileListAbsolute.txt
 obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
+obj/Debug/ThreePlaySim.csproj.FileListAbsolute.txt
+*.suo
