@@ -68,10 +68,5 @@ namespace ThreePlaySim.WarPlaySim
 			Console.WriteLine(AfficherTous());
 		}
 
-
-        public override void RenderMap()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

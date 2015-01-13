@@ -30,6 +30,24 @@ namespace ThreePlaySim.Abstract
 
     }
 
+    public class SimulationFootballFabrique : FabriqueAbstraite
+    {
+        public SimulationFootballFabrique(string filename)
+            :base(filename)
+        {
+        }
+
+        public SimulationFootball CreerSimulation()
+        {
+            xmlDoc.Load(xmlPath + xmlFile);
+            var equipeFactory = new EquipeFabrique("footballSimulation.xml");
+            var equipe1 = equipeFactory.CreerEquipe1();
+            var equipe2 = equipeFactory.CreerEquipe2();
+
+            return new SimulationFootball(equipe1, equipe2);
+        }
+    }
+
     public class EquipeFabrique : FabriqueAbstraite
     {
         private  JoueurFabrique joueurFactory;
@@ -40,23 +58,23 @@ namespace ThreePlaySim.Abstract
             joueurFactory = new JoueurFabrique(xmlFile);
         }
 
-        public Equipe CreerEquipe(int i)
-        {
-            xmlDoc.Load(xmlFile);
-            var xpathRequest = String.Format("//equipe[{0}]/@nom", i);
-            var equipe = new Equipe(xmlDoc.SelectSingleNode(xpathRequest).Value);
+        //public Equipe CreerEquipe(int i)
+        //{
+        //    xmlDoc.Load(xmlFile);
+        //    var xpathRequest = String.Format("//equipe[{0}]/@nom", i);
+        //    var equipe = new Equipe(xmlDoc.SelectSingleNode(xpathRequest).Value);
 
-            //var nbJoueurRequest = String.Format("//equipe[{0}])", i);
-            //var equipeNode = xmlDoc.SelectSingleNode(nbJoueurRequest);
+        //    //var nbJoueurRequest = String.Format("//equipe[{0}])", i);
+        //    //var equipeNode = xmlDoc.SelectSingleNode(nbJoueurRequest);
 
-            var nbJoueurs = 3;
+        //    var nbJoueurs = 3;
 
-            for (int j = 1; j < nbJoueurs;j++ )
-            {
-                equipe.AddJoueur(joueurFactory.CreerJoueur(equipe.Nom, j));
-            }
-                return equipe;
-        }
+        //    for (int j = 1; j < nbJoueurs;j++ )
+        //    {
+        //        equipe.AddJoueur(joueurFactory.CreerJoueur(equipe.Nom, j));
+        //    }
+        //        return equipe;
+        //}
 
         public Equipe CreerEquipe1()
         {

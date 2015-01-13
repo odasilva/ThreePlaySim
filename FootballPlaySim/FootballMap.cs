@@ -16,8 +16,7 @@ namespace ThreePlaySim.FootballPlaySim
         {
             InitializeComponent();
             sim = simFoot;
-            Controls.Add(new MapItem());
-            timer1.Start();
+            timer1.Stop();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -25,6 +24,21 @@ namespace ThreePlaySim.FootballPlaySim
             var point = joueur.Location;
             point.Y++;
             joueur.Location = new Point(point.X,point.Y);
+        }
+
+        private void FootballMap_Load(object sender, EventArgs e)
+        {
+            //Controls.RemoveByKey("pictureBox1");
+            var item = new PictureBox();
+            item.Size = new System.Drawing.Size(15, 15);
+            //item.Image = new Bitmap(@"C:\Users\jerome\Documents\GitHub\ThreePlaySim\FootballPlaySim\images\bluePawn.png");
+            item.Image = ThreePlaySim.Properties.Resources.pionBleu;
+            item.SizeMode = PictureBoxSizeMode.StretchImage;
+            item.Location = new Point(200, 300);
+            item.Name = "cutsomPictureBox";
+            //((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            this.Controls.Add(item);
+            Controls.SetChildIndex(item, 0);
         }
     }
 }

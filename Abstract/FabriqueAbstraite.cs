@@ -26,7 +26,6 @@ namespace ThreePlaySim.Abstract
             xmlFile = filename;
             xmlDoc = new XmlDocument();
         }
-
 	}
 	
  }
