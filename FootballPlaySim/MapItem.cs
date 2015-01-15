@@ -9,13 +9,12 @@ namespace ThreePlaySim.FootballPlaySim
 {
     public class MapItem : PictureBox
     {
-        public MapItem() : base()
+        public MapItem(string nom,Point placement) : base()
         {
             Size = new System.Drawing.Size(15, 15);
-            Image = new Bitmap(@"C:\Users\jerome\Documents\GitHub\ThreePlaySim\FootballPlaySim\images\bluePawn.png");
+            Image = ThreePlaySim.Properties.Resources.pionBleu;
             SizeMode = PictureBoxSizeMode.StretchImage;
-            Location = new Point(200, 700);
-            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            Location = placement;
         }
     }
 }
