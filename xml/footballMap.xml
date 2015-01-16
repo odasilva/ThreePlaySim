@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="52" height="33" tilewidth="21" tileheight="21">
  <tileset firstgid="1" name="field - Copie" tilewidth="21" tileheight="21">
-  <dimension width="1093" height="702"/>
+  <dimension width="1105" height="740"/>
  </tileset>
  <objectgroup name="bordures" width="52" height="33">
   <object name="zone1" x="24" y="3" width="293" height="690"/>
