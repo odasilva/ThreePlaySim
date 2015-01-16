@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace ThreePlaySim.FootballPlaySim
 {
     public partial class FootballMap : Form
     {
         private SimulationFootball sim;
+        private Area[][] grid;
+
         public FootballMap(SimulationFootball simFoot)
         {
             InitializeComponent();
@@ -21,14 +24,11 @@ namespace ThreePlaySim.FootballPlaySim
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            var point = joueur.Location;
-            point.Y++;
-            joueur.Location = new Point(point.X,point.Y);
         }
 
         private void FootballMap_Load(object sender, EventArgs e)
         {
-            AddItem(new MapItem("player",new Point(200,150)));
+            LoadMap();
         }
 
         public void AddItem(MapItem item)
@@ -37,6 +37,13 @@ namespace ThreePlaySim.FootballPlaySim
             Controls.SetChildIndex(item,0);
         }
 
+        private void LoadMap()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(ThreePlaySim.Properties.Resources.footballMap);
+            Height = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["height"].Value);
+            Width = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["width"].Value);
+        }
 
     }
 }

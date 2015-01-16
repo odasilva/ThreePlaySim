@@ -71,6 +71,23 @@ namespace ThreePlaySim.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;map version=&quot;1.0&quot; orientation=&quot;orthogonal&quot; width=&quot;52&quot; height=&quot;33&quot; tilewidth=&quot;21&quot; tileheight=&quot;21&quot;&gt;
+        /// &lt;tileset firstgid=&quot;1&quot; name=&quot;field - Copie&quot; tilewidth=&quot;21&quot; tileheight=&quot;21&quot;&gt;
+        ///  &lt;image source=&quot;../../../../../Pictures/field - Copie.png&quot; width=&quot;1093&quot; height=&quot;702&quot;/&gt;
+        /// &lt;/tileset&gt;
+        /// &lt;objectgroup name=&quot;bordures&quot; width=&quot;52&quot; height=&quot;33&quot;&gt;
+        ///  &lt;object name=&quot;zone1&quot; x=&quot;24&quot; y=&quot;3&quot; width=&quot;293&quot; height=&quot;690&quot;/&gt;
+        ///  &lt;object name=&quot;zone2&quot; x=&quot;776&quot; y=&quot;2&quot; width=&quot;296&quot; height=&quot;690&quot;/&gt;
+        ///  &lt;object name=&quot;z [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string footballMap {
+            get {
+                return ResourceManager.GetString("footballMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pionBleu {
