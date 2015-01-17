@@ -21,10 +21,8 @@ namespace ThreePlaySim
 		{
 			//Console.WriteLine("Hello World!");
 
-
-            SimulationFabrique fabrique = new SimulationFabrique(@"C:\Users\jerome\Documents\GitHub\ThreePlaySim\FootballPlaySim\SimulationFootball.xml");
-            
-            var footballSimulation = fabrique.CreerSimulationFootball();
+            var fabrique = new SimulationFootballFabrique(Properties.Resources.footballSimulation);
+            var footballSimulation = fabrique.CreerSimulation();
             footballSimulation.RenderMap();
 
 			Console.Write("Press any key to continue . . . ");

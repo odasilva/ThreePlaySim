@@ -16,14 +16,12 @@ namespace ThreePlaySim.Abstract
 	/// </summary>
 	abstract public class FabriqueAbstraite
 	{
-        protected readonly  string xmlFile;
+        protected readonly  string xmlContent;
         protected  XmlDocument xmlDoc;
-        protected string xmlPath = @"..\..\xml\";
-        protected string imagePath = @"..\..\image\";
 
-        public  FabriqueAbstraite(string filename)
+        public  FabriqueAbstraite(string xml)
         {
-            xmlFile = filename;
+            xmlContent = xml;
             xmlDoc = new XmlDocument();
         }
 	}

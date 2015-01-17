@@ -4,43 +4,44 @@ using System.Linq;
 using System.Text;
 using ThreePlaySim.FootballPlaySim;
 using System.Xml;
+using System.Windows.Forms;
 using ThreePlaySim.FootballPlaySim;
 using ThreePlaySim.TraficPlaySim;
 using ThreePlaySim.WarPlaySim;
 
 namespace ThreePlaySim.Abstract
 {
-    public class SimulationFabrique : FabriqueAbstraite
-    {
-        private EquipeFabrique equipeFactory;
+    //public class Fabriques : FabriqueAbstraite
+    //{
+    //    private EquipeFabrique equipeFactory;
 
-        public SimulationFabrique(string xml)
-            : base(xml)
-        {
-            equipeFactory = new EquipeFabrique(xmlFile);
-        }
-        public SimulationAbstraite CreerSimulationFootball()
-        {
-            xmlDoc.Load(xmlFile);
-            var equipe1 = equipeFactory.CreerEquipe1();
-            var equipe2 = equipeFactory.CreerEquipe2();
+    //    public Fabriques(string xml)
+    //        : base(xml)
+    //    {
+    //        equipeFactory = new EquipeFabrique(xmlFile);
+    //    }
+    //    public SimulationAbstraite CreerSimulationFootball()
+    //    {
+    //        xmlDoc.Load(xmlFile);
+    //        var equipe1 = equipeFactory.CreerEquipe1();
+    //        var equipe2 = equipeFactory.CreerEquipe2();
 
-            return new SimulationFootball(equipe1,equipe2);
-        }
+    //        return new SimulationFootball(equipe1,equipe2);
+    //    }
 
-    }
+    //}
 
     public class SimulationFootballFabrique : FabriqueAbstraite
     {
-        public SimulationFootballFabrique(string filename)
-            :base(filename)
+        public SimulationFootballFabrique(string xml)
+            :base(xml)
         {
         }
 
         public SimulationFootball CreerSimulation()
         {
-            xmlDoc.Load(xmlPath + xmlFile);
-            var equipeFactory = new EquipeFabrique("footballSimulation.xml");
+            xmlDoc.LoadXml(xmlContent);
+            var equipeFactory = new EquipeFabrique(xmlContent);
             var equipe1 = equipeFactory.CreerEquipe1();
             var equipe2 = equipeFactory.CreerEquipe2();
 
@@ -55,7 +56,7 @@ namespace ThreePlaySim.Abstract
         public  EquipeFabrique(string xml)
             : base(xml)
         {
-            joueurFactory = new JoueurFabrique(xmlFile);
+            joueurFactory = new JoueurFabrique(xmlContent);
         }
 
         //public Equipe CreerEquipe(int i)
@@ -78,7 +79,7 @@ namespace ThreePlaySim.Abstract
 
         public Equipe CreerEquipe1()
         {
-            xmlDoc.Load(xmlFile);
+            xmlDoc.LoadXml(xmlContent);
             var equipeNode = xmlDoc.SelectSingleNode("//equipe[1]");
             var equipe = new Equipe(equipeNode.Attributes["nom"].Value);
             
@@ -91,7 +92,7 @@ namespace ThreePlaySim.Abstract
 
         public Equipe CreerEquipe2()
         {
-            xmlDoc.Load(xmlFile);
+            xmlDoc.LoadXml(xmlContent);
             var xpathRequest = String.Format("//equipe[2]/@nom");
             return new Equipe(xmlDoc.SelectSingleNode(xpathRequest).Value);
         }
@@ -107,7 +108,7 @@ namespace ThreePlaySim.Abstract
 
         public Joueur CreerJoueur(string nomEquipe,int i)
         {
-            xmlDoc.Load(xmlFile);
+            xmlDoc.LoadXml(xmlContent);
 
             var request = String.Format("//equipe[@nom={0}]/joueur[{1}]", nomEquipe, i);
             var joueurNode = xmlDoc.SelectSingleNode(request);
@@ -118,6 +119,34 @@ namespace ThreePlaySim.Abstract
             var poste = joueurNode.Attributes["poste"].Value;
 
             return new Joueur(prenom, nom, numero, poste);
+        }
+    }
+
+    public class MapFabrique : FabriqueAbstraite
+    {
+
+        public MapFabrique(String xml)
+            :base(xml)
+        {
+
+        }
+
+        public SimulationMap CreeMap(System.Drawing.Bitmap img, SimulationAbstraite simulation)
+        {
+            var map = new SimulationMap(simulation);
+            map.WindowState = FormWindowState.Maximized;
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xmlContent);
+            var hauteurTerrain = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["height"].Value);
+            var largeurTerrain = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["width"].Value);
+
+            map.fond = new PictureBox();
+            map.fond.Image = img;
+            map.fond.Height = hauteurTerrain;
+            map.fond.Width = largeurTerrain;
+            map.Controls.Add(map.fond);
+
+            return map;
         }
     }
 

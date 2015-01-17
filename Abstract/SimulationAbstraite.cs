@@ -7,9 +7,9 @@ namespace ThreePlaySim.Abstract
 {
     abstract public class SimulationAbstraite
     {
-        protected System.Windows.Forms.Form map;
-        abstract public void RenderMap();       
+        public System.Windows.Forms.Form Map { get; set; }    
         public List<Personnage> ListPersonnage {get;set;}
+        public Area[,] Grid { get; set; }
 		 
 		public SimulationAbstraite()
 		{
@@ -50,5 +50,9 @@ namespace ThreePlaySim.Abstract
 		{
 			return "";
 		}
+
+        abstract public void LoadMap();
+        abstract public void RenderMap();   
+        abstract protected void LoadGrid();
     }
 }

@@ -68,5 +68,15 @@ namespace ThreePlaySim.WarPlaySim
 			Console.WriteLine(AfficherTous());
 		}
 
+
+        public override void LoadMap()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void LoadGrid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

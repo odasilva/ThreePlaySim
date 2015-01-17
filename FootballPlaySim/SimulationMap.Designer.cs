@@ -1,6 +1,6 @@
-﻿namespace ThreePlaySim.FootballPlaySim
+﻿namespace ThreePlaySim
 {
-    partial class FootballMap
+    partial class SimulationMap
     {
         /// <summary>
         /// Required designer variable.

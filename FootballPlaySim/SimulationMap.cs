@@ -8,24 +8,27 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using ThreePlaySim.Properties;
+using ThreePlaySim.FootballPlaySim;
+using ThreePlaySim.TraficPlaySim;
+using ThreePlaySim.WarPlaySim;
+using ThreePlaySim.Abstract;
 
-namespace ThreePlaySim.FootballPlaySim
+
+namespace ThreePlaySim
 {
-    public partial class FootballMap : Form
+    public partial class SimulationMap : Form
     {
-        private SimulationFootball sim;
+        private SimulationAbstraite sim;
         private Area[,] grid;
-        private PictureBox fond;
-        private List<MapItem> joueursEquipe1;
-        private List<MapItem> joueursEquipe2;
+        public PictureBox fond;
+        private List<MapItem> mapItems;
+        private List<MapItem> MapItems;
 
-        public FootballMap(SimulationFootball simFoot)
+        public SimulationMap(SimulationAbstraite simulation)
         {
             InitializeComponent();
-            joueursEquipe1 = new List<MapItem>();
-            joueursEquipe2 = new List<MapItem>();
-            sim = simFoot;
-            LoadMap();
+            mapItems = new List<MapItem>();
+            sim = simulation;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -41,28 +44,6 @@ namespace ThreePlaySim.FootballPlaySim
         {
             Controls.Add(item);
             Controls.SetChildIndex(item,0);
-        }
-
-        private void LoadMap()
-        {
-            WindowState = FormWindowState.Maximized;
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(ThreePlaySim.Properties.Resources.footballMap);
-            var hauteurTerrain = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["height"].Value);
-            var largeurTerrain = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["width"].Value);
-       
-            fond = new PictureBox();
-            fond.Image = Properties.Resources.terrain;
-            fond.Height = hauteurTerrain;
-            fond.Width = largeurTerrain;
-            Controls.Add(fond);
-
-            LoadGrid();
-
-            var it = new MapItem("nom", grid[10, 29]);
-            AddItem(it);
-            joueursEquipe1.Add(it);
-
         }
 
         private void LoadGrid()
