@@ -22,7 +22,7 @@ namespace ThreePlaySim
 			//Console.WriteLine("Hello World!");
 
             var fabrique = new SimulationFootballFabrique(Properties.Resources.footballSimulation);
-            var footballSimulation = fabrique.CreerSimulation();
+            var footballSimulation = fabrique.CreerSimulation(Properties.Resources.footballMap, Properties.Resources.terrain);
             footballSimulation.RenderMap();
 
 			Console.Write("Press any key to continue . . . ");

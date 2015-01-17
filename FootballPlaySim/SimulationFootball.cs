@@ -18,7 +18,8 @@ namespace ThreePlaySim.FootballPlaySim
         public Equipe Equipe2 { get; set; }
         
 
-		public SimulationFootball(Equipe equipe1,Equipe equipe2)
+		public SimulationFootball(Equipe equipe1,Equipe equipe2,String xmlContent,System.Drawing.Bitmap imgFond)
+            : base(xmlContent,imgFond)
 		{
             Equipe1 = equipe1;
             Equipe2 = equipe2;
@@ -27,16 +28,6 @@ namespace ThreePlaySim.FootballPlaySim
             ListPersonnage.AddRange(Equipe2.ListJoueurs);
 		}
 
-        public override void RenderMap()
-        {
-            LoadMap();
-            System.Windows.Forms.Application.Run(Map);
-        }
-
-        public override void LoadMap()
-        {
-            Map = new SimulationMap(this);
-        }
 
         protected override void LoadGrid()
         {

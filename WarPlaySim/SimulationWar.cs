@@ -23,7 +23,8 @@ namespace ThreePlaySim.WarPlaySim
         public int x = 10;
         public int y = 10;
         
-		public SimulationWar()
+		public SimulationWar(String xml,System.Drawing.Bitmap imgFond)
+            : base(xml,imgFond)
 		{
 			map = new string [x,y];
 			armeA = new List<Personnage>();
@@ -62,17 +63,8 @@ namespace ThreePlaySim.WarPlaySim
 			
 			return window;
 		}
-		
-		public override void RenderMap()
-        {
-			Console.WriteLine(AfficherTous());
-		}
 
 
-        public override void LoadMap()
-        {
-            throw new NotImplementedException();
-        }
 
         protected override void LoadGrid()
         {

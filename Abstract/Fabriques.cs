@@ -5,31 +5,11 @@ using System.Text;
 using ThreePlaySim.FootballPlaySim;
 using System.Xml;
 using System.Windows.Forms;
-using ThreePlaySim.FootballPlaySim;
 using ThreePlaySim.TraficPlaySim;
 using ThreePlaySim.WarPlaySim;
 
 namespace ThreePlaySim.Abstract
 {
-    //public class Fabriques : FabriqueAbstraite
-    //{
-    //    private EquipeFabrique equipeFactory;
-
-    //    public Fabriques(string xml)
-    //        : base(xml)
-    //    {
-    //        equipeFactory = new EquipeFabrique(xmlFile);
-    //    }
-    //    public SimulationAbstraite CreerSimulationFootball()
-    //    {
-    //        xmlDoc.Load(xmlFile);
-    //        var equipe1 = equipeFactory.CreerEquipe1();
-    //        var equipe2 = equipeFactory.CreerEquipe2();
-
-    //        return new SimulationFootball(equipe1,equipe2);
-    //    }
-
-    //}
 
     public class SimulationFootballFabrique : FabriqueAbstraite
     {
@@ -38,14 +18,14 @@ namespace ThreePlaySim.Abstract
         {
         }
 
-        public SimulationFootball CreerSimulation()
+        public SimulationFootball CreerSimulation(String mapXml,System.Drawing.Bitmap imgFond)
         {
             xmlDoc.LoadXml(xmlContent);
             var equipeFactory = new EquipeFabrique(xmlContent);
             var equipe1 = equipeFactory.CreerEquipe1();
             var equipe2 = equipeFactory.CreerEquipe2();
 
-            return new SimulationFootball(equipe1, equipe2);
+            return new SimulationFootball(equipe1, equipe2,mapXml,imgFond);
         }
     }
 
@@ -128,7 +108,6 @@ namespace ThreePlaySim.Abstract
         public MapFabrique(String xml)
             :base(xml)
         {
-
         }
 
         public SimulationMap CreeMap(System.Drawing.Bitmap img, SimulationAbstraite simulation)
@@ -147,6 +126,15 @@ namespace ThreePlaySim.Abstract
             map.Controls.Add(map.fond);
 
             return map;
+        }
+    }
+
+    public class GridFabrique : FabriqueAbstraite
+    {
+        public GridFabrique(String xml)
+            :base(xml)
+        {
+            
         }
     }
 

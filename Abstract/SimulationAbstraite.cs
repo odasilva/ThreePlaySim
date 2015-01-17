@@ -2,19 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace ThreePlaySim.Abstract
 {
     abstract public class SimulationAbstraite
     {
-        public System.Windows.Forms.Form Map { get; set; }    
+        public SimulationMap Map { get; set; }    
         public List<Personnage> ListPersonnage {get;set;}
         public Area[,] Grid { get; set; }
+        private String mapXml;
+        private Bitmap fondImg;
 		 
-		public SimulationAbstraite()
+		public SimulationAbstraite(String mapXmlContent,Bitmap fond)
 		{
-			ListPersonnage = new List<Personnage>();				
+			ListPersonnage = new List<Personnage>();
+            mapXml = mapXmlContent;
+            fondImg = fond;
+            LoadMap();	
 		}
+
+        private void LoadMap()
+        {
+            MapFabrique fabrique = new MapFabrique(mapXml);
+            Map = fabrique.CreeMap(fondImg, this);
+        }
 		
 		public string AfficherTous()
 		{
@@ -51,8 +63,12 @@ namespace ThreePlaySim.Abstract
 			return "";
 		}
 
-        abstract public void LoadMap();
-        abstract public void RenderMap();   
+
+        public void RenderMap()
+        {
+            System.Windows.Forms.Application.Run(Map);
+        }
+
         abstract protected void LoadGrid();
     }
 }
