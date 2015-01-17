@@ -26,6 +26,7 @@ namespace ThreePlaySim.Abstract
         {
             MapFabrique fabrique = new MapFabrique(mapXml);
             Map = fabrique.CreeMap(fondImg, this);
+            Map.Grid = new GridFabrique(Properties.Resources.footballMap).CreerGrid();
         }
 		
 		public string AfficherTous()

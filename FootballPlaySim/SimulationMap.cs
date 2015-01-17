@@ -19,7 +19,7 @@ namespace ThreePlaySim
     public partial class SimulationMap : Form
     {
         private SimulationAbstraite sim;
-        private Area[,] grid;
+        public Area[,] Grid { get; set; }
         public PictureBox fond;
         private List<MapItem> mapItems;
         private List<MapItem> MapItems;
@@ -45,29 +45,5 @@ namespace ThreePlaySim
             Controls.Add(item);
             Controls.SetChildIndex(item,0);
         }
-
-        private void LoadGrid()
-        {
-            var doc = new XmlDocument();
-            doc.LoadXml(Properties.Resources.footballMap);
-            var longueurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["width"].Value);
-            var largeurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["height"].Value);
-            var longueurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tileheight"].Value);
-            var largeurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tilewidth"].Value);
-            int x,y;
-
-            grid = new Area[longueurGrid,largeurGrid];
-
-            for(int i = 0; i < longueurGrid; i++)
-            {
-                x = longueurArea + i * longueurArea;
-                for(int j = 0; j < largeurGrid; j++)
-                {
-                    y = j + j * largeurArea;
-                    grid[i, j] = new Area(grid.Length, x, y,i,j);
-                }
-            }
-        }
-
     }
 }

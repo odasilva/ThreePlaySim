@@ -134,7 +134,31 @@ namespace ThreePlaySim.Abstract
         public GridFabrique(String xml)
             :base(xml)
         {
-            
+        }
+
+        public Area[,] CreerGrid()
+        {
+            var doc = new XmlDocument();
+            doc.LoadXml(Properties.Resources.footballMap);
+            var longueurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["width"].Value);
+            var largeurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["height"].Value);
+            var longueurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tileheight"].Value);
+            var largeurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tilewidth"].Value);
+            int x, y;
+
+            var grid = new Area[longueurGrid, largeurGrid];
+
+            for (int i = 0; i < longueurGrid; i++)
+            {
+                x = longueurArea + i * longueurArea;
+                for (int j = 0; j < largeurGrid; j++)
+                {
+                    y = j + j * largeurArea;
+                    grid[i, j] = new Area(grid.Length, x, y, i, j);
+                }
+            }
+
+            return grid;
         }
     }
 
