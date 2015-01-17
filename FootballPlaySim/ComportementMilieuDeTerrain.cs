@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ThreePlaySim.FootballPlaySim
 {
-    class ComportementMilieuDeTerrain : ComportementJoueurDeFoot
+    class ComportementMillieuDeTerrain : ComportementJoueurDeFoot
     {
         public override void SeDeplacer()
         {

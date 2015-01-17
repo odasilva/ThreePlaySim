@@ -17,6 +17,7 @@ namespace ThreePlaySim.FootballPlaySim
         public Equipe Equipe1 { get; set; }
         public Equipe Equipe2 { get; set; }
         
+        
 
 
 		public SimulationFootball(Equipe equipe1,Equipe equipe2)

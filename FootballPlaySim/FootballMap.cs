@@ -22,6 +22,8 @@ namespace ThreePlaySim.FootballPlaySim
         public FootballMap(SimulationFootball simFoot)
         {
             InitializeComponent();
+            joueursEquipe1 = new List<MapItem>();
+            joueursEquipe2 = new List<MapItem>();
             sim = simFoot;
             LoadMap();
         }
@@ -57,7 +59,9 @@ namespace ThreePlaySim.FootballPlaySim
 
             LoadGrid();
 
-            AddItem(new MapItem("nom", grid[10, 29].Location));
+            var it = new MapItem("nom", grid[10, 29]);
+            AddItem(it);
+            joueursEquipe1.Add(it);
 
         }
 
@@ -79,7 +83,7 @@ namespace ThreePlaySim.FootballPlaySim
                 for(int j = 0; j < largeurGrid; j++)
                 {
                     y = j + j * largeurArea;
-                    grid[i, j] = new Area(grid.Length, x, y);
+                    grid[i, j] = new Area(grid.Length, x, y,i,j);
                 }
             }
         }

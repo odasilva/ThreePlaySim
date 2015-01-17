@@ -9,12 +9,31 @@ namespace ThreePlaySim.FootballPlaySim
 {
     public class MapItem : PictureBox
     {
-        public MapItem(string nom,Point placement) : base()
+        private Area actualArea;
+        public Area ActualArea
+        {
+            get { return actualArea; }
+            set
+            {
+                actualArea = value;
+                Location = actualArea.Location;
+            }
+        }
+        public Point GridLocation
+        {
+            get
+            {
+                return actualArea.GridLocation;
+            }
+        }
+
+        public MapItem(string nom,Area a) : base()
         {
             Size = new System.Drawing.Size(15, 15);
             Image = ThreePlaySim.Properties.Resources.pionBleu;
             SizeMode = PictureBoxSizeMode.StretchImage;
-            Location = placement;
+            Location = a.Location;
+            ActualArea = a;
         }
     }
 }
