@@ -27,11 +27,5 @@ namespace ThreePlaySim.FootballPlaySim
             ListPersonnage.AddRange(Equipe1.ListJoueurs);
             ListPersonnage.AddRange(Equipe2.ListJoueurs);
 		}
-
-
-        protected override void LoadGrid()
-        {
-            
-        }
 	}
 }

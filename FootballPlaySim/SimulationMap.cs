@@ -22,7 +22,7 @@ namespace ThreePlaySim
         public Area[,] Grid { get; set; }
         public PictureBox fond;
         private List<MapItem> mapItems;
-        private List<MapItem> MapItems;
+        public List<MapItem> MapItems { get; set; }
 
         public SimulationMap(SimulationAbstraite simulation)
         {
@@ -42,6 +42,7 @@ namespace ThreePlaySim
 
         public void AddItem(MapItem item)
         {
+            MapItems.Add(item);
             Controls.Add(item);
             Controls.SetChildIndex(item,0);
         }

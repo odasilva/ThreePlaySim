@@ -63,12 +63,5 @@ namespace ThreePlaySim.WarPlaySim
 			
 			return window;
 		}
-
-
-
-        protected override void LoadGrid()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

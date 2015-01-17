@@ -70,6 +70,5 @@ namespace ThreePlaySim.Abstract
             System.Windows.Forms.Application.Run(Map);
         }
 
-        abstract protected void LoadGrid();
     }
 }
