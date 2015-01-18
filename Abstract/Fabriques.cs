@@ -140,25 +140,44 @@ namespace ThreePlaySim.Abstract
         {
             var doc = new XmlDocument();
             doc.LoadXml(Properties.Resources.footballMap);
-            var longueurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["width"].Value);
-            var largeurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["height"].Value);
+            var largeurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["width"].Value);
+            var longueurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["height"].Value);
             var longueurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tileheight"].Value);
             var largeurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tilewidth"].Value);
             int x, y;
-
+            int areaId = 0;
             var grid = new Area[longueurGrid, largeurGrid];
 
             for (int i = 0; i < longueurGrid; i++)
             {
-                x = longueurArea + i * longueurArea;
+                x = i * longueurArea;
                 for (int j = 0; j < largeurGrid; j++)
                 {
-                    y = j + j * largeurArea;
-                    grid[i, j] = new Area(grid.Length, x, y, i, j);
+                    y = j * largeurArea;
+                    grid[i, j] = new Area(areaId++, x, y, i, j);
+                    GetAreaProperties(doc, grid[i, j]);
                 }
             }
 
             return grid;
+        }
+
+        private void GetAreaProperties(XmlDocument doc,Area area)
+        {
+            var tilesNodesList = doc.GetElementsByTagName("tileset")[0].ChildNodes;
+            foreach(XmlNode tileNode in tilesNodesList)
+            {
+                if(tileNode.Name != "tile")
+                    continue;
+                if( int.Parse(tileNode.Attributes["id"].Value) == area.Id)
+                {
+                    foreach(XmlNode propertyNode in tileNode.FirstChild.ChildNodes)
+                    {
+                        area.Proprietes.Add(propertyNode.Attributes["name"].Value, propertyNode.Attributes["value"].Value);
+                    }
+                }
+                    
+            }
         }
     }
 

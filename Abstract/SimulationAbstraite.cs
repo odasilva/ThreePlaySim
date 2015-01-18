@@ -10,7 +10,6 @@ namespace ThreePlaySim.Abstract
     {
         public SimulationMap Map { get; set; }    
         public List<Personnage> ListPersonnage {get;set;}
-        public Area[,] Grid { get; set; }
         private String mapXml;
         private Bitmap fondImg;
 		 
@@ -26,7 +25,7 @@ namespace ThreePlaySim.Abstract
         {
             MapFabrique fabrique = new MapFabrique(mapXml);
             Map = fabrique.CreeMap(fondImg, this);
-            Map.Grid = new GridFabrique(Properties.Resources.footballMap).CreerGrid();
+            Map.Grid = new GridFabrique(mapXml).CreerGrid();
         }
 		
 		public string AfficherTous()
