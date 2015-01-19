@@ -19,15 +19,14 @@ namespace ThreePlaySim
     public partial class SimulationMap : Form
     {
         private SimulationAbstraite sim;
-        public Area[,] Grid { get; set; }
+        public List<List<Area>> Grid { get; set; }
         public PictureBox fond;
-        private List<MapItem> mapItems;
         public List<MapItem> MapItems { get; set; }
 
         public SimulationMap(SimulationAbstraite simulation)
         {
             InitializeComponent();
-            mapItems = new List<MapItem>();
+            MapItems = new List<MapItem>();
             sim = simulation;
         }
 
@@ -45,6 +44,12 @@ namespace ThreePlaySim
             MapItems.Add(item);
             Controls.Add(item);
             Controls.SetChildIndex(item,0);
+        }
+
+
+        public Area GetAreaByProperty(string propertyValue)
+        {
+            return Grid.SelectMany(L => L = L).First(A => A.Proprietes.ContainsKey(propertyValue));
         }
     }
 }

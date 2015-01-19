@@ -12,15 +12,17 @@ namespace ThreePlaySim.FootballPlaySim
         public string Numero { get; set; }
         public string Poste {get;set;}
         public Equipe Equipe { get; set; }
+        public string Position {get;set;}
         public ComportementJoueurDeFoot ComportementJoueur;
 
-        public Joueur(string prenom,string nom,string numero,string poste)
+        public Joueur(string prenom,string nom,string numero,string poste, string position)
             : base(nom)
         {
             Prenom = prenom;
             Nom = nom;
             Numero = numero;
             Poste = poste;
+            Position = position;
 
             switch(poste)
             {

@@ -65,7 +65,7 @@ namespace ThreePlaySim.Abstract
             
             foreach(XmlNode joueurNode in equipeNode.ChildNodes)
             {
-                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value,joueurNode.Attributes["nom"].Value,joueurNode.Attributes["numero"].Value,joueurNode.Attributes["poste"].Value));
+                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value,joueurNode.Attributes["nom"].Value,joueurNode.Attributes["numero"].Value,joueurNode.Attributes["poste"].Value, joueurNode.Attributes["position"].Value));
             }
             return equipe;
         }
@@ -73,8 +73,14 @@ namespace ThreePlaySim.Abstract
         public Equipe CreerEquipe2()
         {
             xmlDoc.LoadXml(xmlContent);
-            var xpathRequest = String.Format("//equipe[2]/@nom");
-            return new Equipe(xmlDoc.SelectSingleNode(xpathRequest).Value);
+            var equipeNode = xmlDoc.SelectSingleNode("//equipe[2]");
+            var equipe = new Equipe(equipeNode.Attributes["nom"].Value);
+
+            foreach (XmlNode joueurNode in equipeNode.ChildNodes)
+            {
+                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value, joueurNode.Attributes["nom"].Value, joueurNode.Attributes["numero"].Value, joueurNode.Attributes["poste"].Value, joueurNode.Attributes["position"].Value));
+            }
+            return equipe;
         }
     }
 
@@ -97,8 +103,9 @@ namespace ThreePlaySim.Abstract
             var nom = joueurNode.Attributes["nom"].Value;
             var numero = joueurNode.Attributes["numero"].Value;
             var poste = joueurNode.Attributes["poste"].Value;
+            var position = joueurNode.Attributes["position"].Value;
 
-            return new Joueur(prenom, nom, numero, poste);
+            return new Joueur(prenom, nom, numero, poste,position);
         }
     }
 
@@ -136,7 +143,7 @@ namespace ThreePlaySim.Abstract
         {
         }
 
-        public Area[,] CreerGrid()
+        public List<List<Area>> CreerGrid()
         {
             var doc = new XmlDocument();
             doc.LoadXml(Properties.Resources.footballMap);
@@ -146,19 +153,23 @@ namespace ThreePlaySim.Abstract
             var largeurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tilewidth"].Value);
             int x, y;
             int areaId = 0;
-            var grid = new Area[longueurGrid, largeurGrid];
+            //var grid = new Area[longueurGrid, largeurGrid];
+            var grid = new List<List<Area>>(largeurGrid);
 
             for (int i = 0; i < longueurGrid; i++)
             {
                 x = i * longueurArea;
+                grid.Add(new List<Area>());
                 for (int j = 0; j < largeurGrid; j++)
                 {
                     y = j * largeurArea;
-                    grid[i, j] = new Area(areaId++, x, y, i, j);
-                    GetAreaProperties(doc, grid[i, j]);
+                    //grid[i, j] = new Area(areaId++, x, y, i, j);
+                    //GetAreaProperties(doc, grid[i, j]);
+                    grid[i].Add(new Area(areaId++, x, y, i, j));
+                    GetAreaProperties(doc, grid[i][j]);
                 }
             }
-
+            
             return grid;
         }
 

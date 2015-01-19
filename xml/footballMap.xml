@@ -3,25 +3,423 @@
  <tileset firstgid="1" name="field - Copie" tilewidth="21" tileheight="21">
   <dimension width="1105" height="740"/>
    <tile id="0">
-     <properties>
-       <property name="test" value="test"/>
-     </properties>
-   </tile>
-   <tile id="51">
-     <properties>
-       <property name="test4" value=""/>
-     </properties>
-   </tile>
-   <tile id="52">
-     <properties>
-       <property name="test2" value="test2"/>
-     </properties>
-   </tile>
-   <tile id="1715">
-     <properties>
-       <property name="test1" value="test1"/>
-     </properties>
-   </tile>
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="51">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="52">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="103">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="104">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="109">
+   <properties>
+    <property name="spawnPos" value="DG"/>
+   </properties>
+  </tile>
+  <tile id="110">
+   <properties>
+    <property name="spawnDG1" value=""/>
+   </properties>
+  </tile>
+  <tile id="126">
+   <properties>
+    <property name="spawnMG1" value=""/>
+   </properties>
+  </tile>
+  <tile id="135">
+   <properties>
+    <property name="spawnMD2" value=""/>
+   </properties>
+  </tile>
+  <tile id="150">
+   <properties>
+    <property name="spawnDD2" value=""/>
+   </properties>
+  </tile>
+  <tile id="155">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="156">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="207">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="208">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="259">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="260">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="311">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="312">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="363">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="364">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="415">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="416">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="467">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="468">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="519">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="520">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="571">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="572">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="623">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="624">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="675">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="676">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="727">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="728">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="779">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="780">
+   <properties>
+    <property name="cage1" value=""/>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="831">
+   <properties>
+    <property name="cage2" value=""/>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="832">
+   <properties>
+    <property name="cage1" value=""/>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="838">
+   <properties>
+    <property name="spawnDC1" value=""/>
+   </properties>
+  </tile>
+  <tile id="856">
+   <properties>
+    <property name="spawnBU1" value=""/>
+   </properties>
+  </tile>
+  <tile id="860">
+   <properties>
+    <property name="spawnBU2" value=""/>
+   </properties>
+  </tile>
+  <tile id="877">
+   <properties>
+    <property name="spawnDC2" value=""/>
+   </properties>
+  </tile>
+  <tile id="883">
+   <properties>
+    <property name="cage2" value=""/>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="884">
+   <properties>
+    <property name="cage1" value=""/>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="935">
+   <properties>
+    <property name="cage2" value=""/>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="936">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="987">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="988">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1002">
+   <properties>
+    <property name="accessible" value="true"/>
+    <property name="camps" value="equipe1"/>
+   </properties>
+  </tile>
+  <tile id="1027">
+   <properties>
+    <property name="accessible" value="true"/>
+    <property name="camps" value="equipe2"/>
+   </properties>
+  </tile>
+  <tile id="1039">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1040">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1091">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1092">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1143">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1144">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1195">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1196">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1247">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1248">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1299">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1300">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1351">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1352">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1403">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1404">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1455">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1456">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1507">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1508">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1529">
+   <properties>
+    <property name="spawnMD1" value=""/>
+   </properties>
+  </tile>
+  <tile id="1539">
+   <properties>
+    <property name="spawnMG2" value=""/>
+   </properties>
+  </tile>
+  <tile id="1559">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1560">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1565">
+   <properties>
+    <property name="spawnPos" value="DD"/>
+   </properties>
+  </tile>
+  <tile id="1566">
+   <properties>
+    <property name="spawnDD1" value=""/>
+   </properties>
+  </tile>
+  <tile id="1606">
+   <properties>
+    <property name="spawnDG2" value=""/>
+   </properties>
+  </tile>
+  <tile id="1611">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1612">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1663">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1664">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
+  <tile id="1715">
+   <properties>
+    <property name="inaccessible" value=""/>
+   </properties>
+  </tile>
  </tileset>
  <objectgroup name="bordures" width="52" height="33">
   <object name="zone1" x="24" y="3" width="293" height="690"/>

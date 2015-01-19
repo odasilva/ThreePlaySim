@@ -26,6 +26,19 @@ namespace ThreePlaySim.FootballPlaySim
             ListPersonnage = new List<Personnage>();
             ListPersonnage.AddRange(Equipe1.ListJoueurs);
             ListPersonnage.AddRange(Equipe2.ListJoueurs);
+            Init();
 		}
+
+        public void Init()
+        {
+            foreach(Joueur j in ListPersonnage)
+            {
+                if(j.Equipe == Equipe1 && j.Position == "DG")
+                {
+                    var spawnArea = Map.GetAreaByProperty("spawnDG1");
+                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                }
+            }
+        }
 	}
 }

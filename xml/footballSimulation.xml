@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <simulation>
   <equipe nom="Paris">
-    <joueur prenom="Marco" nom="VERRATTI" numero="6" poste="millieu" />
-    <joueur prenom="Zlatan" nom="IBRAHIMOVIC" numero="10" poste="attaquant"/>
-    <joueur prenom="Gregory" nom="WAN DER WIEL" numero="4" poste="defenseur"/>
+    <joueur prenom="Ezequiel" nom="LAVEZZI" numero="6" poste="millieu" position="MG" />
+    <joueur prenom="Moura" nom="LUCAS" numero="9" poste="milieu" position="MD" />
+    <joueur prenom="Zlatan" nom="IBRAHIMOVIC" numero="10" poste="attaquant" position="BU"/>
+    <joueur prenom="Gregory" nom="WAN DER WIEL" numero="4" poste="defenseur" position="DD"/>
+    <joueur prenom="Lucas" nom="DIGNE" numero="3" poste="defenseur" position="DG"/>
+    <joueur prenom ="Thiago" nom="SILVA" numero="5" poste="defenseur" position="DC"/>
   </equipe>
   <equipe nom="Marseilles">
-    <joueur prenom="André-Pierre" nom="GIGNAC" numero="10" poste="attaquant"/>
-    <joueur prenom="Marco" nom="VERRATTI" numero="6" poste="millieu"/>
-    <joueur prenom="Nicolas" nom="N'KOULOU" numero="2" poste="defenseur"/>
+    <joueur prenom="André-Pierre" nom="GIGNAC" numero="10" poste="attaquant" position="BU"/>
+    <joueur prenom="Dimitri" nom="PAYET" numero="6" poste="millieu" position="MD"/>
+    <joueur prenom="Florian" nom="THAUVIN" numero="10" poste="milieu" position="MG" />
+    <joueur prenom="Nicolas" nom="N'KOULOU" numero="2" poste="defenseur" position="DC"/>
+    <joueur prenom="Benjamin" nom="MENDY" numero="3" poste="defenseur" position="DG"/>
+    <joueur prenom="Rod" nom="FANNY" numero="4" poste="defenseur" position="DG" />
   </equipe>
 </simulation>
