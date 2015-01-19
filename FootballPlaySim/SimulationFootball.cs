@@ -33,11 +33,93 @@ namespace ThreePlaySim.FootballPlaySim
         {
             foreach(Joueur j in ListPersonnage)
             {
-                if(j.Equipe == Equipe1 && j.Position == "DG")
+                if (j.Equipe.Nom == Equipe1.Nom)
                 {
-                    var spawnArea = Map.GetAreaByProperty("spawnDG1");
-                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                    if (j.Position == "DG")
+                    {
+                        var spawnArea = Map.GetAreaByProperty("spawnDG1");
+                        Map.AddItem(new MapItem(j.Nom, spawnArea));
+                        continue;
+                    }
+
+                    if (j.Position == "DC")
+                    {
+                        var spawnArea = Map.GetAreaByProperty("spawnDC1");
+                        Map.AddItem(new MapItem(j.Nom, spawnArea));
+                        continue;
+                    }
+
+                    if (j.Position == "DD")
+                    {
+                        var spawnArea = Map.GetAreaByProperty("spawnDD1");
+                        Map.AddItem(new MapItem(j.Nom, spawnArea));
+                        continue;
+                    }
+
+                    if (j.Position == "MG")
+                    {
+                        var spawnArea = Map.GetAreaByProperty("spawnMG1");
+                        Map.AddItem(new MapItem(j.Nom, spawnArea));
+                        continue;
+                    }
+
+                    if (j.Position == "MD")
+                    {
+                        var spawnArea = Map.GetAreaByProperty("spawnMD1");
+                        Map.AddItem(new MapItem(j.Nom, spawnArea));
+                        continue;
+                    }
+
+                    if (j.Position == "BU")
+                    {
+                        var spawnArea = Map.GetAreaByProperty("spawnBU1");
+                        Map.AddItem(new MapItem(j.Nom, spawnArea));
+                        continue;
+                    }
                 }
+
+                if (j.Position == "DG")
+                {
+                    var spawnArea = Map.GetAreaByProperty("spawnDG2");
+                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                    continue;
+                }
+
+                if (j.Position == "DC")
+                {
+                    var spawnArea = Map.GetAreaByProperty("spawnDC2");
+                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                    continue;
+                }
+
+                if (j.Position == "DD")
+                {
+                    var spawnArea = Map.GetAreaByProperty("spawnDD2");
+                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                    continue;
+                }
+
+                if (j.Position == "MG")
+                {
+                    var spawnArea = Map.GetAreaByProperty("spawnMG2");
+                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                    continue;
+                }
+
+                if (j.Position == "MD")
+                {
+                    var spawnArea = Map.GetAreaByProperty("spawnMD2");
+                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                    continue;
+                }
+
+                if (j.Position == "BU")
+                {
+                    var spawnArea = Map.GetAreaByProperty("spawnBU2");
+                    Map.AddItem(new MapItem(j.Nom, spawnArea));
+                    continue;
+                }
+
             }
         }
 	}

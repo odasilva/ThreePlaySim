@@ -158,11 +158,11 @@ namespace ThreePlaySim.Abstract
 
             for (int i = 0; i < longueurGrid; i++)
             {
-                x = i * longueurArea;
+                y = i * longueurArea;
                 grid.Add(new List<Area>());
                 for (int j = 0; j < largeurGrid; j++)
                 {
-                    y = j * largeurArea;
+                    x = j * largeurArea;
                     //grid[i, j] = new Area(areaId++, x, y, i, j);
                     //GetAreaProperties(doc, grid[i, j]);
                     grid[i].Add(new Area(areaId++, x, y, i, j));
