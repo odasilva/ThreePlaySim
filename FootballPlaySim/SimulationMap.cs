@@ -32,6 +32,8 @@ namespace ThreePlaySim
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            this.sim.ListPersonnage[1].SeDeplacer();
+            
         }
 
         private void FootballMap_Load(object sender, EventArgs e)
