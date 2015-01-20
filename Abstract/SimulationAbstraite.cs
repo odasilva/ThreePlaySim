@@ -69,5 +69,11 @@ namespace ThreePlaySim.Abstract
             System.Windows.Forms.Application.Run(Map);
         }
 
+        /// <summary>
+        /// Code éxecuté en boucle tout au long de la simulation.
+        /// (déplacements des personnages, IA...)
+        /// </summary>
+        public abstract void Routine();
+
     }
 }

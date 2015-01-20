@@ -28,12 +28,13 @@ namespace ThreePlaySim
             InitializeComponent();
             MapItems = new List<MapItem>();
             sim = simulation;
+            timer1.Interval = 1000;
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.sim.ListPersonnage[1].SeDeplacer();
-            
+            sim.Routine();
         }
 
         private void FootballMap_Load(object sender, EventArgs e)
