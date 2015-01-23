@@ -52,7 +52,7 @@ namespace ThreePlaySim
 
         public Area GetAreaByProperty(string propertyValue)
         {
-            return Grid.SelectMany(L => L = L).First(A => A.Proprietes.ContainsKey(propertyValue));
+            return Grid.SelectMany(L => L).First(A => A.Proprietes.ContainsKey(propertyValue));
         }
     }
 }

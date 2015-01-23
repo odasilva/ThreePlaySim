@@ -42,5 +42,10 @@ namespace ThreePlaySim.Abstract
         public string SeDeplacer(){
         	return "";
         }
+
+        public void Action()
+        {
+
+        }
 	}
 }

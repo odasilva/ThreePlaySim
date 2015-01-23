@@ -63,5 +63,10 @@ namespace ThreePlaySim.WarPlaySim
 			
 			return window;
 		}
+
+        public override void Routine()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

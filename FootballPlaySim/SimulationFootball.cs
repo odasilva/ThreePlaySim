@@ -123,5 +123,13 @@ namespace ThreePlaySim.FootballPlaySim
             }
         }
 
+
+        public override void Routine()
+        {
+            foreach(Personnage p in ListPersonnage)
+            {
+                p.Action();
+            }
+        }
 	}
 }
