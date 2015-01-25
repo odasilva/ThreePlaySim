@@ -7,13 +7,15 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ThreePlaySim.Abstract
 {
 	/// <summary>
 	/// Description of Personnage.
 	/// </summary>
-	public abstract class Personnage
+	public abstract class Personnage : SujetAbstrait
 	{
 		public ComportementConfrontation comportementConfrontation { get; set; }
 		public ComportementEmettreUnSon comportementEmettreUnSon { get; set; }
@@ -25,6 +27,7 @@ namespace ThreePlaySim.Abstract
 			this.Nom = nom;
 			comportementConfrontation = null;
 			comportementEmettreUnSon = null;
+            observateurList = new List<ObservateurAbstrait>();
 		}
 
         public abstract string Afficher();
@@ -39,13 +42,11 @@ namespace ThreePlaySim.Abstract
         	return comportementEmettreUnSon.EmmettreSon();
         }
 
-        public string SeDeplacer(){
-        	return "";
+        public virtual void SeDeplacer(){
+           var mapitem = observateurList.First(O => O is MapItem) as MapItem;
+           mapitem.MiseAjourPosition();
         }
-
-        public void Action()
-        {
-
-        }
+  
+        public abstract void Action();
 	}
 }

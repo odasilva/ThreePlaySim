@@ -42,8 +42,17 @@ namespace ThreePlaySim.FootballPlaySim
         {
             throw new NotImplementedException();
         }
-        
+
+
+        public override void Action()
+        {
+            //throw new NotImplementedException();
+            Console.WriteLine(String.Format("{0} {1} se déplace action",Prenom,Nom));
+            SeDeplacer();
+        }
     }
+
+    
 
     public enum EPosteJoueur
     {

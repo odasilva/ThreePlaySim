@@ -38,7 +38,8 @@ namespace ThreePlaySim.FootballPlaySim
                     if (j.Position == "DG")
                     {
                         var spawnArea = Map.GetAreaByProperty("spawnDG1");
-                        Map.AddItem(new MapItem(j, spawnArea,Properties.Resources.pionBleu));
+                        var item = new MapItem(j, spawnArea, Properties.Resources.pionBleu);
+                        Map.AddItem(item);
                         continue;
                     }
 

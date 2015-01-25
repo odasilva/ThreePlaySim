@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using ThreePlaySim.Abstract;
 
-namespace ThreePlaySim.FootballPlaySim
+namespace ThreePlaySim
 {
-    public class MapItem : PictureBox
+    public class MapItem : ObservateurAbstrait
     {
         private Area actualArea;
         public Area ActualArea
@@ -16,7 +17,7 @@ namespace ThreePlaySim.FootballPlaySim
             set
             {
                 actualArea = value;
-                Location = actualArea.Location;
+                PictureBox.Location = actualArea.Location;
             }
         }
         public Point GridLocation
@@ -26,17 +27,32 @@ namespace ThreePlaySim.FootballPlaySim
                 return actualArea.GridLocation;
             }
         }
-        private Joueur joueur;
+        private Personnage personnage;
+        public PictureBox PictureBox { get; set; }
 
-        public MapItem(Joueur j,Area a,Bitmap img) : base()
+        public MapItem(Personnage perso,Area a,Bitmap img) : base()
         {
-            Size = new System.Drawing.Size(15, 15);
-            Image = img;
-            SizeMode = PictureBoxSizeMode.StretchImage;
-            joueur = j;
-            Name = joueur.Nom;
-            Location = a.Location;
+            PictureBox = new PictureBox();
+            PictureBox.Size = new System.Drawing.Size(15, 15);
+            PictureBox.Image = img;
+            PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            personnage = perso;
+            PictureBox.Name = personnage.Nom;
+            PictureBox.Location = a.Location;
             ActualArea = a;
+            personnage.Attach(this);
         }
+
+        public override void MiseAjour()
+        {
+            
+        }
+
+        public void MiseAjourPosition()
+        {
+            
+        }
+
+
     }
 }

@@ -27,5 +27,10 @@ namespace ThreePlaySim.WarPlaySim
         {
             return "A";
         }
+
+        public override void Action()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

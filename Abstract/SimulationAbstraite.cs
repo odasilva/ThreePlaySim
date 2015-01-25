@@ -19,7 +19,18 @@ namespace ThreePlaySim.Abstract
             mapXml = mapXmlContent;
             fondImg = fond;
             LoadMap();	
+            
 		}
+
+        public void Start()
+        {
+            Map.StartTimer();
+        }
+
+        public void Pause()
+        {
+            Map.stopTimer();
+        }
 
         private void LoadMap()
         {

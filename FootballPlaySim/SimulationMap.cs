@@ -29,7 +29,16 @@ namespace ThreePlaySim
             MapItems = new List<MapItem>();
             sim = simulation;
             timer1.Interval = 1000;
+        }
+
+        public void StartTimer()
+        {
             timer1.Start();
+        }
+
+        public void stopTimer()
+        {
+            timer1.Stop();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -45,8 +54,8 @@ namespace ThreePlaySim
         public void AddItem(MapItem item)
         {
             MapItems.Add(item);
-            Controls.Add(item);
-            Controls.SetChildIndex(item,0);
+            Controls.Add(item.PictureBox);
+            Controls.SetChildIndex(item.PictureBox,0);
         }
 
 

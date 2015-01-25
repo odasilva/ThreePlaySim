@@ -16,7 +16,7 @@ namespace ThreePlaySim.Abstract
 	/// </summary>
 	public abstract class SujetAbstrait
 	{
-		protected readonly List<ObservateurAbstrait> observateurList = new List<ObservateurAbstrait>();
+		protected  List<ObservateurAbstrait> observateurList;
 	 
 		public void Attach(ObservateurAbstrait observer)
 	 	{
@@ -35,6 +35,8 @@ namespace ThreePlaySim.Abstract
 	 			o.MiseAjour();
 	 		}
 	 	}
+
+
 	}
 	
 	public abstract class ObservateurAbstrait
