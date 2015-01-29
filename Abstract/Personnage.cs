@@ -54,11 +54,9 @@ namespace ThreePlaySim.Abstract
                 return;
 
             if (Position != new Point(100, 100))
-                Context.Grid[(int)Position.X][(int)Position.Y].Personnage = null;
+                Context.Grid[(int)Position.X, (int)Position.Y].Personnage = null;
 
-            Context.Grid[x][y].Personnage = this;
-            //var tempArea = Context.Grid[x][y];
-            //Context.Grid[x][y] = new Area { Coordonnees = tempArea.Coordonnees, FontColor = tempArea.FontColor, Personnage = this };
+            Context.Grid[x,y].Personnage = this;
             Position = new Point(x,y);
         }
   

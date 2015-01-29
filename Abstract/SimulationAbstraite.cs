@@ -14,6 +14,7 @@ namespace ThreePlaySim.Abstract
         public List<Personnage> ListPersonnage {get;set;}
         public SimulationView SimView { get; set; }
         public DispatcherTimer Timer { get; set; }
+        public Map Grid { get { return SimView.Map; } }
 
 		public SimulationAbstraite()
 		{

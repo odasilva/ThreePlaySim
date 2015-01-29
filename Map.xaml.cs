@@ -24,7 +24,6 @@ namespace ThreePlaySim
     {
         private AreaCollection grid;
         public ObservableCollection<ObservableCollection<Area>> GridRows { get {return grid.Rows;} }
-        private int nbLines, nbRows;
 
         public Map()
         {
@@ -37,7 +36,10 @@ namespace ThreePlaySim
         {
             get
             {
-                return null;
+                if(x < 0 || y < 0
+                    || x >= grid.nbLines || y >= grid.nbRows)
+                    return null;
+                return grid.Rows[x][y];
             }
         }
 
