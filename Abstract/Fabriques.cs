@@ -6,6 +6,7 @@ using ThreePlaySim.FootballPlaySim;
 using System.Xml;
 using ThreePlaySim.TraficPlaySim;
 using ThreePlaySim.WarPlaySim;
+using System.Windows.Media;
 
 namespace ThreePlaySim.Abstract
 {
@@ -30,6 +31,10 @@ namespace ThreePlaySim.Abstract
 
             simulationFoot.Equipe1 = equipe1;
             simulationFoot.Equipe2 = equipe2;
+
+            simulationFoot.Equipe1.FontColor = Brushes.Green;
+            simulationFoot.Equipe2.FontColor = Brushes.OrangeRed;
+
 
             return simulationFoot;
         }

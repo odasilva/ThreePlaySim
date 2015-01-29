@@ -32,6 +32,7 @@ namespace ThreePlaySim
             var fabrique = new SimulationFootballFabrique(Properties.Resources.footballSimulation);
             var simFoot = fabrique.CreerSimulation();
             simFoot.Equipe1.ListJoueurs[2].SeDeplacer(0,3);
+            simFoot.Equipe2.ListJoueurs[4].SeDeplacer(3, 8);
             simFoot.RenderMap();
         }
 

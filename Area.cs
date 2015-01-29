@@ -41,7 +41,11 @@ namespace ThreePlaySim
         public SolidColorBrush FontColor
         {
             get { return fontColor == null ? defaultFont : fontColor; }
-            set { fontColor = value; }
+            set
+            {
+                fontColor = value;
+                RaiseEvent("FontColor");
+            }
         }
         private SolidColorBrush defaultFont = Brushes.White;
         private SolidColorBrush fontColor;

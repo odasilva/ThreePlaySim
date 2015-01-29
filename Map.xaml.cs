@@ -32,14 +32,17 @@ namespace ThreePlaySim
             BoardControl.ItemsSource = GridRows;
         }
 
-        public Area this[int x, int y]
+        public Area this[double x, double y]
         {
             get
             {
+                var intx = (int)x;
+                var inty = (int)y;
+
                 if(x < 0 || y < 0
-                    || x >= grid.nbLines || y >= grid.nbRows)
+                    || intx >= grid.nbLines || inty >= grid.nbRows)
                     return null;
-                return grid.Rows[x][y];
+                return grid.Rows[intx][inty];
             }
         }
 

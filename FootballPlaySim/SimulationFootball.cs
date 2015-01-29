@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ThreePlaySim.Abstract;
+using System.Windows.Media;
 
 namespace ThreePlaySim.FootballPlaySim
 {
@@ -16,12 +17,12 @@ namespace ThreePlaySim.FootballPlaySim
 	{
         public Equipe Equipe1 { get; set; }
         public Equipe Equipe2 { get; set; }
+
         
 
 		public SimulationFootball(String xmlContent)
             : base()
 		{
-            ListPersonnage = new List<Personnage>();
 		}
 
         //public void Init()

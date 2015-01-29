@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ThreePlaySim.Abstract;
+using System.Windows;
 
 namespace ThreePlaySim.FootballPlaySim
 {
@@ -46,6 +47,13 @@ namespace ThreePlaySim.FootballPlaySim
         public override void Action()
         {
             SeDeplacer((int)Position.X+1,(int)Position.Y + 1);
+        }
+
+        public override void SeDeplacer(int x, int y)
+        {
+            base.SeDeplacer(x, y);
+            if(Position != new Point(100,100))
+                Context.Grid[Position.X,Position.Y].FontColor = Equipe.FontColor;
         }
 
         

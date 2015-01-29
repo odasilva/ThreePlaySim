@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Media;
 
 namespace ThreePlaySim.FootballPlaySim
 {
@@ -9,6 +10,7 @@ namespace ThreePlaySim.FootballPlaySim
     public class Equipe
     {
         public List<Joueur> ListJoueurs;
+        public SolidColorBrush FontColor { get; set; }
         private string nom;
         public String Nom
         {
