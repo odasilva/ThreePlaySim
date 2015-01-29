@@ -47,7 +47,8 @@ namespace ThreePlaySim
                 RaiseEvent("FontColor");
             }
         }
-        private SolidColorBrush defaultFont = Brushes.White;
+        private SolidColorBrush defaultFont;
+        public SolidColorBrush DefaultFont { get { return defaultFont; } set { defaultFont = value; } }
         private SolidColorBrush fontColor;
         public Point Coordonnees { get; set; }
         

@@ -47,14 +47,17 @@ namespace ThreePlaySim.Abstract
         }
 
         public virtual void SeDeplacer(int x, int y){
-
+           
             if (x >= 30)
                 return;
             if (y >= 25)
                 return;
 
             if (Position != new Point(100, 100))
-                Context.Grid[(int)Position.X, (int)Position.Y].Personnage = null;
+            {
+                Context.Grid[Position.X, Position.Y].Personnage = null;
+                Context.Grid[Position.X, Position.Y].FontColor = Context.Grid[Position.X, Position.Y].DefaultFont;
+            }
 
             Context.Grid[x,y].Personnage = this;
             Position = new Point(x,y);
