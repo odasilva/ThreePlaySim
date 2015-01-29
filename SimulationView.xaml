@@ -1,0 +1,11 @@
+﻿<Window x:Class="ThreePlaySim.SimulationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:custom="clr-namespace:ThreePlaySim"
+        Title="SimulationView"
+        WindowState="Maximized" >
+    
+    <Grid>
+        <custom:Map x:Name="grid"/>
+    </Grid>
+</Window>

@@ -3,40 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Controls;
+using System.Windows.Threading;
+
 
 namespace ThreePlaySim.Abstract
 {
     abstract public class SimulationAbstraite
     {
-        public SimulationMap Map { get; set; }    
         public List<Personnage> ListPersonnage {get;set;}
-        private String mapXml;
-        private Bitmap fondImg;
-		 
-		public SimulationAbstraite(String mapXmlContent,Bitmap fond)
+        public SimulationView SimView { get; set; }
+        public DispatcherTimer Timer { get; set; }
+
+		public SimulationAbstraite()
 		{
 			ListPersonnage = new List<Personnage>();
-            mapXml = mapXmlContent;
-            fondImg = fond;
-            LoadMap();	
-            
+            SimView = new SimulationView();
+            Timer = new DispatcherTimer();
+            Timer.Interval = new TimeSpan(0,0,1);
+            Timer.Tick += Routine;
+            Timer.Start();
 		}
 
-        public void Start()
+        void Routine(object sender, EventArgs e)
         {
-            Map.StartTimer();
+           foreach(var p in ListPersonnage)
+           {
+               p.Action();
+           }
         }
 
-        public void Pause()
+        public void RenderMap()
         {
-            Map.stopTimer();
-        }
-
-        private void LoadMap()
-        {
-            MapFabrique fabrique = new MapFabrique(mapXml);
-            Map = fabrique.CreeMap(fondImg, this);
-            Map.Grid = new GridFabrique(mapXml).CreerGrid();
+            SimView.Show(); 
         }
 		
 		public string AfficherTous()
@@ -54,8 +53,9 @@ namespace ThreePlaySim.Abstract
 			
 		}
 		
-		public void CreationPersonnages(Personnage personnage)
+		public void AjoutePersonnage(Personnage personnage)
 		{
+            personnage.Context = this;
 			ListPersonnage.Add(personnage);
 		}
 		
@@ -74,11 +74,6 @@ namespace ThreePlaySim.Abstract
 			return "";
 		}
 
-
-        public void RenderMap()
-        {
-            System.Windows.Forms.Application.Run(Map);
-        }
 
         /// <summary>
         /// Code éxecuté en boucle tout au long de la simulation.

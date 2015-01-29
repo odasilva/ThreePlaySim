@@ -23,8 +23,8 @@ namespace ThreePlaySim.WarPlaySim
         public int x = 10;
         public int y = 10;
         
-		public SimulationWar(String xml,System.Drawing.Bitmap imgFond)
-            : base(xml,imgFond)
+		public SimulationWar()
+            : base()
 		{
 			map = new string [x,y];
 			armeA = new List<Personnage>();

@@ -9,6 +9,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace ThreePlaySim.Abstract
 {
@@ -19,6 +20,8 @@ namespace ThreePlaySim.Abstract
 	{
 		public ComportementConfrontation comportementConfrontation { get; set; }
 		public ComportementEmettreUnSon comportementEmettreUnSon { get; set; }
+        public Point Position { get; set; }
+        public SimulationAbstraite Context { get; set; }
 		public string Nom { get; set; }
 				
 		
@@ -27,6 +30,7 @@ namespace ThreePlaySim.Abstract
 			this.Nom = nom;
 			comportementConfrontation = null;
 			comportementEmettreUnSon = null;
+            Position = new Point(100, 100);
             observateurList = new List<ObservateurAbstrait>();
 		}
 
@@ -42,9 +46,20 @@ namespace ThreePlaySim.Abstract
         	return comportementEmettreUnSon.EmmettreSon();
         }
 
-        public virtual void SeDeplacer(){
-           var mapitem = observateurList.First(O => O is MapItem) as MapItem;
-           mapitem.MiseAjourPosition();
+        public virtual void SeDeplacer(int x, int y){
+
+            if (x >= 30)
+                return;
+            if (y >= 25)
+                return;
+
+            if (Position != new Point(100, 100))
+                Context.Grid[(int)Position.X][(int)Position.Y].Personnage = null;
+
+            Context.Grid[x][y].Personnage = this;
+            //var tempArea = Context.Grid[x][y];
+            //Context.Grid[x][y] = new Area { Coordonnees = tempArea.Coordonnees, FontColor = tempArea.FontColor, Personnage = this };
+            Position = new Point(x,y);
         }
   
         public abstract void Action();

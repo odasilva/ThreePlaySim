@@ -12,17 +12,15 @@ namespace ThreePlaySim.FootballPlaySim
         public string Numero { get; set; }
         public string Poste {get;set;}
         public Equipe Equipe { get; set; }
-        public string Position {get;set;}
         public ComportementJoueurDeFoot ComportementJoueur;
 
-        public Joueur(string prenom,string nom,string numero,string poste, string position)
+        public Joueur(string prenom,string nom,string numero,string poste)
             : base(nom)
         {
             Prenom = prenom;
             Nom = nom;
             Numero = numero;
             Poste = poste;
-            Position = position;
 
             switch(poste)
             {
@@ -46,10 +44,10 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void Action()
         {
-            //throw new NotImplementedException();
-            Console.WriteLine(String.Format("{0} {1} se déplace action",Prenom,Nom));
-            SeDeplacer();
+            SeDeplacer((int)Position.X,(int)Position.Y + 1);
         }
+
+        
     }
 
     

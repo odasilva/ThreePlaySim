@@ -1,31 +1,55 @@
-﻿#region Using directives
-
-using System;
-using System.Reflection;
+﻿using System.Reflection;
+using System.Resources;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Windows;
 
-#endregion
-
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
+// Les informations générales relatives à un assembly dépendent de 
+// l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
+// associées à un assembly.
 [assembly: AssemblyTitle("ThreePlaySim")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ThreePlaySim")]
-[assembly: AssemblyCopyright("Copyright 2014")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// This sets the default COM visibility of types in the assembly to invisible.
-// If you need to expose a type to COM, use [ComVisible(true)] on that type.
+// L'affectation de la valeur false à ComVisible rend les types invisibles dans cet assembly 
+// aux composants COM.  Si vous devez accéder à un type dans cet assembly à partir de 
+// COM, affectez la valeur true à l'attribut ComVisible sur ce type.
 [assembly: ComVisible(false)]
 
-// The assembly version has following format :
+//Pour commencer à générer des applications localisables, définissez 
+//<UICulture>CultureYouAreCodingWith</UICulture> dans votre fichier .csproj
+//dans <PropertyGroup>.  Par exemple, si vous utilisez le français
+//dans vos fichiers sources, définissez <UICulture> à fr-FR.  Puis, supprimez les marques de commentaire de
+//l'attribut NeutralResourceLanguage ci-dessous.  Mettez à jour "fr-FR" dans
+//la ligne ci-après pour qu'elle corresponde au paramètre UICulture du fichier projet.
+
+//[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
+
+
+[assembly: ThemeInfo(
+    ResourceDictionaryLocation.None, //où se trouvent les dictionnaires de ressources spécifiques à un thème
+    //(utilisé si une ressource est introuvable dans la page, 
+    // ou dictionnaires de ressources de l'application)
+    ResourceDictionaryLocation.SourceAssembly //où se trouve le dictionnaire de ressources générique
+    //(utilisé si une ressource est introuvable dans la page, 
+    // dans l'application ou dans l'un des dictionnaires de ressources spécifiques à un thème)
+)]
+
+
+// Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
-// Major.Minor.Build.Revision
+//      Version principale
+//      Version secondaire 
+//      Numéro de build
+//      Révision
 //
-// You can specify all the values or you can use the default the Revision and 
-// Build Numbers by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.*")]
+// Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut 
+// en utilisant '*', comme indiqué ci-dessous :
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

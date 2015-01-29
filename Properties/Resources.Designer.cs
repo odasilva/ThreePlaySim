@@ -61,79 +61,18 @@ namespace ThreePlaySim.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ballon {
-            get {
-                object obj = ResourceManager.GetObject("ballon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;map version=&quot;1.0&quot; orientation=&quot;orthogonal&quot; width=&quot;52&quot; height=&quot;33&quot; tilewidth=&quot;21&quot; tileheight=&quot;21&quot;&gt;
-        /// &lt;tileset firstgid=&quot;1&quot; name=&quot;field - Copie&quot; tilewidth=&quot;21&quot; tileheight=&quot;21&quot;&gt;
-        ///  &lt;dimension width=&quot;1105&quot; height=&quot;740&quot;/&gt;
-        /// &lt;/tileset&gt;
-        /// &lt;objectgroup name=&quot;bordures&quot; width=&quot;52&quot; height=&quot;33&quot;&gt;
-        ///  &lt;object name=&quot;zone1&quot; x=&quot;24&quot; y=&quot;3&quot; width=&quot;293&quot; height=&quot;690&quot;/&gt;
-        ///  &lt;object name=&quot;zone2&quot; x=&quot;776&quot; y=&quot;2&quot; width=&quot;296&quot; height=&quot;690&quot;/&gt;
-        ///  &lt;object name=&quot;zone3&quot; x=&quot;316&quot; y=&quot;1&quot; width=&quot;458&quot; height=&quot;691&quot;/&gt;
-        /// [le reste de la chaîne a été tronqué]&quot;;.
-        /// </summary>
-        internal static string footballMap {
-            get {
-                return ResourceManager.GetString("footballMap", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;simulation&gt;
-        ///  &lt;equipe&gt;
-        ///    &lt;joueur prenom=&quot;Marco&quot; nom=&quot;VERRATTI&quot; numero=&quot;6&quot; poste=&quot;millieu&quot; /&gt;
-        ///    &lt;joueur prenom=&quot;Zlatan&quot; nom=&quot;IBRAHIMOVIC&quot; numero=&quot;10&quot; poste=&quot;attaquant&quot;/&gt;
-        ///    &lt;joueur prenom=&quot;Gregory&quot; nom=&quot;WAN DER WIEL&quot; numero=&quot;4&quot; poste=&quot;defenseur&quot;/&gt;
-        ///  &lt;/equipe&gt;
-        ///  &lt;equipe&gt;
-        ///    &lt;joueur prenom=&quot;André-Pierre&quot; nom=&quot;GIGNAC&quot; numero=&quot;10&quot; poste=&quot;attaquant&quot;/&gt;
-        ///    &lt;joueur prenom=&quot;Marco&quot; nom=&quot;VERRATTI&quot; numero=&quot;6&quot; poste=&quot;millieu&quot;/&gt;
-        ///    &lt;joueur prenom=&quot;Nicolas&quot; nom=&quot;N&apos; [le reste de la chaîne a été tronqué]&quot;;.
+        ///  &lt;equipe nom=&quot;Paris&quot;&gt;
+        ///    &lt;joueur prenom=&quot;Ezequiel&quot; nom=&quot;LAVEZZI&quot; numero=&quot;6&quot; poste=&quot;millieu&quot; position=&quot;MG&quot; /&gt;
+        ///    &lt;joueur prenom=&quot;Moura&quot; nom=&quot;LUCAS&quot; numero=&quot;9&quot; poste=&quot;milieu&quot; position=&quot;MD&quot; /&gt;
+        ///    &lt;joueur prenom=&quot;Zlatan&quot; nom=&quot;IBRAHIMOVIC&quot; numero=&quot;10&quot; poste=&quot;attaquant&quot; position=&quot;BU&quot;/&gt;
+        ///    &lt;joueur prenom=&quot;Gregory&quot; nom=&quot;WAN DER WIEL&quot; numero=&quot;4&quot; poste=&quot;defenseur&quot; position=&quot;DD&quot;/&gt;
+        ///    &lt;joueur prenom=&quot;Lucas&quot; nom=&quot;DIGNE&quot; numero=&quot;3&quot; poste=&quot;defenseur&quot; positi [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string footballSimulation {
             get {
                 return ResourceManager.GetString("footballSimulation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pionBleu {
-            get {
-                object obj = ResourceManager.GetObject("pionBleu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pionRouge {
-            get {
-                object obj = ResourceManager.GetObject("pionRouge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap terrain {
-            get {
-                object obj = ResourceManager.GetObject("terrain", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
