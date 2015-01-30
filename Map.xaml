@@ -13,10 +13,8 @@
         <DataTemplate x:Key="AreaTemplate" DataType="custom:Area">
             <Border x:Name="Border" BorderBrush="Black" BorderThickness="1" Background="{Binding FontColor}">
                 <Grid>
-                    <Label Content="{Binding Path=Value}"></Label>
-                    <Image  Source="{Binding Path=ImgSource}" Height="15" Width="15">
-                        
-                    </Image>
+                    <Label Content="{Binding Path=Value}" HorizontalAlignment="Left"/>
+                    <Image  Source="{Binding Path=ImgSource}" Height="15" Width="15" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
                 </Grid>
             </Border>
         </DataTemplate>

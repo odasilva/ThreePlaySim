@@ -34,8 +34,19 @@ namespace ThreePlaySim
             {
                 personnage = value;
                 RaiseEvent("Value");
-                if (personnage.Accessoire != null)
-                    RaiseEvent("ImgSource");
+                RaiseEvent("ImgSource");
+            }
+        }
+        public ImageSource ImgSource
+        {
+            get
+            {
+                if(personnage != null && personnage.Accessoire != null)
+                {
+                    return new System.Windows.Media.Imaging.BitmapImage(new Uri(personnage.Accessoire.Img, UriKind.Relative));
+                }
+                    
+                return null;
             }
         }
         public SolidColorBrush FontColor
@@ -51,17 +62,7 @@ namespace ThreePlaySim
         public SolidColorBrush DefaultFont { get { return defaultFont; } set { defaultFont = value; } }
         private SolidColorBrush fontColor;
         public Point Coordonnees { get; set; }
-        public ImageSource ImgSource
-        {
-            get
-            {
-                if (personnage == null)
-                    return null;
-                if (personnage.Accessoire == null)
-                    return null;
-                return personnage.Accessoire;
-            }
-        }
+     
         
         
         public Area(Point coordonnees)

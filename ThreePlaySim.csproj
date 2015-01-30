@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -53,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Abstract\Accessoire.cs" />
+    <Compile Include="Abstract\AccessoireDecorateur.cs" />
+    <Compile Include="FootballPlaySim\Ballon.cs" />
     <Compile Include="Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
@@ -149,10 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\ThreePlaySim.vshost.exe" />
-    <Resource Include="FootballPlaySim\images\ball.png" />
-    <Resource Include="FootballPlaySim\images\bluePawn.png" />
-    <Resource Include="FootballPlaySim\images\field.png" />
-    <Resource Include="FootballPlaySim\images\redPawn.png" />
+    <Resource Include="images\ball.png" />
+    <Resource Include="images\bluePawn.png" />
+    <Resource Include="images\field.png" />
+    <Resource Include="images\redPawn.png" />
     <Resource Include="FootballPlaySim\SimulationFootball.xml" />
     <Resource Include="obj\Debug\ThreePlaySim.csproj.FileListAbsolute.txt" />
     <Resource Include="WarPlaySim\SimulationWar.xml" />
@@ -161,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

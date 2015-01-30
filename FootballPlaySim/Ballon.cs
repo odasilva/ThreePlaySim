@@ -10,7 +10,7 @@ namespace ThreePlaySim.FootballPlaySim
 {
     public class Ballon : Accessoire
     {
-        public Ballon(string nom,Bitmap image)
+        public Ballon(string nom,string image)
             : base(nom,image)
         {
 

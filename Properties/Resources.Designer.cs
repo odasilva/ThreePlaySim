@@ -61,16 +61,6 @@ namespace ThreePlaySim.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ball {
-            get {
-                object obj = ResourceManager.GetObject("ball", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;simulation&gt;
         ///  &lt;equipe nom=&quot;Paris&quot;&gt;
