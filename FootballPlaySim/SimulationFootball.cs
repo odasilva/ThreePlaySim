@@ -74,37 +74,43 @@ namespace ThreePlaySim.FootballPlaySim
 
                 if (j.Placement == "DG")
                 {
+                    j.SeDeplacer(4, 2);
                     continue;
                 }
 
                 if (j.Placement == "DC")
                 {
+                    j.SeDeplacer(4, 12);
                     continue;
                 }
 
                 if (j.Placement == "DD")
                 {
+                    j.SeDeplacer(4, 22);
                     continue;
                 }
 
                 if (j.Placement == "MG")
                 {
+                    j.SeDeplacer(8, 2);
                     continue;
                 }
 
                 if (j.Placement == "MD")
                 {
+                    j.SeDeplacer(8, 22);
                     continue;
                 }
 
                 if (j.Placement == "BU")
                 {
+                    j.SeDeplacer(13, 12);
                     continue;
                 }
 
             }
 
-            Equipe1.ListJoueurs[1].Accessoire = Ballon;
+            Equipe1.ListJoueurs[1].RecoitLeBallon();
         }
 
 

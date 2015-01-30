@@ -17,12 +17,14 @@ namespace ThreePlaySim.FootballPlaySim
         {
             get { return nom; }
         }
+        public bool ALeBallon { get; set; }
 
         public Equipe(string _nom)
         {
             nom = _nom;
             ListJoueurs = new List<Joueur>();
             Score = 0;
+            ALeBallon = false;
         }
 
         public void AddJoueur(Joueur j)

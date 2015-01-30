@@ -57,6 +57,25 @@ namespace ThreePlaySim.FootballPlaySim
                 Context.Grid[Position.X,Position.Y].FontColor = Equipe.FontColor;
         }
 
+        public void RecoitLeBallon()
+        {
+            var simulationFoot = Context as SimulationFootball;
+            Accessoire = simulationFoot.Ballon;
+            Equipe.ALeBallon = true;
+        }
+
+        public void PerdLeBallon()
+        {
+            Accessoire = null;
+            Equipe.ALeBallon = false;
+            EquipeAdverse().ALeBallon = true;
+        }
+
+        private  Equipe EquipeAdverse()
+        {
+            var simulationFoot = Context as SimulationFootball;
+            return Equipe.Equals(simulationFoot.Equipe1) ? simulationFoot.Equipe2 : simulationFoot.Equipe1;
+        }
         
     }
 
