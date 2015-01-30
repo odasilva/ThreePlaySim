@@ -68,5 +68,10 @@ namespace ThreePlaySim.WarPlaySim
         {
             throw new NotImplementedException();
         }
+
+        public override void PlacerPersonnages()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

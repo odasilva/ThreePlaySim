@@ -28,97 +28,84 @@ namespace ThreePlaySim.FootballPlaySim
             Ballon = new Ballon("ballon", @"..\images\ball.png");
 		}
 
-        //public void Init()
-        //{
-        //    foreach(Joueur j in ListPersonnage)
-        //    {
-        //        if (j.Equipe.Nom == Equipe1.Nom)
-        //        {
-        //            if (j.Position == "DG")
-        //            {
-        //                var spawnArea = Map.GetAreaByProperty("spawnDG1");
-                       
-        //                continue;
-        //            }
+        public override void PlacerPersonnages()
+        {
+            foreach (Joueur j in ListPersonnage)
+            {
+                if (j.Equipe.Nom == Equipe1.Nom)
+                {
+                    if (j.Placement == "DG")
+                    {
+                        j.SeDeplacer(25,2);
+                        continue;
+                    }
 
-        //            if (j.Position == "DC")
-        //            {
-        //                var spawnArea = Map.GetAreaByProperty("spawnDC1");
-        //                continue;
-        //            }
+                    if (j.Placement == "DC")
+                    {
+                        j.SeDeplacer(25, 12);
+                        continue;
+                    }
 
-        //            if (j.Position == "DD")
-        //            {
-        //                var spawnArea = Map.GetAreaByProperty("spawnDD1");
-                   
-        //                continue;
-        //            }
+                    if (j.Placement == "DD")
+                    {
+                        j.SeDeplacer(25, 22);
 
-        //            if (j.Position == "MG")
-        //            {
-        //                var spawnArea = Map.GetAreaByProperty("spawnMG1");
+                        continue;
+                    }
 
-        //                continue;
-        //            }
+                    if (j.Placement == "MG")
+                    {
+                        j.SeDeplacer(20, 2);
+                        continue;
+                    }
 
-        //            if (j.Position == "MD")
-        //            {
-        //                var spawnArea = Map.GetAreaByProperty("spawnMD1");
+                    if (j.Placement == "MD")
+                    {
+                        j.SeDeplacer(20, 22);
+                        continue;
+                    }
 
-        //                continue;
-        //            }
+                    if (j.Placement == "BU")
+                    {
+                        j.SeDeplacer(15, 12);
+                        continue;
+                    }
+                }
 
-        //            if (j.Position == "BU")
-        //            {
-        //                var spawnArea = Map.GetAreaByProperty("spawnBU1");
+                if (j.Placement == "DG")
+                {
+                    continue;
+                }
 
-        //                continue;
-        //            }
-        //        }
+                if (j.Placement == "DC")
+                {
+                    continue;
+                }
 
-        //        if (j.Position == "DG")
-        //        {
-        //            var spawnArea = Map.GetAreaByProperty("spawnDG2");
-                   
-        //            continue;
-        //        }
+                if (j.Placement == "DD")
+                {
+                    continue;
+                }
 
-        //        if (j.Position == "DC")
-        //        {
-        //            var spawnArea = Map.GetAreaByProperty("spawnDC2");
-        //            continue;
-        //        }
+                if (j.Placement == "MG")
+                {
+                    continue;
+                }
 
-        //        if (j.Position == "DD")
-        //        {
-        //            var spawnArea = Map.GetAreaByProperty("spawnDD2");
+                if (j.Placement == "MD")
+                {
+                    continue;
+                }
 
-        //            continue;
-        //        }
+                if (j.Placement == "BU")
+                {
+                    continue;
+                }
 
-        //        if (j.Position == "MG")
-        //        {
-        //            var spawnArea = Map.GetAreaByProperty("spawnMG2");
+            }
 
-        //            continue;
-        //        }
-
-        //        if (j.Position == "MD")
-        //        {
-        //            var spawnArea = Map.GetAreaByProperty("spawnMD2");
-
-        //            continue;
-        //        }
-
-        //        if (j.Position == "BU")
-        //        {
-        //            var spawnArea = Map.GetAreaByProperty("spawnBU2");
-
-        //            continue;
-        //        }
-
-        //    }
-        //}
+            Equipe1.ListJoueurs[1].Accessoire = Ballon;
+        }
 
 
         public override void Routine()

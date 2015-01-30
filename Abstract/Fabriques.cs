@@ -58,7 +58,7 @@ namespace ThreePlaySim.Abstract
             
             foreach(XmlNode joueurNode in equipeNode.ChildNodes)
             {
-                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value,joueurNode.Attributes["nom"].Value,joueurNode.Attributes["numero"].Value,joueurNode.Attributes["poste"].Value));
+                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value,joueurNode.Attributes["nom"].Value,joueurNode.Attributes["numero"].Value,joueurNode.Attributes["poste"].Value,joueurNode.Attributes["position"].Value));
             }
             return equipe;
         }
@@ -71,7 +71,7 @@ namespace ThreePlaySim.Abstract
 
             foreach (XmlNode joueurNode in equipeNode.ChildNodes)
             {
-                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value, joueurNode.Attributes["nom"].Value, joueurNode.Attributes["numero"].Value, joueurNode.Attributes["poste"].Value));
+                equipe.AddJoueur(new Joueur(joueurNode.Attributes["prenom"].Value, joueurNode.Attributes["nom"].Value, joueurNode.Attributes["numero"].Value, joueurNode.Attributes["poste"].Value, joueurNode.Attributes["position"].Value));
             }
             return equipe;
         }
@@ -96,9 +96,9 @@ namespace ThreePlaySim.Abstract
             var nom = joueurNode.Attributes["nom"].Value;
             var numero = joueurNode.Attributes["numero"].Value;
             var poste = joueurNode.Attributes["poste"].Value;
-            var position = joueurNode.Attributes["position"].Value;
+            var placement = joueurNode.Attributes["position"].Value;
 
-            return new Joueur(prenom, nom, numero, poste);
+            return new Joueur(prenom, nom, numero, poste,placement);
         }
     }
 

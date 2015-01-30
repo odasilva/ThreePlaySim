@@ -36,6 +36,7 @@ namespace ThreePlaySim.Abstract
 
         public void RenderMap()
         {
+            PlacerPersonnages();
             SimView.Show(); 
         }
 		
@@ -75,6 +76,8 @@ namespace ThreePlaySim.Abstract
 			return "";
 		}
 
+        public abstract void PlacerPersonnages();
+        
 
         /// <summary>
         /// Code éxecuté en boucle tout au long de la simulation.
