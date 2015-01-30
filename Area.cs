@@ -27,6 +27,7 @@ namespace ThreePlaySim
             }
         }
         private Personnage personnage;
+        public bool Accessible { get; set; }
         public Personnage Personnage
         {
             get { return personnage; }
@@ -65,14 +66,15 @@ namespace ThreePlaySim
      
         
         
-        public Area(Point coordonnees)
+        public Area(Point coordonnees, bool isAccessible = true)
         {
             Coordonnees = coordonnees;
+            Accessible = isAccessible;
         }
 
         public Area()
         {
-
+            Accessible = true;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -28,12 +28,9 @@ namespace ThreePlaySim.Abstract
 	 		observateurList.Remove(observer);
 	 	}
 	 
-	 	public void Notify()
+	 	public void Notify(ObservateurAbstrait observateur, string message)
 	 	{
-	 		foreach (ObservateurAbstrait o in observateurList)
-	 		{
-	 			o.MiseAjour();
-	 		}
+            observateur.MiseAjour(message);
 	 	}
 
 
@@ -41,7 +38,13 @@ namespace ThreePlaySim.Abstract
 	
 	public abstract class ObservateurAbstrait
  	{
- 		public abstract void MiseAjour();
+        public string Nom;
+        public ObservateurAbstrait(string nom)
+        {
+            Nom = nom;
+        }
+
+ 		public abstract void MiseAjour(string message);
  	}
 
 

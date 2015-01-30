@@ -116,7 +116,21 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void Routine()
         {
-           
+           if(Equipe1.Score == 5)
+           {
+               Timer.Stop();
+               //Afficher Equipe1 vainqueur
+               SimView.Close();
+               return;
+           }
+            if(Equipe2.Score == 5)
+            {
+                Timer.Stop();
+                //Afficher Equipe2 vainqueur
+                SimView.Close();
+                return;
+            }
+
             foreach(Personnage p in ListPersonnage)
             {
                 p.Action();

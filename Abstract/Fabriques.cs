@@ -17,7 +17,6 @@ namespace ThreePlaySim.Abstract
             :base(xml)
         {
         }
-
         public SimulationFootball CreerSimulation()
         {
             xmlDoc.LoadXml(xmlContent);
@@ -101,89 +100,5 @@ namespace ThreePlaySim.Abstract
             return new Joueur(prenom, nom, numero, poste,placement);
         }
     }
-
-    //public class MapFabrique : FabriqueAbstraite
-    //{
-
-    //    public MapFabrique(String xml)
-    //        :base(xml)
-    //    {
-    //    }
-
-    //    public SimulationMap CreeMap(System.Drawing.Bitmap img, SimulationAbstraite simulation)
-    //    {
-    //        var map = new SimulationMap(simulation);
-    //        map.WindowState = FormWindowState.Maximized;
-    //        XmlDocument doc = new XmlDocument();
-    //        doc.LoadXml(xmlContent);
-    //        var hauteurTerrain = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["height"].Value);
-    //        var largeurTerrain = int.Parse(doc.GetElementsByTagName("dimension")[0].Attributes["width"].Value);
-
-    //        map.fond = new PictureBox();
-    //        map.fond.Image = img;
-    //        map.fond.Height = hauteurTerrain;
-    //        map.fond.Width = largeurTerrain;
-    //        map.Controls.Add(map.fond);
-
-    //        return map;
-    //    }
-    //}
-
-    //public class GridFabrique : FabriqueAbstraite
-    //{
-    //    public GridFabrique(String xml)
-    //        :base(xml)
-    //    {
-    //    }
-
-    //    public List<List<Area>> CreerGrid()
-    //    {
-    //        var doc = new XmlDocument();
-    //        doc.LoadXml(Properties.Resources.footballMap);
-    //        var largeurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["width"].Value);
-    //        var longueurGrid = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["height"].Value);
-    //        var longueurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tileheight"].Value);
-    //        var largeurArea = int.Parse(doc.GetElementsByTagName("map")[0].Attributes["tilewidth"].Value);
-    //        int x, y;
-    //        int areaId = 0;
-    //        //var grid = new Area[longueurGrid, largeurGrid];
-    //        var grid = new List<List<Area>>(largeurGrid);
-
-    //        for (int i = 0; i < longueurGrid; i++)
-    //        {
-    //            y = i * longueurArea;
-    //            grid.Add(new List<Area>());
-    //            for (int j = 0; j < largeurGrid; j++)
-    //            {
-    //                x = j * largeurArea;
-    //                //grid[i, j] = new Area(areaId++, x, y, i, j);
-    //                //GetAreaProperties(doc, grid[i, j]);
-    //                grid[i].Add(new Area(areaId++, x, y, i, j));
-    //                GetAreaProperties(doc, grid[i][j]);
-    //            }
-    //        }
-            
-    //        return grid;
-    //    }
-
-    //    private void GetAreaProperties(XmlDocument doc,Area area)
-    //    {
-    //        var tilesNodesList = doc.GetElementsByTagName("tileset")[0].ChildNodes;
-    //        foreach(XmlNode tileNode in tilesNodesList)
-    //        {
-    //            if(tileNode.Name != "tile")
-    //                continue;
-    //            if( int.Parse(tileNode.Attributes["id"].Value) == area.Id)
-    //            {
-    //                foreach(XmlNode propertyNode in tileNode.FirstChild.ChildNodes)
-    //                {
-    //                    area.Proprietes.Add(propertyNode.Attributes["name"].Value, propertyNode.Attributes["value"].Value);
-    //                }
-    //            }
-                    
-    //        }
-    //    }
-    //}
-
 
 }

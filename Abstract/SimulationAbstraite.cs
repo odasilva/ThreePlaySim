@@ -36,6 +36,7 @@ namespace ThreePlaySim.Abstract
 
         public void RenderMap()
         {
+            ListPersonnage.ForEach(P => P.Attach(new ObservateurPersonnage(P,this,P.Nom + "Observateur")));
             PlacerPersonnages();
             SimView.Show(); 
         }
