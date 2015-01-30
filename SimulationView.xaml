@@ -4,8 +4,8 @@
         xmlns:custom="clr-namespace:ThreePlaySim"
         Title="SimulationView"
         WindowState="Maximized" >
-    
+
     <Grid>
-        <custom:Map x:Name="grid"/>
+        <custom:Map x:Name="grid"  HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
     </Grid>
 </Window>

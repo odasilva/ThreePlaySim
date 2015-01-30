@@ -18,11 +18,14 @@ namespace ThreePlaySim.FootballPlaySim
         public Equipe Equipe1 { get; set; }
         public Equipe Equipe2 { get; set; }
 
+        public Ballon Ballon { get; set; }
+      
         
 
 		public SimulationFootball(String xmlContent)
             : base()
 		{
+            Ballon = new Ballon("ballon", Properties.Resources.ball);
 		}
 
         //public void Init()

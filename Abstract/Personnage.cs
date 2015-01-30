@@ -22,6 +22,7 @@ namespace ThreePlaySim.Abstract
 		public ComportementEmettreUnSon comportementEmettreUnSon { get; set; }
         public Point Position { get; set; }
         public SimulationAbstraite Context { get; set; }
+        public Accessoire Accessoire { get; set; }
 		public string Nom { get; set; }
 				
 		

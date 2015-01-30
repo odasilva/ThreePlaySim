@@ -12,7 +12,12 @@
     <UserControl.Resources>
         <DataTemplate x:Key="AreaTemplate" DataType="custom:Area">
             <Border x:Name="Border" BorderBrush="Black" BorderThickness="1" Background="{Binding FontColor}">
-                <Label Content="{Binding Path=Value}"></Label>
+                <Grid>
+                    <Label Content="{Binding Path=Value}"></Label>
+                    <Image  Source="{Binding Path=ImgSource}" Height="15" Width="15">
+                        
+                    </Image>
+                </Grid>
             </Border>
         </DataTemplate>
         

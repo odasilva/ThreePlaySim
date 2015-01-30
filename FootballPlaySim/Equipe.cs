@@ -12,6 +12,7 @@ namespace ThreePlaySim.FootballPlaySim
         public List<Joueur> ListJoueurs;
         public SolidColorBrush FontColor { get; set; }
         private string nom;
+        public int Score;
         public String Nom
         {
             get { return nom; }
@@ -21,6 +22,7 @@ namespace ThreePlaySim.FootballPlaySim
         {
             nom = _nom;
             ListJoueurs = new List<Joueur>();
+            Score = 0;
         }
 
         public void AddJoueur(Joueur j)

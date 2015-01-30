@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -35,9 +34,10 @@ namespace ThreePlaySim
             {
                 personnage = value;
                 RaiseEvent("Value");
+                if (personnage.Accessoire != null)
+                    RaiseEvent("ImgSource");
             }
         }
-
         public SolidColorBrush FontColor
         {
             get { return fontColor == null ? defaultFont : fontColor; }
@@ -51,6 +51,17 @@ namespace ThreePlaySim
         public SolidColorBrush DefaultFont { get { return defaultFont; } set { defaultFont = value; } }
         private SolidColorBrush fontColor;
         public Point Coordonnees { get; set; }
+        public ImageSource ImgSource
+        {
+            get
+            {
+                if (personnage == null)
+                    return null;
+                if (personnage.Accessoire == null)
+                    return null;
+                return personnage.Accessoire;
+            }
+        }
         
         
         public Area(Point coordonnees)
