@@ -62,7 +62,6 @@ namespace ThreePlaySim.Abstract
 
             Context.Grid[x,y].Personnage = this;
             Position = new Point(x,y);
-            var test = observateurList.Find(O => O.Nom == Nom + "Observateur");
             Notify(observateurList.Find(O => O.Nom == Nom + "Observateur"), String.Format("Se deplace vers la position {0};{1}", Position.X, Position.Y));
         }
   
