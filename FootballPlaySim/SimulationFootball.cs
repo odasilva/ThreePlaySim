@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ThreePlaySim.Abstract;
 using System.Windows.Media;
+using System.Windows;
 
 namespace ThreePlaySim.FootballPlaySim
 {
@@ -36,37 +37,42 @@ namespace ThreePlaySim.FootballPlaySim
                     if (j.Placement == "DG")
                     {
                         j.SeDeplacer(25,2);
+                        j.StartPosition = new Point(25, 2);
                         continue;
                     }
 
                     if (j.Placement == "DC")
                     {
                         j.SeDeplacer(25, 12);
+                        j.StartPosition = new Point(25, 12);
                         continue;
                     }
 
                     if (j.Placement == "DD")
                     {
                         j.SeDeplacer(25, 22);
-
+                        j.StartPosition = new Point(25, 22);
                         continue;
                     }
 
                     if (j.Placement == "MG")
                     {
                         j.SeDeplacer(20, 2);
+                        j.StartPosition = new Point(20,2);
                         continue;
                     }
 
                     if (j.Placement == "MD")
                     {
                         j.SeDeplacer(20, 22);
+                            j.StartPosition = new Point(20, 22);
                         continue;
                     }
 
                     if (j.Placement == "BU")
                     {
                         j.SeDeplacer(15, 12);
+                        j.StartPosition = new Point(15, 12);
                         continue;
                     }
                 }
@@ -74,36 +80,42 @@ namespace ThreePlaySim.FootballPlaySim
                 if (j.Placement == "DG")
                 {
                     j.SeDeplacer(4, 2);
+                    j.StartPosition = new Point(4,2);
                     continue;
                 }
 
                 if (j.Placement == "DC")
                 {
                     j.SeDeplacer(4, 12);
+                    j.StartPosition = new Point(4, 12);
                     continue;
                 }
 
                 if (j.Placement == "DD")
                 {
                     j.SeDeplacer(4, 22);
+                    j.StartPosition = new Point(4, 22);
                     continue;
                 }
 
                 if (j.Placement == "MG")
                 {
                     j.SeDeplacer(8, 2);
+                    j.StartPosition = new Point(8, 2);
                     continue;
                 }
 
                 if (j.Placement == "MD")
                 {
                     j.SeDeplacer(8, 22);
+                    j.StartPosition = new Point(8,22);
                     continue;
                 }
 
                 if (j.Placement == "BU")
                 {
                     j.SeDeplacer(13, 12);
+                    j.StartPosition = new Point(13,12);
                     continue;
                 }
 
@@ -135,7 +147,7 @@ namespace ThreePlaySim.FootballPlaySim
                 return;
             }
 
-            foreach(Personnage p in ListPersonnage)
+            foreach (Personnage p in ListPersonnage)
             {
                 p.Action();
             }

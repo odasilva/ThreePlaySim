@@ -24,6 +24,7 @@ namespace ThreePlaySim
     {
         private AreaCollection grid;
         public ObservableCollection<ObservableCollection<Area>> GridRows { get {return grid.Rows;} }
+       
 
         public Map()
         {

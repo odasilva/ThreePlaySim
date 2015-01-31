@@ -14,6 +14,7 @@ namespace ThreePlaySim.FootballPlaySim
         public string Poste {get;set;}
         public string Placement {get;set;}
         public Equipe Equipe { get; set; }
+        public Point StartPosition { get; set; }
 
         public ComportementJoueurDeFoot ComportementJoueur;
 
@@ -60,9 +61,87 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void Action()
         {
-            SeDeplacer(Position.X + 1, Position.Y);
-            if (Poste == "attaquant")
-                FrapperAuxBut();
+            var r = new Random();
+
+           var context = (SimulationFootball)Context;
+           if(Equipe == context.Equipe1)
+           {
+               if(Equipe.ALeBallon)
+               {
+                   if(Accessoire == null)
+                   {
+                       if (Position.X >= 30)
+                           SeDeplacer(Position.X - 1, Position.Y);
+                       if(Position.X == 0)
+                           SeDeplacer(Position.X + 1, Position.Y);
+                       if (Position.Y >= 25)
+                           SeDeplacer(Position.X, Position.Y-1);
+                       if (Position.Y == 0)
+                           SeDeplacer(Position.X, Position.Y+1);
+                       var value = r.Next(1, 4);
+                       if (value == 1)
+                           SeDeplacer(Position.X - 1, Position.Y-1);
+                       if (value == 2)
+                           SeDeplacer(Position.X - 1, Position.Y);
+                       if (value == 3)
+                           SeDeplacer(Position.X - 1, Position.Y + 1);
+                   }
+                   else
+                   {
+                       if (Math.Abs(Position.X - StartPosition.X) >= 5 || Math.Abs(Position.Y - StartPosition.Y) >= 5)
+                       {
+                           PasserLaBalle();
+                       }
+                       else
+                       {
+                           if (Position.X >= 30)
+                               SeDeplacer(Position.X - 1, Position.Y);
+                           if (Position.X == 0)
+                               SeDeplacer(Position.X + 1, Position.Y);
+                           if (Position.Y >= 25)
+                               SeDeplacer(Position.X, Position.Y - 1);
+                           if (Position.Y == 0)
+                               SeDeplacer(Position.X, Position.Y + 1);
+                           var value = r.Next(1, 4);
+                           if (value == 1)
+                               SeDeplacer(Position.X - 1, Position.Y - 1);
+                           if (value == 2)
+                               SeDeplacer(Position.X - 1, Position.Y);
+                           if (value == 3)
+                               SeDeplacer(Position.X - 1, Position.Y + 1);
+                       }
+                   }
+               }
+           }
+           else
+           {
+
+           }
+
+           System.Threading.Thread.Sleep(new TimeSpan(0, 0, 0, 0, 20));
+        }
+
+
+        private Area VerifieSiJoueurACote()
+        {
+            if ((int)Position.X >= 30 || (int)Position.Y >= 25)
+                return null;
+            var context = (SimulationFootball)Context;
+            if (context.Grid[Position.X - 1, Position.Y].Personnage != null)
+                return context.Grid[Position.X - 1, Position.Y];
+            if (context.Grid[Position.X - 1, Position.Y+1].Personnage != null)
+                return context.Grid[Position.X - 1, Position.Y+1];
+            if (context.Grid[Position.X, Position.Y+1].Personnage != null)
+                return context.Grid[Position.X, Position.Y+1];
+            if (context.Grid[Position.X + 1, Position.Y+1].Personnage != null)
+                return context.Grid[Position.X+1, Position.Y+1];
+            if (context.Grid[Position.X+1, Position.Y].Personnage != null)
+                return context.Grid[Position.X + 1, Position.Y];
+            if (context.Grid[Position.X+1, Position.Y-1].Personnage != null)
+                return context.Grid[Position.X+1, Position.Y-1];
+            if (context.Grid[Position.X, Position.Y-1].Personnage != null)
+                return context.Grid[Position.X, Position.Y-1];
+            return null;
         }
 
         public override void SeDeplacer(double x, double y)

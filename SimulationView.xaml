@@ -8,13 +8,14 @@
     <DockPanel>
         <custom:Map x:Name="grid"  VerticalAlignment="Stretch"  Width="900" DockPanel.Dock="Left"/>
         <Border BorderThickness="2" BorderBrush="Black">
+            <ScrollViewer  Height="500">
             <TextBlock x:Name="TBNotification"
                    DockPanel.Dock="Right"
                    HorizontalAlignment="Right"                
-                   TextWrapping="Wrap"
                    VerticalAlignment="Top" Width="500"
-                   Height="415"
-                   ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                   Height="500"
+                   />
+            </ScrollViewer>
         </Border>
     </DockPanel>
 </Window>

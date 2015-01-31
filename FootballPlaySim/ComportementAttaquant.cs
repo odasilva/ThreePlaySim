@@ -17,7 +17,8 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void PasserLaBalle()
         {
-            
+            joueur.Notify(joueur.Nom + "Observateur", String.Format("{0} {1} est attaquant. il ne fait pas de passes, il marque des buts!!", joueur.Prenom, joueur.Nom));
+            joueur.FrapperAuxBut();
         }
 
         public override void FrapperAuButs()
@@ -39,7 +40,11 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void Dribbler(Joueur adversaire)
         {
-            throw new NotImplementedException();
+            var r = new Random();
+            if(r.Next(1,2) == 1)
+            {
+                joueur.Notify(joueur.Nom + "Observateur", String.Format("{0} {1} à dribbler {2} {3}", joueur.Prenom, joueur.Nom,adversaire.Prenom,adversaire.Nom));
+            }
         }
     }
 }
