@@ -20,7 +20,7 @@ namespace ThreePlaySim.Abstract
 			
 		}
 
-        public abstract string Confrontation();
+        public abstract void Confrontation(Personnage adversaire);
 		
 	}
 }

@@ -17,7 +17,6 @@ namespace ThreePlaySim.FootballPlaySim
 	{
         public Equipe Equipe1 { get; set; }
         public Equipe Equipe2 { get; set; }
-
         public Ballon Ballon { get; set; }
       
         
@@ -110,9 +109,14 @@ namespace ThreePlaySim.FootballPlaySim
 
             }
 
-            Equipe1.ListJoueurs[1].RecoitLeBallon();
+            Equipe1.ListJoueurs.Find(P => P.Nom == "IBRAHIMOVIC").RecoitLeBallon();
         }
 
+        public override void InitObservateurs()
+        {
+            base.InitObservateurs();
+            ListPersonnage.ForEach(P => P.Attach(new AlerteurDeBut("alerteurDeBut",this,(Joueur)P)));
+        }
 
         public override void Routine()
         {

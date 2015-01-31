@@ -21,9 +21,10 @@ namespace ThreePlaySim.WarPlaySim
 			
 		}
 		
-		public override string Confrontation()
-		{
-			return " arrive avec son arc.";
-		}
-	}
+
+        public override void Confrontation(Personnage adversaire)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

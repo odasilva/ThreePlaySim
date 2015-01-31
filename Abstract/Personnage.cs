@@ -38,8 +38,8 @@ namespace ThreePlaySim.Abstract
         public abstract string Afficher();
 
 		
-        public string Confrontation(){
-        	return comportementConfrontation.Confrontation();
+        public void Confrontation(Personnage ennemi){
+             comportementConfrontation.Confrontation(ennemi);
         }
 
 
@@ -62,7 +62,7 @@ namespace ThreePlaySim.Abstract
 
             Context.Grid[x,y].Personnage = this;
             Position = new Point(x,y);
-            Notify(observateurList.Find(O => O.Nom == Nom + "Observateur"), String.Format("Se deplace vers la position {0};{1}", Position.X, Position.Y));
+            Notify( Nom + "Observateur", String.Format("{0} se deplace vers la position {1};{2}",Nom, Position.X, Position.Y));
         }
   
         public abstract void Action();

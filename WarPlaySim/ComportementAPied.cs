@@ -20,10 +20,10 @@ namespace ThreePlaySim.WarPlaySim
 		{
 			
 		}
-		
-		public override string Confrontation()
-		{
-			return " arrive à pied.";
-		}
-	}
+
+        public override void Confrontation(Personnage adversaire)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

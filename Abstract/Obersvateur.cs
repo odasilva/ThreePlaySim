@@ -28,9 +28,10 @@ namespace ThreePlaySim.Abstract
 	 		observateurList.Remove(observer);
 	 	}
 	 
-	 	public void Notify(ObservateurAbstrait observateur, string message)
+	 	public void Notify(String nomObservateur, string message)
 	 	{
-            observateur.MiseAjour(message);
+            var o = observateurList.Find(O => O.Nom == nomObservateur);
+            o.MiseAjour(message);
 	 	}
 
 

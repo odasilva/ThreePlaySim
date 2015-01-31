@@ -24,8 +24,7 @@ namespace ThreePlaySim
         public override void MiseAjour(String message)
         {
             simulation.SimView.TBNotification.Text +=
-                String.Format("{0} : {1}", sujet.Nom, message)
-                + Environment.NewLine;
+                message + Environment.NewLine;
         }
     }
 }

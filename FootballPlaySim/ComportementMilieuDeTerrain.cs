@@ -7,10 +7,6 @@ namespace ThreePlaySim.FootballPlaySim
 {
     class ComportementMillieuDeTerrain : ComportementJoueurDeFoot
     {
-        public override void SeDeplacer()
-        {
-            throw new NotImplementedException();
-        }
 
         public override void PasserLaBalle()
         {
@@ -18,6 +14,11 @@ namespace ThreePlaySim.FootballPlaySim
         }
 
         public override void FrapperAuButs()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Dribbler(Joueur adversaire)
         {
             throw new NotImplementedException();
         }

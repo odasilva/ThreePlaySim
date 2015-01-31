@@ -56,6 +56,7 @@
     </ApplicationDefinition>
     <Compile Include="Abstract\Accessoire.cs" />
     <Compile Include="Abstract\AccessoireDecorateur.cs" />
+    <Compile Include="FootballPlaySim\AlerteurDeBut.cs" />
     <Compile Include="FootballPlaySim\Ballon.cs" />
     <Compile Include="Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>

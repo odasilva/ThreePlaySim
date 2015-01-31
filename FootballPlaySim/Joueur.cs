@@ -27,7 +27,7 @@ namespace ThreePlaySim.FootballPlaySim
             Placement = placement;
             switch(poste)
             {
-                case "attaquant": ComportementJoueur = new ComportementAttaquant();
+                case "attaquant": ComportementJoueur = new ComportementAttaquant(this);
                     break;
                 case "millieu": ComportementJoueur = new ComportementMillieuDeTerrain();
                 break;
@@ -37,7 +37,20 @@ namespace ThreePlaySim.FootballPlaySim
         }
 
 
+        public void Dribbler(Joueur adversaire)
+        {
+            ComportementJoueur.Dribbler(adversaire);
+        }
 
+        public void FrapperAuxBut()
+        {
+            ComportementJoueur.FrapperAuButs();
+        }
+
+        public void PasserLaBalle()
+        {
+            ComportementJoueur.PasserLaBalle();
+        }
 
         public override string Afficher()
         {
@@ -47,7 +60,8 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void Action()
         {
-            //SeDeplacer((int)Position.X+1,(int)Position.Y + 1);
+            if (Poste == "attaquant")
+                FrapperAuxBut();
         }
 
         public override void SeDeplacer(int x, int y)
@@ -71,7 +85,7 @@ namespace ThreePlaySim.FootballPlaySim
             EquipeAdverse().ALeBallon = true;
         }
 
-        private  Equipe EquipeAdverse()
+        public  Equipe EquipeAdverse()
         {
             var simulationFoot = Context as SimulationFootball;
             return Equipe.Equals(simulationFoot.Equipe1) ? simulationFoot.Equipe2 : simulationFoot.Equipe1;
