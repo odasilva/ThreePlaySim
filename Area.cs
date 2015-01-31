@@ -35,19 +35,29 @@ namespace ThreePlaySim
             {
                 personnage = value;
                 RaiseEvent("Value");
-                RaiseEvent("ImgSource");
+                if(personnage != null && personnage.Accessoire != null)
+                {
+                    ImgSource = new System.Windows.Media.Imaging.BitmapImage(new Uri(personnage.Accessoire.Img, UriKind.Relative));
+                }
+                else
+                {
+                    ImgSource = null;        
+                }
+                    
             }
         }
+        private ImageSource imgSource;
         public ImageSource ImgSource
         {
             get
             {
-                if(personnage != null && personnage.Accessoire != null)
-                {
-                    return new System.Windows.Media.Imaging.BitmapImage(new Uri(personnage.Accessoire.Img, UriKind.Relative));
-                }
-                    
-                return null;
+                return imgSource;
+            }
+
+            set
+            {
+                imgSource = value;
+                RaiseEvent("ImgSource");
             }
         }
         public SolidColorBrush FontColor

@@ -22,7 +22,13 @@ namespace ThreePlaySim.Abstract
 		public ComportementEmettreUnSon comportementEmettreUnSon { get; set; }
         public Point Position { get; set; }
         public SimulationAbstraite Context { get; set; }
-        public Accessoire Accessoire { get; set; }
+        private Accessoire accessoire;
+        public Accessoire Accessoire
+        {
+            get { return accessoire; }
+            set { accessoire = value; }
+        }
+
 		public string Nom { get; set; }
 				
 		
@@ -47,7 +53,7 @@ namespace ThreePlaySim.Abstract
         	return comportementEmettreUnSon.EmmettreSon();
         }
 
-        public virtual void SeDeplacer(int x, int y){
+        public virtual void SeDeplacer(double x, double y){
            
             if (x >= 30)
                 return;

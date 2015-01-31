@@ -60,11 +60,12 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void Action()
         {
+            SeDeplacer(Position.X + 1, Position.Y);
             if (Poste == "attaquant")
                 FrapperAuxBut();
         }
 
-        public override void SeDeplacer(int x, int y)
+        public override void SeDeplacer(double x, double y)
         {
             base.SeDeplacer(x, y);
             if(Position != new Point(100,100))
