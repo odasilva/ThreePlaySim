@@ -140,7 +140,7 @@ public class ArmeeFabrique : FabriqueAbstraite
     public ArmeeFabrique(string xml)
         : base(xml)
     {
-        armeeFactory = new ArmeeFabrique(xmlContent);
+        armeeFactory = new SoldatFabrique(xmlContent);
     }
 
     public Armee CreerArmeeA()
@@ -167,5 +167,29 @@ public class ArmeeFabrique : FabriqueAbstraite
             armee.AddSoldat(new Soldat(soldatNode.Attributes["prenom"].Value, soldatNode.Attributes["nom"].Value, soldatNode.Attributes["type"].Value));
         }
         return armee;
+    }
+
+
+    public class SoldatFabrique : FabriqueAbstraite
+    {
+        public SoldatFabrique(string xml)
+            : base(xml)
+        {
+
+        }
+
+        public Soldat CreerSoldat(string nomArmee, int i, SimulationWar sim)
+        {
+            xmlDoc.LoadXml(xmlContent);
+
+            var request = String.Format("//armee[@nom={0}]/soldat[{1}]", nomArmee, i);
+            var soldatNode = xmlDoc.SelectSingleNode(request);
+
+            var prenom = soldatNode.Attributes["prenom"].Value;
+            var nom = soldatNode.Attributes["nom"].Value;
+            var type = soldatNode.Attributes["type"].Value;
+
+            return new Soldat(prenom, nom, type);
+        }
     }
 }
