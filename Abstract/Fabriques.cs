@@ -25,7 +25,7 @@ namespace ThreePlaySim.Abstract
             var equipe1 = equipeFactory.CreerEquipe1();
             var equipe2 = equipeFactory.CreerEquipe2();
 
-            var simulationFoot = new SimulationFootball(xmlContent);
+            var simulationFoot = new SimulationFootball(xmlContent,Properties.Resources.FootballMap );
             equipe1.ListJoueurs.ForEach(P => simulationFoot.AjoutePersonnage(P));
             equipe2.ListJoueurs.ForEach(P => simulationFoot.AjoutePersonnage(P));
 

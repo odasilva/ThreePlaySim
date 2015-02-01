@@ -18,7 +18,17 @@ namespace ThreePlaySim.FootballPlaySim
 
         public override void Confrontation(Personnage adversaire)
         {
-           
+           var joueurAdversaire = adversaire as Joueur;
+           if(joueurAdversaire.Accessoire != null)
+           {
+               var r = new Random();
+               if(r.Next(1,3) == 1)
+               {
+                   joueurAdversaire.PerdLeBallon();
+                   joueur.RecoitLeBallon();
+                   joueur.SeDeplacer(joueur.Position.X + 1, joueur.Position.Y);
+               }
+           }
         }
     }
 }
