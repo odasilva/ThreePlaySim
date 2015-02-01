@@ -35,6 +35,7 @@ namespace ThreePlaySim.FootballPlaySim
                 case "defenseur": ComportementJoueur = new ComportementDefenseur();
                     break;
             }
+            //comportementConfrontation = new ComportementConfrontationJoueur()
         }
 
 
@@ -130,6 +131,10 @@ namespace ThreePlaySim.FootballPlaySim
            System.Threading.Thread.Sleep(new TimeSpan(0, 0, 0, 0, 20));
         }
 
+        public void Tacler()
+        {
+
+        }
 
         private Area VerifieSiJoueurACote()
         {
