@@ -8,7 +8,7 @@ using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.WarPlaySim
 {
-    class Soldat : Personnage
+    public class Soldat : Personnage
     {
         
         public string Prenom { get; set; }
