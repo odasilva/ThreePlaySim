@@ -19,8 +19,9 @@ namespace ThreePlaySim.WarPlaySim
 		public ComportementParlerCrier()
 		{
 		}
-		
-		public string EmmettreSon(){
+
+        public override string EmmettreSon()
+        {
 			return " AAAaaaaah !";
 		}
 	}

@@ -19,9 +19,10 @@ namespace ThreePlaySim.WarPlaySim
 		public ComportementParlerPrincesse()
 		{
 		}
-		
-		
-		public string EmmettreSon(){
+
+
+        public override string EmmettreSon()
+        {
 			return " Son de princesse !";
 		}
 	}

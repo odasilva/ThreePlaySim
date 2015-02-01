@@ -21,7 +21,7 @@ namespace ThreePlaySim.WarPlaySim
 		}
 		
 		
-		public string EmmettreSon(){
+		public override string EmmettreSon(){
 			return " Ah !";
 		}
 	}
