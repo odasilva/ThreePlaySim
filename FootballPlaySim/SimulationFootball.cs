@@ -5,6 +5,7 @@
  * Time: 14:36
  */
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using ThreePlaySim.Abstract;
@@ -121,7 +122,7 @@ namespace ThreePlaySim.FootballPlaySim
 
             }
 
-            Equipe1.ListJoueurs.Find(P => P.Nom == "IBRAHIMOVIC").RecoitLeBallon();
+            Equipe1.ListJoueurs.Where(P => P.Poste == "defenseur").ToList()[0].RecoitLeBallon();
         }
 
         public override void InitObservateurs()
@@ -152,5 +153,12 @@ namespace ThreePlaySim.FootballPlaySim
                 p.Action();
             }
         }
+
+        public void RemiseEnJeu()
+        {
+            ListPersonnage.Select(P => P as Joueur).ToList().ForEach(J => J.SeDeplacer(J.StartPosition.X, J.StartPosition.Y));
+            System.Threading.Thread.Sleep(2);
+        }
+
 	}
 }

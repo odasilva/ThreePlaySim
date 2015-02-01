@@ -24,6 +24,7 @@ namespace ThreePlaySim.FootballPlaySim
             sujet.Equipe.Score++;
             simulation.SimView.TBNotification.Text += String.Format("BUT POUR {0}. Le score est de {1} à {2}", sujet.Equipe.Nom, simulation.Equipe1.Score, simulation.Equipe2.Score)
                 + Environment.NewLine;
+            simulation.RemiseEnJeu();
 
         }
 

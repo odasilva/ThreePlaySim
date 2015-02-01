@@ -85,7 +85,7 @@ namespace ThreePlaySim.Abstract
                 areas.Add(Context.Grid[Position.X - 1, Position.Y]);
             if (Position != new Point(0,24))
                 areas.Add(Context.Grid[Position.X - 1, Position.Y+1]);
-            if (Position.Y < 24)
+            if (Position.Y <= 23)
                 areas.Add(Context.Grid[Position.X, Position.Y+1]);
             if (Position != new Point(29,24))
                 areas.Add(Context.Grid[Position.X + 1, Position.Y +1]);

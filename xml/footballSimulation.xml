@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <simulation>
   <equipe nom="Paris">
-    <joueur prenom="Ezequiel" nom="LAVEZZI" numero="6" poste="millieu" position="MG" />
+    <joueur prenom="Ezequiel" nom="LAVEZZI" numero="6" poste="milieu" position="MG" />
     <joueur prenom="Moura" nom="LUCAS" numero="9" poste="milieu" position="MD" />
     <joueur prenom="Zlatan" nom="IBRAHIMOVIC" numero="10" poste="attaquant" position="BU"/>
     <joueur prenom="Gregory" nom="WAN DER WIEL" numero="4" poste="defenseur" position="DD"/>
@@ -10,7 +10,7 @@
   </equipe>
   <equipe nom="Marseilles">
     <joueur prenom="André-Pierre" nom="GIGNAC" numero="10" poste="attaquant" position="BU"/>
-    <joueur prenom="Dimitri" nom="PAYET" numero="6" poste="millieu" position="MD"/>
+    <joueur prenom="Dimitri" nom="PAYET" numero="6" poste="milieu" position="MD"/>
     <joueur prenom="Florian" nom="THAUVIN" numero="10" poste="milieu" position="MG" />
     <joueur prenom="Nicolas" nom="N'KOULOU" numero="2" poste="defenseur" position="DC"/>
     <joueur prenom="Benjamin" nom="MENDY" numero="3" poste="defenseur" position="DG"/>

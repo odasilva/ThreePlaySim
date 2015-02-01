@@ -30,12 +30,12 @@ namespace ThreePlaySim.FootballPlaySim
             {
                 case "attaquant": ComportementJoueur = new ComportementAttaquant(this);
                     break;
-                case "millieu": ComportementJoueur = new ComportementMillieuDeTerrain(this);
+                case "milieu": ComportementJoueur = new ComportementMillieuDeTerrain(this);
                     break;
                 case "defenseur": ComportementJoueur = new ComportementDefenseur(this);
                     break;
             }
-            //comportementConfrontation = new ComportementConfrontationJoueur()
+            comportementConfrontation = new ComportementConfrontationJoueur(this);
         }
 
 
@@ -125,8 +125,11 @@ namespace ThreePlaySim.FootballPlaySim
                     {
                         var possesseurDuBallon = EquipeAdverse().ListJoueurs.Find(J => J.Accessoire != null).Position;
                         var futurePos = Position;
-                        foreach (var area in GetAreaAdjacentes())
+                        var adjacenteAreas = GetAreaAdjacentes();
+                        foreach (var area in adjacenteAreas)
                         {
+                            if (area == null)
+                                continue;
                             if (GetDistance(area.Coordonnees, possesseurDuBallon) <= GetDistance(futurePos, possesseurDuBallon))
                                 futurePos = area.Coordonnees;
                         }
@@ -197,6 +200,8 @@ namespace ThreePlaySim.FootballPlaySim
                         var futurePos = Position;
                         foreach (var area in GetAreaAdjacentes())
                         {
+                            if (area == null)
+                                continue;
                             if (GetDistance(area.Coordonnees, possesseurDuBallon) <= GetDistance(futurePos, possesseurDuBallon))
                                 futurePos = area.Coordonnees;
                         }
@@ -215,7 +220,7 @@ namespace ThreePlaySim.FootballPlaySim
 
         private Area VerifieSiJoueurACote()
         {
-            if ((int)Position.X >= 30 || (int)Position.Y >= 25)
+            if ((int)Position.X >= 29 || (int)Position.Y >= 24 || (int)Position.X == 0 || (int)Position.Y == 0)
                 return null;
             var context = (SimulationFootball)Context;
             if (context.Grid[Position.X - 1, Position.Y].Personnage != null)

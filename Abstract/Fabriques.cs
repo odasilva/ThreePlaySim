@@ -140,7 +140,7 @@ public class ArmeeFabrique : FabriqueAbstraite
     public ArmeeFabrique(string xml)
         : base(xml)
     {
-        armeeFactory = new SoldatFabrique(xmlContent);
+        //armeeFactory = new SoldatFabrique(xmlContent);
     }
 
     public Armee CreerArmeeA()
