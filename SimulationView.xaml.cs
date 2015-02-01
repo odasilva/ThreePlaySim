@@ -31,9 +31,16 @@ namespace ThreePlaySim
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
             if (simulation.Timer.IsEnabled)
+            {
                 simulation.Timer.Stop();
+                btnStop.Content = "Reprendre";
+            }
             else
-                simulation.Timer.Stop();
+            {
+                simulation.Timer.Start();
+                btnStop.Content = "Pause";
+            }
+                
         }
     }
 }
