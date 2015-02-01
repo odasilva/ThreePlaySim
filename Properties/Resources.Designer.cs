@@ -61,6 +61,33 @@ namespace ThreePlaySim.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000        /// [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string FootballMap {
+            get {
+                return ResourceManager.GetString("FootballMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;simulation&gt;
         ///  &lt;equipe nom=&quot;Paris&quot;&gt;
