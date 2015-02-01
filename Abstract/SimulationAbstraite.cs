@@ -21,7 +21,7 @@ namespace ThreePlaySim.Abstract
 		{
             mapFileContent = mapFile;
 			ListPersonnage = new List<Personnage>();
-            SimView = new SimulationView();
+            SimView = new SimulationView(this);
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0,0,0,0,500);
             Timer.Tick += Routine;

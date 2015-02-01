@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ThreePlaySim.Abstract;
 using System.ComponentModel;
+using System.Windows.Documents;
 
 namespace ThreePlaySim
 {
@@ -23,9 +24,7 @@ namespace ThreePlaySim
 
         public override void MiseAjour(String message)
         {
-            //simulation.SimView.TBNotification.Text +=
-            //    message + Environment.NewLine;
-            simulation.SimView.TBNotification.Inlines.Add(message + Environment.NewLine);
+            simulation.SimView.Paragraph.Inlines.Add(message + Environment.NewLine);
         }
     }
 }

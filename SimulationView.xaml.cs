@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim
 {
@@ -19,11 +20,20 @@ namespace ThreePlaySim
     /// </summary>
     public partial class SimulationView : Window
     {
-
+        private SimulationAbstraite simulation;
         public Map Map { get { return grid; } }
-        public SimulationView()
+        public SimulationView(SimulationAbstraite sim)
         {
             InitializeComponent();
+            simulation = sim;
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            if (simulation.Timer.IsEnabled)
+                simulation.Timer.Stop();
+            else
+                simulation.Timer.Stop();
         }
     }
 }

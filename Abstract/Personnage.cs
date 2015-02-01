@@ -68,7 +68,7 @@ namespace ThreePlaySim.Abstract
 
             Context.Grid[x,y].Personnage = this;
             Position = new Point(x,y);
-            Notify( Nom + "Observateur", String.Format("{0} se deplace vers la position {1};{2}",Nom, Position.X, Position.Y));
+            //Notify( Nom + "Observateur", String.Format("{0} se deplace vers la position {1};{2}",Nom, Position.X, Position.Y));
         }
 
         public double GetDistance(Point pointA, Point pointB)

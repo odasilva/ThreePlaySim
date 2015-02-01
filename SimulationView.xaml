@@ -5,18 +5,30 @@
         Title="SimulationView"
         WindowState="Maximized" >
 
-    <DockPanel>
+    <!--<DockPanel>
         <custom:Map x:Name="grid"  VerticalAlignment="Stretch"  Width="900" DockPanel.Dock="Left"/>
         <Border BorderThickness="2" BorderBrush="Black">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" >
-            <TextBlock x:Name="TBNotification"
+            <Viewbox StretchDirection="DownOnly">
+                <TextBlock x:Name="TBNotification"
+                   Margin="0"
                    DockPanel.Dock="Right"
                    TextWrapping="Wrap"
-                   HorizontalAlignment="Right"                
-                   VerticalAlignment="Top" Width="500"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Stretch"
+                   Width="500"
                    Height="500"
                    />
-            </ScrollViewer>
+            </Viewbox>
         </Border>
-    </DockPanel>
+    </DockPanel>-->
+    <Grid>
+        <custom:Map x:Name="grid"  VerticalAlignment="Stretch"  Width="900"/>
+            <FlowDocumentScrollViewer Height="400" HorizontalAlignment="Right">
+                <FlowDocument x:Name="Document" TextAlignment="Left">
+                    <Paragraph x:Name="Paragraph" FontSize="14" />
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        <Button Content="Button" Height="80" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="40" Click="btnStop_Click"/>
+        <!--<Button x:Name="btnStop" Content="Pause/Reprendre" Click="btnStop_Click" Height="40" Width="80"/>-->
+    </Grid>
 </Window>
