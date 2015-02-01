@@ -39,6 +39,34 @@ namespace ThreePlaySim.Abstract
         }
     }
 
+    public class SimulationWarFabrique : FabriqueAbstraite
+    {
+        public SimulationWarFabrique(string xml)
+            : base(xml)
+        {
+        }
+        public SimulationFootball CreerSimulation()
+        {
+            xmlDoc.LoadXml(xmlContent);
+            var equipeFactory = new EquipeFabrique(xmlContent);
+            var equipe1 = equipeFactory.CreerEquipe1();
+            var equipe2 = equipeFactory.CreerEquipe2();
+
+            var simulationFoot = new SimulationFootball(xmlContent);
+            equipe1.ListJoueurs.ForEach(P => simulationFoot.AjoutePersonnage(P));
+            equipe2.ListJoueurs.ForEach(P => simulationFoot.AjoutePersonnage(P));
+
+            simulationFoot.Equipe1 = equipe1;
+            simulationFoot.Equipe2 = equipe2;
+
+            simulationFoot.Equipe1.FontColor = Brushes.Green;
+            simulationFoot.Equipe2.FontColor = Brushes.OrangeRed;
+
+
+            return simulationFoot;
+        }
+    }
+
     public class EquipeFabrique : FabriqueAbstraite
     {
         private  JoueurFabrique joueurFactory;

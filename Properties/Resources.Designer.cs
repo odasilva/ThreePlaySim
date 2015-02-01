@@ -75,5 +75,27 @@ namespace ThreePlaySim.Properties {
                 return ResourceManager.GetString("footballSimulation", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;SimulationWar&gt;
+        ///  &lt;armee nom=&quot;A&quot;&gt;
+        ///    &lt;personnage nom=&quot;VERRATTI&quot; type=&quot;Princesse&quot; /&gt;
+        ///    &lt;personnage nom =&quot;BAHEBECK&quot; type=&quot;Archer&quot;/&gt;
+        ///    &lt;personnage nom=&quot;VAN DER WIEL&quot; poste=&quot;Cavalier&quot;/&gt;
+        ///  &lt;/armee&gt;
+        ///  &lt;armee nom =&quot;B&quot;&gt;
+        ///    &lt;personnage nom =&quot;MENDY&quot; poste=&quot;Princesse&quot; /&gt;
+        ///    &lt;personnage nom=&quot;PAYET&quot; poste=&quot;Fantassin&quot; /&gt;
+        ///    &lt;personnage nom=&quot;GIGNAC&quot; poste=&quot;Cavalier&quot; /&gt;
+        ///  &lt;/armee&gt;
+        ///&lt;/SimulationWar&gt;
+        ///.
+        /// </summary>
+        internal static string SimulationWar {
+            get {
+                return ResourceManager.GetString("SimulationWar", resourceCulture);
+            }
+        }
     }
 }

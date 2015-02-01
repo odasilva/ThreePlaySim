@@ -155,13 +155,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\ThreePlaySim.vshost.exe" />
+    <None Include="xml\SimulationWar.xml" />
     <Resource Include="images\ball.png" />
     <Resource Include="images\bluePawn.png" />
     <Resource Include="images\field.png" />
     <Resource Include="images\redPawn.png" />
     <Resource Include="FootballPlaySim\SimulationFootball.xml" />
     <Resource Include="obj\Debug\ThreePlaySim.csproj.FileListAbsolute.txt" />
-    <Resource Include="WarPlaySim\SimulationWar.xml" />
     <Resource Include="xml\footballMap.xml" />
     <Resource Include="xml\footballSimulation.xml" />
   </ItemGroup>
