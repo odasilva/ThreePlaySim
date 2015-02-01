@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace ThreePlaySim
 {
@@ -58,17 +59,31 @@ namespace ThreePlaySim
         public int nbLines { get; set; }
         public int nbRows { get; set; }
 
-        public AreaCollection(int columns, int lines)
+        public AreaCollection(int lines, int columns)
         {
-            nbLines = columns;
-            nbRows = lines;
+
+            var distinctLines = Properties.Resources.FootballMap.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
+            nbLines = lines;
+            nbRows = columns;
+            
             Rows = new ObservableCollection<ObservableCollection<Area>>();
-            for(int i = 0 ; i< columns; i++)
+            for(int i = 0 ; i < lines; i++)
             {
                 var line = new ObservableCollection<Area>();
-                for(int j = 0; j < lines ; j++)
+                for(int j = 0; j < columns ; j++)
                 {
                     var area = new Area(new Point(i, j));
+                    if (distinctLines[i].ElementAt(j) == '0')
+                    {
+                        area.Accessible = true;
+                        area.DefaultFont = Brushes.White;
+                    }
+                    else
+                    {
+                        area.Accessible = false;
+                        area.DefaultFont = Brushes.DarkGray;
+                    }
+                        
                     line.Add(area);
                 }
                 Rows.Add(line);

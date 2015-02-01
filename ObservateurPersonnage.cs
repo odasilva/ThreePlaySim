@@ -23,8 +23,9 @@ namespace ThreePlaySim
 
         public override void MiseAjour(String message)
         {
-            simulation.SimView.TBNotification.Text +=
-                message + Environment.NewLine;
+            //simulation.SimView.TBNotification.Text +=
+            //    message + Environment.NewLine;
+            simulation.SimView.TBNotification.Inlines.Add(message + Environment.NewLine);
         }
     }
 }
