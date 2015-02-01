@@ -28,6 +28,11 @@ namespace ThreePlaySim.Abstract
             Timer.Start();
 		}
 
+        public SimulationAbstraite()
+        {
+            // TODO: Complete member initialization
+        }
+
         void Routine(object sender, EventArgs e)
         {
            foreach(var p in ListPersonnage)
