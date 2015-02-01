@@ -60,7 +60,7 @@ namespace ThreePlaySim.Abstract
                     else
                     {
                         Grid[i, j].Accessible = false;
-                        Grid[i, j].DefaultFont = System.Windows.Media.Brushes.DarkGray;
+                        Grid[i, j].DefaultFont = System.Windows.Media.Brushes.Black;
                     }
                 }
             }

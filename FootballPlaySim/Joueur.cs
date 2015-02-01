@@ -64,6 +64,7 @@ namespace ThreePlaySim.FootballPlaySim
             var r = new Random();
 
            var context = (SimulationFootball)Context;
+
            if(Equipe == context.Equipe1)
            {
                if(Equipe.ALeBallon)
@@ -110,6 +111,14 @@ namespace ThreePlaySim.FootballPlaySim
                            if (value == 3)
                                SeDeplacer(Position.X - 1, Position.Y + 1);
                        }
+                   }
+               }
+               else
+               {
+                   var areaVoisine = VerifieSiJoueurACote();
+                   if(areaVoisine != null)
+                   {
+
                    }
                }
            }
