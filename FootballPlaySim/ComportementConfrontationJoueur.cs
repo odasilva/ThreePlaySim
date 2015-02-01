@@ -27,6 +27,7 @@ namespace ThreePlaySim.FootballPlaySim
                    joueurAdversaire.PerdLeBallon();
                    joueur.RecoitLeBallon();
                    joueur.SeDeplacer(joueur.Position.X + 1, joueur.Position.Y);
+                   joueur.Notify(joueur.Nom + "Observateur", String.Format("{0} {1} à pri le ballon dans les pieds de {2} {3}",joueur.Prenom,joueur.Nom,joueurAdversaire.Prenom,joueur.Nom));
                }
            }
         }

@@ -70,7 +70,34 @@ namespace ThreePlaySim.Abstract
             Position = new Point(x,y);
             Notify( Nom + "Observateur", String.Format("{0} se deplace vers la position {1};{2}",Nom, Position.X, Position.Y));
         }
-  
+
+        public double GetDistance(Point pointA, Point pointB)
+        {
+            return Math.Sqrt(Math.Pow(pointB.X - pointA.X, 2) + Math.Pow(pointB.Y - pointA.Y, 2));
+        }
+
+        public List<Area> GetAreaAdjacentes()
+        {
+            var areas = new List<Area>();
+            if(Position != new Point(0,0))
+                areas.Add(Context.Grid[Position.X+1,Position.Y-1]);
+            if (Position.X > 0)
+                areas.Add(Context.Grid[Position.X - 1, Position.Y]);
+            if (Position != new Point(0,24))
+                areas.Add(Context.Grid[Position.X - 1, Position.Y+1]);
+            if (Position.Y < 24)
+                areas.Add(Context.Grid[Position.X, Position.Y+1]);
+            if (Position != new Point(29,24))
+                areas.Add(Context.Grid[Position.X + 1, Position.Y +1]);
+            if (Position.X < 29)
+                areas.Add(Context.Grid[Position.X + 1, Position.Y]);
+            if (Position != new Point(29,0))
+                areas.Add(Context.Grid[Position.X + 1, Position.Y-1]);
+            if (Position.Y > 0)
+                areas.Add(Context.Grid[Position.X, Position.Y-1]);
+            return areas;
+        }
+
         public abstract void Action();
 	}
 }

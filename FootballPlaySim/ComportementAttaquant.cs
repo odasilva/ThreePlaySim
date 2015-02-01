@@ -8,11 +8,10 @@ namespace ThreePlaySim.FootballPlaySim
     public class ComportementAttaquant : ComportementJoueurDeFoot
     {
 
-        private Joueur joueur;
 
         public ComportementAttaquant(Joueur j)
+            : base(j)
         {
-            joueur = j;
         }
 
         public override void PasserLaBalle()
