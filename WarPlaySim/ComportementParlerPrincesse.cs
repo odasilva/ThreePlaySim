@@ -14,7 +14,7 @@ namespace ThreePlaySim.WarPlaySim
 	/// <summary>
 	/// Description of ComportementParlerPrincesse.
 	/// </summary>
-	public class ComportementParlerPrincesse
+    public class ComportementParlerPrincesse : ComportementEmettreUnSon
 	{
 		public ComportementParlerPrincesse()
 		{

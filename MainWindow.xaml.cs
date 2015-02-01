@@ -36,8 +36,8 @@ namespace ThreePlaySim
         private void btnSimWar_Click(object sender, RoutedEventArgs e)
         {
             var fabrique = new SimulationWarFabrique(Properties.Resources.SimulationWar);
-            var simFoot = fabrique.CreerSimulation();
-            simFoot.RenderMap();
+            var simWar = fabrique.CreerSimulation();
+            simWar.RenderMap();
         }
 
         private void btnSimTraffic_Click(object sender, RoutedEventArgs e)

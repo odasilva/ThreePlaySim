@@ -7,6 +7,7 @@ using System.Xml;
 using ThreePlaySim.TraficPlaySim;
 using ThreePlaySim.WarPlaySim;
 using System.Windows.Media;
+using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.Abstract
 {
@@ -45,25 +46,25 @@ namespace ThreePlaySim.Abstract
             : base(xml)
         {
         }
-        public SimulationFootball CreerSimulation()
+        public SimulationWar CreerSimulation()
         {
             xmlDoc.LoadXml(xmlContent);
-            var equipeFactory = new EquipeFabrique(xmlContent);
-            var equipe1 = equipeFactory.CreerEquipe1();
-            var equipe2 = equipeFactory.CreerEquipe2();
+            var armeeFactory = new ArmeeFabrique(xmlContent);
+            var armeA = armeeFactory.CreerArmeeA();
+            var armeB = armeeFactory.CreerArmeeB();
 
-            var simulationFoot = new SimulationFootball(xmlContent);
-            equipe1.ListJoueurs.ForEach(P => simulationFoot.AjoutePersonnage(P));
-            equipe2.ListJoueurs.ForEach(P => simulationFoot.AjoutePersonnage(P));
+            var simulationWar = new SimulationWar(xmlContent);
+            armeA.ListSoldats.ForEach(P => simulationWar.AjoutePersonnage(P));
+            armeB.ListSoldats.ForEach(P => simulationWar.AjoutePersonnage(P));
 
-            simulationFoot.Equipe1 = equipe1;
-            simulationFoot.Equipe2 = equipe2;
+            simulationWar.armeA = armeA;
+            simulationWar.armeB = armeB;
 
-            simulationFoot.Equipe1.FontColor = Brushes.Green;
-            simulationFoot.Equipe2.FontColor = Brushes.OrangeRed;
+            simulationWar.armeA.FontColor = Brushes.Green;
+            simulationWar.armeB.FontColor = Brushes.OrangeRed;
 
 
-            return simulationFoot;
+            return simulationWar;
         }
     }
 
@@ -129,4 +130,42 @@ namespace ThreePlaySim.Abstract
         }
     }
 
+}
+
+
+public class ArmeeFabrique : FabriqueAbstraite
+{
+    private ArmeeFabrique armeeFactory;
+
+    public ArmeeFabrique(string xml)
+        : base(xml)
+    {
+        armeeFactory = new ArmeeFabrique(xmlContent);
+    }
+
+    public Armee CreerArmeeA()
+    {
+        xmlDoc.LoadXml(xmlContent);
+        var armeeNode = xmlDoc.SelectSingleNode("//armee[1]");
+        var armee = new Armee(armeeNode.Attributes["nom"].Value);
+
+        foreach (XmlNode soldatNode in armeeNode.ChildNodes)
+        {
+            armee.AddSoldat(new Soldat(soldatNode.Attributes["prenom"].Value, soldatNode.Attributes["nom"].Value, soldatNode.Attributes["type"].Value));
+        }
+        return armee;
+    }
+
+    public Armee CreerArmeeB()
+    {
+        xmlDoc.LoadXml(xmlContent);
+        var armeeNode = xmlDoc.SelectSingleNode("//armee[2]");
+        var armee = new Armee(armeeNode.Attributes["nom"].Value);
+
+        foreach (XmlNode soldatNode in armeeNode.ChildNodes)
+        {
+            armee.AddSoldat(new Soldat(soldatNode.Attributes["prenom"].Value, soldatNode.Attributes["nom"].Value, soldatNode.Attributes["type"].Value));
+        }
+        return armee;
+    }
 }

@@ -14,7 +14,7 @@ namespace ThreePlaySim.WarPlaySim
 	/// <summary>
 	/// Description of ComportementParlerCrier.
 	/// </summary>
-	public class ComportementParlerCrier
+    public class ComportementParlerCrier : ComportementEmettreUnSon
 	{
 		public ComportementParlerCrier()
 		{

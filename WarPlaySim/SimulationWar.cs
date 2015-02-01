@@ -22,8 +22,8 @@ namespace ThreePlaySim.WarPlaySim
         public List<Personnage> armeB;        
         public int x = 10;
         public int y = 10;
-        
-		public SimulationWar()
+
+        public SimulationWar(String xmlContent)
             : base()
 		{
 			map = new string [x,y];

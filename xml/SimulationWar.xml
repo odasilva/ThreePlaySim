@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<SimulationWar>
-  <armee nom="A">
-    <personnage nom="VERRATTI" type="Princesse" />
-    <personnage nom ="BAHEBECK" type="Archer"/>
-    <personnage nom="VAN DER WIEL" poste="Cavalier"/>
+<simulation>
+  <armee nom="Orc">
+    <soldat prenom ="Mio" nom = "Theradras" type="Princesse" />
+    <soldat prenom ="Goel" nom = "Thrall" type="Archer"/>
+    <soldat prenom ="Hellscream" nom = "Grommash" poste="Cavalier"/>
   </armee>
-  <armee nom ="B">
-    <personnage nom ="MENDY" poste="Princesse" />
-    <personnage nom="PAYET" poste="Fantassin" />
-    <personnage nom="GIGNAC" poste="Cavalier" />
+  <armee nom ="Hummain">
+    <soldat prenom ="Jaina" nom = "Proudmoore" type="Princesse" />
+    <soldat prenom ="Sam" nom = "Change" type="Archer"/>
+    <soldat prenom ="Arthas" nom = "Menethil" poste="Cavalier"/>
   </armee>
-</SimulationWar>
+</simulation>

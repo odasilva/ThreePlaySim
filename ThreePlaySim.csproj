@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="TraficPlaySim\Class1.cs" />
     <Compile Include="WarPlaySim\Archer.cs" />
+    <Compile Include="WarPlaySim\Armee.cs" />
     <Compile Include="WarPlaySim\Cavalier.cs" />
     <Compile Include="WarPlaySim\ComportementACheval.cs" />
     <Compile Include="WarPlaySim\ComportementAPied.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="WarPlaySim\Fantassin.cs" />
     <Compile Include="WarPlaySim\Princesesse.cs" />
     <Compile Include="WarPlaySim\SimulationWar.cs" />
+    <Compile Include="WarPlaySim\Soldat.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

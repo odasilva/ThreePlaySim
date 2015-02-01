@@ -10,7 +10,7 @@ namespace ThreePlaySim.WarPlaySim
 {
     public class Armee
     {
-        public List<Personnage> ListPersonnages;
+        public List<Soldat> ListSoldats;
         public SolidColorBrush FontColor { get; set; }
         private string nom;
         public int Score;
@@ -23,14 +23,14 @@ namespace ThreePlaySim.WarPlaySim
         public Armee(string _nom)
         {
             nom = _nom;
-            ListPersonnages = new List<Personnage>();
+            ListSoldats = new List<Soldat>();
             Score = 0;
         }
 
-        public void AddJoueur(Personnage p)
+        public void AddSoldat(Soldat p)
         {
-            j.Armee = this;
-            ListPersonnages.Add(p);
+            p.Armee = this;
+            ListSoldats.Add(p);
         }
     }
 }
