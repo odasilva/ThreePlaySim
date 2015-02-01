@@ -22,8 +22,8 @@ namespace ThreePlaySim.FootballPlaySim
       
         
 
-		public SimulationFootball(String xmlContent)
-            : base()
+		public SimulationFootball(String xmlContent,string mapFile)
+            : base(mapFile)
 		{
             Ballon = new Ballon("ballon", @"..\images\ball.png");
 		}

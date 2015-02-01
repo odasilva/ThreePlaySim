@@ -15,9 +15,11 @@ namespace ThreePlaySim.Abstract
         public SimulationView SimView { get; set; }
         public DispatcherTimer Timer { get; set; }
         public Map Grid { get { return SimView.Map; } }
+        private String mapFileContent;
 
-		public SimulationAbstraite()
+		public SimulationAbstraite(string mapFile)
 		{
+            mapFileContent = mapFile;
 			ListPersonnage = new List<Personnage>();
             SimView = new SimulationView();
             Timer = new DispatcherTimer();
@@ -36,9 +38,32 @@ namespace ThreePlaySim.Abstract
 
         public void RenderMap()
         {
+            SetAreasAccessibility();
             InitObservateurs();
             PlacerPersonnages();
             SimView.Show(); 
+        }
+
+        protected virtual void SetAreasAccessibility()
+        {
+            var distinctLines = mapFileContent.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
+            for(int i = 0 ;i < 30;i++)
+            {
+                for (int j = 0; j < 25; j++)
+                {
+
+                    if (distinctLines[i].ElementAt(j) == '0')
+                    {
+                        Grid[i, j].Accessible = true;
+                        Grid[i, j].DefaultFont = System.Windows.Media.Brushes.White;
+                    }
+                    else
+                    {
+                        Grid[i, j].Accessible = false;
+                        Grid[i, j].DefaultFont = System.Windows.Media.Brushes.DarkGray;
+                    }
+                }
+            }
         }
 
         public virtual void InitObservateurs()

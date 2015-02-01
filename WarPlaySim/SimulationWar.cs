@@ -23,8 +23,8 @@ namespace ThreePlaySim.WarPlaySim
         public int x = 10;
         public int y = 10;
         
-		public SimulationWar()
-            : base()
+		public SimulationWar(string mapFile)
+            : base(mapFile)
 		{
 			map = new string [x,y];
 			armeA = new List<Personnage>();

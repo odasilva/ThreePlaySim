@@ -62,7 +62,7 @@ namespace ThreePlaySim
         public AreaCollection(int lines, int columns)
         {
 
-            var distinctLines = Properties.Resources.FootballMap.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
+          
             nbLines = lines;
             nbRows = columns;
             
@@ -72,18 +72,7 @@ namespace ThreePlaySim
                 var line = new ObservableCollection<Area>();
                 for(int j = 0; j < columns ; j++)
                 {
-                    var area = new Area(new Point(i, j));
-                    if (distinctLines[i].ElementAt(j) == '0')
-                    {
-                        area.Accessible = true;
-                        area.DefaultFont = Brushes.White;
-                    }
-                    else
-                    {
-                        area.Accessible = false;
-                        area.DefaultFont = Brushes.DarkGray;
-                    }
-                        
+                    var area = new Area(new Point(i, j));      
                     line.Add(area);
                 }
                 Rows.Add(line);
