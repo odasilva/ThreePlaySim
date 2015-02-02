@@ -197,20 +197,27 @@ namespace ThreePlaySim.FootballPlaySim
                     else
                     {
                         var possesseurDuBallon = EquipeAdverse().ListJoueurs.Find(J => J.Accessoire != null).Position;
-                        var futurePos = Position;
-                        foreach (var area in GetAreaAdjacentes())
-                        {
-                            if (area == null)
-                                continue;
-                            if (GetDistance(area.Coordonnees, possesseurDuBallon) <= GetDistance(futurePos, possesseurDuBallon))
-                                futurePos = area.Coordonnees;
-                        }
+                        var futurePos = AllerVersPosition(possesseurDuBallon);
+
                         SeDeplacer(futurePos.X, futurePos.Y);
                     }
                 }
             }
 
-            System.Threading.Thread.Sleep(new TimeSpan(0, 0, 0, 0, 20));
+            System.Threading.Thread.Sleep(new TimeSpan(0, 0, 0, 0, 10));
+        }
+
+        public Point AllerVersPosition(Point p)
+        {
+            var futurePos = Position;
+            foreach (var area in GetAreaAdjacentes())
+            {
+                if (area == null)
+                    continue;
+                if (GetDistance(area.Coordonnees, p) <= GetDistance(futurePos, p))
+                    futurePos = area.Coordonnees;
+            }
+            return futurePos;
         }
 
         public void Tacler(Personnage adversaire)

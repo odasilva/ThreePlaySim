@@ -22,8 +22,8 @@ namespace ThreePlaySim.Abstract
             mapFileContent = mapFile;
 			ListPersonnage = new List<Personnage>();
             SimView = new SimulationView(this);
-            Timer = new DispatcherTimer();
-            Timer.Interval = new TimeSpan(0,0,0,0,500);
+            Timer = new DispatcherTimer(DispatcherPriority.SystemIdle);
+            Timer.Interval = TimeSpan.FromSeconds(2);
             Timer.Tick += Routine;
             Timer.Start();
 		}
@@ -44,10 +44,13 @@ namespace ThreePlaySim.Abstract
         public void RenderMap()
         {
             SetAreasAccessibility();
+            SetColorToArea();
             InitObservateurs();
             PlacerPersonnages();
             SimView.Show(); 
         }
+
+        protected abstract void SetColorToArea();
 
         protected virtual void SetAreasAccessibility()
         {

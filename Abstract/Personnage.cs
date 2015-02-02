@@ -59,6 +59,8 @@ namespace ThreePlaySim.Abstract
                 return;
             if (y >= 25)
                 return;
+            if (!Context.Grid[x, y].Accessible)
+                return;
 
             if (Position != new Point(100, 100))
             {

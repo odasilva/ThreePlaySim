@@ -60,8 +60,6 @@ namespace ThreePlaySim
 
         public AreaCollection(int lines, int columns)
         {
-
-          
             nbLines = lines;
             nbRows = columns;
             

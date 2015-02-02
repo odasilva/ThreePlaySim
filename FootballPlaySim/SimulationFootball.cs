@@ -160,5 +160,15 @@ namespace ThreePlaySim.FootballPlaySim
             System.Threading.Thread.Sleep(2);
         }
 
-	}
+
+        protected override void SetColorToArea()
+        {
+            Grid[0, 12].DefaultFont = Brushes.Yellow;
+            Grid[0, 11].DefaultFont = Brushes.Yellow;
+            Grid[0, 13].DefaultFont = Brushes.Yellow;
+            Grid[29, 11].DefaultFont = Brushes.Yellow;
+            Grid[29, 12].DefaultFont = Brushes.Yellow;
+            Grid[29, 13].DefaultFont = Brushes.Yellow;
+        }
+    }
 }

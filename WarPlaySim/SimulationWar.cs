@@ -52,5 +52,10 @@ namespace ThreePlaySim.WarPlaySim
         {
             throw new NotImplementedException();
         }
+
+        protected override void SetColorToArea()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
