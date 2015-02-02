@@ -264,6 +264,7 @@ namespace ThreePlaySim.FootballPlaySim
         public void PerdLeBallon()
         {
             Accessoire = null;
+            Context.Grid[Position.X, Position.Y].RaiseEvent("imgSource");
             Equipe.ALeBallon = false;
             EquipeAdverse().ALeBallon = true;
         }

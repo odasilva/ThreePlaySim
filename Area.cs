@@ -89,7 +89,7 @@ namespace ThreePlaySim
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        void RaiseEvent(string propertyName)
+        public void RaiseEvent(string propertyName)
         {
            if(PropertyChanged != null)
            {

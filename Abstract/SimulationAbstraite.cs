@@ -23,7 +23,7 @@ namespace ThreePlaySim.Abstract
 			ListPersonnage = new List<Personnage>();
             SimView = new SimulationView(this);
             Timer = new DispatcherTimer(DispatcherPriority.SystemIdle);
-            Timer.Interval = TimeSpan.FromSeconds(2);
+            Timer.Interval = TimeSpan.FromMilliseconds(400);
             Timer.Tick += Routine;
             Timer.Start();
 		}
