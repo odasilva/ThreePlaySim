@@ -91,11 +91,11 @@ namespace ThreePlaySim.Properties {
         ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;simulation&gt;
         ///  &lt;equipe nom=&quot;Paris&quot;&gt;
-        ///    &lt;joueur prenom=&quot;Ezequiel&quot; nom=&quot;LAVEZZI&quot; numero=&quot;6&quot; poste=&quot;millieu&quot; position=&quot;MG&quot; /&gt;
+        ///    &lt;joueur prenom=&quot;Ezequiel&quot; nom=&quot;LAVEZZI&quot; numero=&quot;6&quot; poste=&quot;milieu&quot; position=&quot;MG&quot; /&gt;
         ///    &lt;joueur prenom=&quot;Moura&quot; nom=&quot;LUCAS&quot; numero=&quot;9&quot; poste=&quot;milieu&quot; position=&quot;MD&quot; /&gt;
         ///    &lt;joueur prenom=&quot;Zlatan&quot; nom=&quot;IBRAHIMOVIC&quot; numero=&quot;10&quot; poste=&quot;attaquant&quot; position=&quot;BU&quot;/&gt;
         ///    &lt;joueur prenom=&quot;Gregory&quot; nom=&quot;WAN DER WIEL&quot; numero=&quot;4&quot; poste=&quot;defenseur&quot; position=&quot;DD&quot;/&gt;
-        ///    &lt;joueur prenom=&quot;Lucas&quot; nom=&quot;DIGNE&quot; numero=&quot;3&quot; poste=&quot;defenseur&quot; positi [le reste de la chaîne a été tronqué]&quot;;.
+        ///    &lt;joueur prenom=&quot;Lucas&quot; nom=&quot;DIGNE&quot; numero=&quot;3&quot; poste=&quot;defenseur&quot; positio [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string footballSimulation {
             get {
@@ -105,23 +105,49 @@ namespace ThreePlaySim.Properties {
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-        ///&lt;SimulationWar&gt;
-        ///  &lt;armee nom=&quot;A&quot;&gt;
-        ///    &lt;personnage nom=&quot;VERRATTI&quot; type=&quot;Princesse&quot; /&gt;
-        ///    &lt;personnage nom =&quot;BAHEBECK&quot; type=&quot;Archer&quot;/&gt;
-        ///    &lt;personnage nom=&quot;VAN DER WIEL&quot; poste=&quot;Cavalier&quot;/&gt;
+        ///&lt;simulation&gt;
+        ///  &lt;armee nom=&quot;Orc&quot;&gt;
+        ///    &lt;soldat prenom =&quot;Mio&quot; nom = &quot;Theradras&quot; type=&quot;Princesse&quot; /&gt;
+        ///    &lt;soldat prenom =&quot;Goel&quot; nom = &quot;Thrall&quot; type=&quot;Archer&quot;/&gt;
+        ///    &lt;soldat prenom =&quot;Hellscream&quot; nom = &quot;Grommash&quot; type=&quot;Cavalier&quot;/&gt;
         ///  &lt;/armee&gt;
-        ///  &lt;armee nom =&quot;B&quot;&gt;
-        ///    &lt;personnage nom =&quot;MENDY&quot; poste=&quot;Princesse&quot; /&gt;
-        ///    &lt;personnage nom=&quot;PAYET&quot; poste=&quot;Fantassin&quot; /&gt;
-        ///    &lt;personnage nom=&quot;GIGNAC&quot; poste=&quot;Cavalier&quot; /&gt;
+        ///  &lt;armee nom =&quot;Hummain&quot;&gt;
+        ///    &lt;soldat prenom =&quot;Jaina&quot; nom = &quot;Proudmoore&quot; type=&quot;Princesse&quot; /&gt;
+        ///    &lt;soldat prenom =&quot;Sam&quot; nom = &quot;Change&quot; type=&quot;Archer&quot;/&gt;
+        ///    &lt;soldat prenom =&quot;Arthas&quot; nom = &quot;Menethil&quot; type=&quot;Cavalier&quot;/&gt;
         ///  &lt;/armee&gt;
-        ///&lt;/SimulationWar&gt;
-        ///.
+        ///&lt;/ [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string SimulationWar {
             get {
                 return ResourceManager.GetString("SimulationWar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à 0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000
+        ///0000000000000000000000000        /// [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string WarMap {
+            get {
+                return ResourceManager.GetString("WarMap", resourceCulture);
             }
         }
     }
