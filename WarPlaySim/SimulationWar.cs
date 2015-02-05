@@ -20,28 +20,14 @@ namespace ThreePlaySim.WarPlaySim
         public string[,] map;
         public Armee armeA;
         public Armee armeB;        
-        public int x = 10;
-        public int y = 10;
 
-        public SimulationWar(String xmlContent)
-            : base()
+
+        public SimulationWar(String xmlContent, String mapFile)
+            : base(mapFile)
 		{
 			
 		}
 		
-		public string AfficherTous()
-		{
-			string window = "";
-			
-			for(int i = 0; i<x; i++){
-				for(int j = 0; j<y; j++){
-					window += map[i,j];
-				}
-				window += "\n";
-			}
-			
-			return window;
-		}
 
         public override void Routine()
         {
@@ -50,12 +36,12 @@ namespace ThreePlaySim.WarPlaySim
 
         public override void PlacerPersonnages()
         {
-            throw new NotImplementedException();
+           
         }
 
         protected override void SetColorToArea()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

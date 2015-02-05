@@ -53,7 +53,7 @@ namespace ThreePlaySim.Abstract
             var armeA = armeeFactory.CreerArmeeA();
             var armeB = armeeFactory.CreerArmeeB();
 
-            var simulationWar = new SimulationWar(xmlContent);
+            var simulationWar = new SimulationWar(xmlContent,Properties.Resources.WarMap);
             armeA.ListSoldats.ForEach(P => simulationWar.AjoutePersonnage(P));
             armeB.ListSoldats.ForEach(P => simulationWar.AjoutePersonnage(P));
 

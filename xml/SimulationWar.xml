@@ -3,11 +3,11 @@
   <armee nom="Orc">
     <soldat prenom ="Mio" nom = "Theradras" type="Princesse" />
     <soldat prenom ="Goel" nom = "Thrall" type="Archer"/>
-    <soldat prenom ="Hellscream" nom = "Grommash" poste="Cavalier"/>
+    <soldat prenom ="Hellscream" nom = "Grommash" type="Cavalier"/>
   </armee>
   <armee nom ="Hummain">
     <soldat prenom ="Jaina" nom = "Proudmoore" type="Princesse" />
     <soldat prenom ="Sam" nom = "Change" type="Archer"/>
-    <soldat prenom ="Arthas" nom = "Menethil" poste="Cavalier"/>
+    <soldat prenom ="Arthas" nom = "Menethil" type="Cavalier"/>
   </armee>
 </simulation>

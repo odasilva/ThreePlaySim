@@ -7,6 +7,7 @@ using System.Windows.Shapes;
 using ThreePlaySim.Abstract;
 using System.Windows.Media;
 using System.ComponentModel;
+using System.Windows.Data;
 
 namespace ThreePlaySim
 {
@@ -96,8 +97,5 @@ namespace ThreePlaySim
                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
            }
         }
-
-
-
     }
 }
