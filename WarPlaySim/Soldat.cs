@@ -12,7 +12,6 @@ namespace ThreePlaySim.WarPlaySim
     {
         
         public string Prenom { get; set; }
-        public string Nom { get; set; }
         public string Type {get;set;}
         public Armee Armee { get; set; }
         public Point StartPosition { get; set; }
@@ -142,6 +141,7 @@ namespace ThreePlaySim.WarPlaySim
         public override void SeDeplacer(double x, double y)
         {
             base.SeDeplacer(x, y);
+            Position = new Point(x,y);
             if(Position != new Point(100,100))
                 Context.Grid[Position.X,Position.Y].FontColor = Armee.FontColor;
         }

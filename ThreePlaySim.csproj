@@ -67,16 +67,20 @@
       <DependentUpon>SimulationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TraficPlaySim\Class1.cs" />
+    <Compile Include="WarPlaySim\Arc.cs" />
     <Compile Include="WarPlaySim\Archer.cs" />
     <Compile Include="WarPlaySim\Armee.cs" />
     <Compile Include="WarPlaySim\Cavalier.cs" />
+    <Compile Include="WarPlaySim\Coeur.cs" />
     <Compile Include="WarPlaySim\ComportementACheval.cs" />
     <Compile Include="WarPlaySim\ComportementAPied.cs" />
     <Compile Include="WarPlaySim\ComportementAvecArc.cs" />
     <Compile Include="WarPlaySim\ComportementParler.cs" />
     <Compile Include="WarPlaySim\ComportementParlerCrier.cs" />
     <Compile Include="WarPlaySim\ComportementParlerPrincesse.cs" />
+    <Compile Include="WarPlaySim\Epee.cs" />
     <Compile Include="WarPlaySim\Fantassin.cs" />
+    <Compile Include="WarPlaySim\Lance.cs" />
     <Compile Include="WarPlaySim\Princesesse.cs" />
     <Compile Include="WarPlaySim\SimulationWar.cs" />
     <Compile Include="WarPlaySim\Soldat.cs" />
@@ -158,6 +162,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\ThreePlaySim.vshost.exe" />
+    <Resource Include="images\heart.png" />
+    <Resource Include="images\lance.png" />
+    <Resource Include="images\bow.png" />
+    <Resource Include="images\sword.png" />
     <Resource Include="xml\WarMap.txt" />
     <Resource Include="xml\FootballMap.txt" />
     <None Include="xml\SimulationWar.xml" />

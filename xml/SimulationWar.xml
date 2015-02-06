@@ -4,10 +4,12 @@
     <soldat prenom ="Mio" nom = "Theradras" type="Princesse" />
     <soldat prenom ="Goel" nom = "Thrall" type="Archer"/>
     <soldat prenom ="Hellscream" nom = "Grommash" type="Cavalier"/>
+    <soldat prenom ="Ellis" nom = "Birdman" type="Fantassin"/>
   </armee>
   <armee nom ="Hummain">
     <soldat prenom ="Jaina" nom = "Proudmoore" type="Princesse" />
     <soldat prenom ="Sam" nom = "Change" type="Archer"/>
     <soldat prenom ="Arthas" nom = "Menethil" type="Cavalier"/>
+    <soldat prenom ="Gandalf" nom = "Boewulf" type="Fantassin"/>
   </armee>
 </simulation>
