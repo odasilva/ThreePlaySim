@@ -156,6 +156,7 @@ public class ArmeeFabrique : FabriqueAbstraite
         return armee;
     }
 
+
     public Armee CreerArmeeB()
     {
         xmlDoc.LoadXml(xmlContent);
