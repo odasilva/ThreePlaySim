@@ -67,65 +67,96 @@ namespace ThreePlaySim.WarPlaySim
 
         public override void Action()
         {            
-            /*
-            var r = new Random();
 
-           var context = (SimulationFootball)Context;
-           if(Equipe == context.Equipe1)
+           var r = new Random();
+
+           var context = (SimulationWar)Context;
+           if(Armee == context.armeB)
            {
-               if(Equipe.ALeBallon)
-               {
-                   if(Accessoire == null)
-                   {
-                       if (Position.X >= 30)
-                           SeDeplacer(Position.X - 1, Position.Y);
-                       if(Position.X == 0)
-                           SeDeplacer(Position.X + 1, Position.Y);
-                       if (Position.Y >= 25)
-                           SeDeplacer(Position.X, Position.Y-1);
-                       if (Position.Y == 0)
-                           SeDeplacer(Position.X, Position.Y+1);
-                       var value = r.Next(1, 4);
-                       if (value == 1)
-                           SeDeplacer(Position.X - 1, Position.Y-1);
-                       if (value == 2)
-                           SeDeplacer(Position.X - 1, Position.Y);
-                       if (value == 3)
-                           SeDeplacer(Position.X - 1, Position.Y + 1);
-                   }
-                   else
-                   {
-                       if (Math.Abs(Position.X - StartPosition.X) >= 5 || Math.Abs(Position.Y - StartPosition.Y) >= 5)
-                       {
-                           PasserLaBalle();
-                       }
-                       else
-                       {
-                           if (Position.X >= 30)
-                               SeDeplacer(Position.X - 1, Position.Y);
-                           if (Position.X == 0)
-                               SeDeplacer(Position.X + 1, Position.Y);
-                           if (Position.Y >= 25)
-                               SeDeplacer(Position.X, Position.Y - 1);
-                           if (Position.Y == 0)
-                               SeDeplacer(Position.X, Position.Y + 1);
-                           var value = r.Next(1, 4);
-                           if (value == 1)
-                               SeDeplacer(Position.X - 1, Position.Y - 1);
-                           if (value == 2)
-                               SeDeplacer(Position.X - 1, Position.Y);
-                           if (value == 3)
-                               SeDeplacer(Position.X - 1, Position.Y + 1);
-                       }
-                   }
-               }
+               
+                if(Accessoire == null)
+                {
+                    if (Position.X >= 30)
+                        SeDeplacer(Position.X - 1, Position.Y);
+                    if(Position.X == 0)
+                        SeDeplacer(Position.X + 1, Position.Y);
+                    if (Position.Y >= 25)
+                        SeDeplacer(Position.X, Position.Y-1);
+                    if (Position.Y == 0)
+                        SeDeplacer(Position.X, Position.Y+1);
+                    var value = r.Next(1, 4);
+                    if (value == 1)
+                        SeDeplacer(Position.X - 1, Position.Y-1);
+                    if (value == 2)
+                        SeDeplacer(Position.X - 1, Position.Y);
+                    if (value == 3)
+                        SeDeplacer(Position.X - 1, Position.Y + 1);
+                }
+                else
+                {
+                  
+                    if (Position.X >= 30)
+                        SeDeplacer(Position.X - 1, Position.Y);
+                    if (Position.X == 0)
+                        SeDeplacer(Position.X + 1, Position.Y);
+                    if (Position.Y >= 25)
+                        SeDeplacer(Position.X, Position.Y - 1);
+                    if (Position.Y == 0)
+                        SeDeplacer(Position.X, Position.Y + 1);
+                    var value = r.Next(1, 4);
+                    if (value == 1)
+                        SeDeplacer(Position.X - 1, Position.Y - 1);
+                    if (value == 2)
+                        SeDeplacer(Position.X - 1, Position.Y);
+                    if (value == 3)
+                        SeDeplacer(Position.X - 1, Position.Y + 1);
+                       
+                }
+               
            }
            else
            {
+               if (Accessoire == null)
+               {
+                   if (Position.X >= 30)
+                       SeDeplacer(Position.X + 1, Position.Y);
+                   if (Position.X == 0)
+                       SeDeplacer(Position.X - 1, Position.Y);
+                   if (Position.Y >= 25)
+                       SeDeplacer(Position.X, Position.Y + 1);
+                   if (Position.Y == 0)
+                       SeDeplacer(Position.X, Position.Y - 1);
+                   var value = r.Next(1, 4);
+                   if (value == 1)
+                       SeDeplacer(Position.X + 1, Position.Y + 1);
+                   if (value == 2)
+                       SeDeplacer(Position.X + 1, Position.Y);
+                   if (value == 3)
+                       SeDeplacer(Position.X + 1, Position.Y - 1);
+               }
+               else
+               {
 
+                   if (Position.X >= 30)
+                       SeDeplacer(Position.X + 1, Position.Y);
+                   if (Position.X == 0)
+                       SeDeplacer(Position.X - 1, Position.Y);
+                   if (Position.Y >= 25)
+                       SeDeplacer(Position.X, Position.Y + 1);
+                   if (Position.Y == 0)
+                       SeDeplacer(Position.X, Position.Y - 1);
+                   var value = r.Next(1, 4);
+                   if (value == 1)
+                       SeDeplacer(Position.X + 1, Position.Y + 1);
+                   if (value == 2)
+                       SeDeplacer(Position.X + 1, Position.Y);
+                   if (value == 3)
+                       SeDeplacer(Position.X + 1, Position.Y - 1);
+
+               }
            }
 
-           System.Threading.Thread.Sleep(new TimeSpan(0, 0, 0, 0, 20));*/
+           System.Threading.Thread.Sleep(new TimeSpan(0, 0, 0, 0, 20));
         }
 
 
