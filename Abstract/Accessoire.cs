@@ -26,7 +26,7 @@ namespace ThreePlaySim.Abstract
             img = image;
         }
 
-        public abstract void Utiliser();
+        public abstract String Utiliser();
     }
 }
 

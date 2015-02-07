@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:custom="clr-namespace:ThreePlaySim"
         Title="SimulationView"
-        WindowState="Maximized" >
+        WindowState="Maximized" Width="1169.825" Height="715.2" >
 
     <!--<DockPanel>
         <custom:Map x:Name="grid"  VerticalAlignment="Stretch"  Width="900" DockPanel.Dock="Left"/>
@@ -22,13 +22,22 @@
         </Border>
     </DockPanel>-->
     <Grid>
-        <custom:Map x:Name="grid"  VerticalAlignment="Stretch"  Width="476" Margin="10,10,0,9.6"/>
-        <FlowDocumentScrollViewer HorizontalAlignment="Right" Margin="0,10,9.6,218.6" Width="266">
-            <FlowDocument x:Name="Document" TextAlignment="Left">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="942*"/>
+            <ColumnDefinition Width="221*"/>
+        </Grid.ColumnDefinitions>
+        <custom:Map x:Name="grid"  VerticalAlignment="Stretch"  Width="807" Margin="10,10,0,9.6"/>
+        <FlowDocumentScrollViewer HorizontalAlignment="Right" Margin="0,10,9.2,0" Width="332" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="319">
+            <FlowDocument x:Name="Document" TextAlignment="Justify">
                 <Paragraph x:Name="Paragraph" FontSize="14" />
             </FlowDocument>
         </FlowDocumentScrollViewer>
-        <Button x:Name="btnStop" Content="Pause" Height="53" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="119" Click="btnStop_Click" Margin="0,0,151.6,160.6"/>
+        <FlowDocumentScrollViewer Margin="822,0,10.2,109.6" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="242">
+            <FlowDocument x:Name="MovesDocument" TextAlignment="Justify">
+                <Paragraph x:Name="MovesParagraph"/>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+        <Button x:Name="btnStop" Content="Pause" Height="33" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="314" Click="btnStop_Click" Margin="0,0,10.2,71.6" Grid.ColumnSpan="2"/>
         <!--<Button x:Name="btnStop" Content="Pause/Reprendre" Click="btnStop_Click" Height="40" Width="80"/>-->
     </Grid>
 </Window>

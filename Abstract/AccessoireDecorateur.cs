@@ -8,8 +8,15 @@ namespace ThreePlaySim.Abstract
 {
     public abstract class AccessoireDecorateur : Accessoire
     {
-        public Accessoire Accessoire { get; set; }
-        public abstract override void Utiliser();
+        protected Accessoire Accessoire { get; set; }
+
+        public override String Utiliser()
+        {
+            if (Accessoire != null)
+                return Accessoire.Utiliser();
+            else
+                return "";
+        }
 
 
         public AccessoireDecorateur(Accessoire accessoire)

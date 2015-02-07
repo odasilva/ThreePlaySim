@@ -16,9 +16,11 @@ namespace ThreePlaySim.WarPlaySim
 	/// </summary>
 	public class ComportementAPied : ComportementConfrontation
 	{
-		public ComportementAPied()
+        private Soldat soldat;
+
+		public ComportementAPied(Soldat s)
 		{
-			
+            soldat = s; 
 		}
 
         public override void Confrontation(Personnage adversaire)

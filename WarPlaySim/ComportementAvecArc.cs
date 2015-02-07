@@ -16,9 +16,12 @@ namespace ThreePlaySim.WarPlaySim
 	/// </summary>
 	public class ComportementAvecArc : ComportementConfrontation
 	{
-		public ComportementAvecArc()
+
+        private Soldat soldat;
+
+		public ComportementAvecArc(Soldat s)
 		{
-			
+            soldat = s;
 		}
 		
 

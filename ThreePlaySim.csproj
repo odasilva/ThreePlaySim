@@ -75,10 +75,13 @@
     <Compile Include="WarPlaySim\ComportementACheval.cs" />
     <Compile Include="WarPlaySim\ComportementAPied.cs" />
     <Compile Include="WarPlaySim\ComportementAvecArc.cs" />
+    <Compile Include="WarPlaySim\ComportementConfrontationPrincesse.cs" />
     <Compile Include="WarPlaySim\ComportementParler.cs" />
     <Compile Include="WarPlaySim\ComportementParlerCrier.cs" />
     <Compile Include="WarPlaySim\ComportementParlerPrincesse.cs" />
+    <Compile Include="WarPlaySim\DeFoudre.cs" />
     <Compile Include="WarPlaySim\Epee.cs" />
+    <Compile Include="WarPlaySim\DeFlamme.cs" />
     <Compile Include="WarPlaySim\Fantassin.cs" />
     <Compile Include="WarPlaySim\Lance.cs" />
     <Compile Include="WarPlaySim\Princesesse.cs" />
@@ -168,7 +171,9 @@
     <Resource Include="images\sword.png" />
     <Resource Include="xml\WarMap.txt" />
     <Resource Include="xml\FootballMap.txt" />
-    <None Include="xml\SimulationWar.xml" />
+    <None Include="xml\SimulationWar.xml">
+      <SubType>Designer</SubType>
+    </None>
     <Resource Include="images\ball.png" />
     <Resource Include="images\bluePawn.png" />
     <Resource Include="images\field.png" />

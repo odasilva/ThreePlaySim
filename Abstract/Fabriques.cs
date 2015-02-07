@@ -60,8 +60,8 @@ namespace ThreePlaySim.Abstract
             simulationWar.armeA = armeA;
             simulationWar.armeB = armeB;
 
-            simulationWar.armeA.FontColor = Brushes.Green;
-            simulationWar.armeB.FontColor = Brushes.OrangeRed;
+            simulationWar.armeA.FontColor = Brushes.Gold;
+            simulationWar.armeB.FontColor = Brushes.CornflowerBlue;
 
 
             return simulationWar;
@@ -151,7 +151,8 @@ public class ArmeeFabrique : FabriqueAbstraite
 
         foreach (XmlNode soldatNode in armeeNode.ChildNodes)
         {
-            armee.AddSoldat(new Soldat(soldatNode.Attributes["prenom"].Value, soldatNode.Attributes["nom"].Value, soldatNode.Attributes["type"].Value));
+            var soldat = new Soldat(soldatNode.Attributes["prenom"].Value, soldatNode.Attributes["nom"].Value, soldatNode.Attributes["type"].Value);
+            armee.AddSoldat(soldat);
         }
         return armee;
     }

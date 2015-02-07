@@ -7,18 +7,17 @@ using ThreePlaySim.Abstract;
 
 namespace ThreePlaySim.WarPlaySim
 {
-    public class Lance : Accessoire
+    public class DeFlamme : AccessoireDecorateur
     {
 
-        public Lance(string nom,string img)
-            :base(nom,img)
+        public DeFlamme(Accessoire a)
+            : base(a)
         {
-
         }
 
-        public override String Utiliser()
+        public override string Utiliser()
         {
-            return "Transpercer des corps";
+            return base.Utiliser() + " et de bruler";
         }
     }
 }

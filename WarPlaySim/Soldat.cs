@@ -31,19 +31,30 @@ namespace ThreePlaySim.WarPlaySim
             switch(type)
             {
                 case "Princesse": 
-                        ComportementConfrontation = null;
+                        ComportementConfrontation = new ComportementConfrontationPrincesse(this);
                         ComportementEmettreUnSon = new ComportementParlerPrincesse();
                     break;
                 case "Archer": 
-                        ComportementConfrontation = new ComportementAvecArc();
+                        ComportementConfrontation = new ComportementAvecArc(this);
                         ComportementEmettreUnSon = new ComportementParler();
 
                     break;
                 case "Cavalier": 
-                        ComportementConfrontation = new ComportementACheval();
+                        ComportementConfrontation = new ComportementACheval(this);
                         ComportementEmettreUnSon = new ComportementParlerCrier();
                     break;
+
+                case "Fantassin":
+                    comportementConfrontation = new ComportementAPied(this);
+                    comportementEmettreUnSon = new ComportementParlerCrier();
+                    break;
             }
+        }
+
+
+        public void Attaquer(Soldat ennemi)
+        {
+            comportementConfrontation.Confrontation(ennemi);
         }
 
 
@@ -53,8 +64,10 @@ namespace ThreePlaySim.WarPlaySim
         }
 
 
+
         public override void Action()
-        {/*
+        {            
+            /*
             var r = new Random();
 
            var context = (SimulationFootball)Context;
@@ -153,14 +166,4 @@ namespace ThreePlaySim.WarPlaySim
         }
         
     }
-
-    
-
-    public enum EPosteJoueur
-    {
-        attaquant,
-        millieu,
-        defenseur
-    }
-
-    }
+ }

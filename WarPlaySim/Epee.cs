@@ -16,8 +16,9 @@ namespace ThreePlaySim.WarPlaySim
 
         }
 
-        public override void Utiliser()
+        public override String Utiliser()
         {
+            return "Trancher" ;
         }
     }
 }

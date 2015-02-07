@@ -27,6 +27,8 @@ namespace ThreePlaySim.WarPlaySim
         public Coeur Coeur { get; set; }
 
 
+
+
         public SimulationWar(String xmlContent, String mapFile)
             : base(mapFile)
 		{
@@ -39,6 +41,7 @@ namespace ThreePlaySim.WarPlaySim
 
         public override void Routine()
         {
+            ListPersonnage.ForEach(P => P.Action());
         }
 
         public override void PlacerPersonnages()
@@ -47,9 +50,9 @@ namespace ThreePlaySim.WarPlaySim
             foreach (Soldat s in ListPersonnage)
             {
                 if (s.Type == "Archer")
-                    s.Accessoire = Arc;
+                    s.Accessoire = new DeFlamme(Arc);
                 if (s.Type == "Fantassin")
-                    s.Accessoire = Epee;
+                    s.Accessoire = new DeFoudre(Epee);
                 if (s.Type == "Cavalier")
                     s.Accessoire = Lance;
                 if (s.Type == "Princesse")

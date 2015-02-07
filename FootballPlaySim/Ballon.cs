@@ -16,7 +16,7 @@ namespace ThreePlaySim.FootballPlaySim
 
         }
 
-        public override void Utiliser()
+        public override String Utiliser()
         {
             throw new NotImplementedException();
         }
