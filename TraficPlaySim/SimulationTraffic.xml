@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<simulation>
+  <Vehicules>
+    <composanRoutier nom="FERRARI 408" x="29" y="16"  conduite="VOITURE"/>
+    <composanRoutier nom="GOLF 7" x="29" y="17"  conduite="CAMION" />
+    <composanRoutier nom="PEUGEOT 3008" x="29" y="18"  conduite="CAMION" />
+  </Vehicules>
+  <Feux>
+    <composanRoutier nom="feu_n1" y="19" x="5" />
+    <composanRoutier nom="feu_n1" y="7" x="14" />
+    <composanRoutier nom="feu_n3" y="19" x="25" />
+  </Feux>
+</simulation>

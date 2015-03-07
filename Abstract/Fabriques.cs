@@ -8,9 +8,125 @@ using ThreePlaySim.TraficPlaySim;
 using ThreePlaySim.WarPlaySim;
 using System.Windows.Media;
 using ThreePlaySim.Abstract;
+using ThreePlaySim.TraficPlaySim.model;
 
 namespace ThreePlaySim.Abstract
 {
+    public class SimulationTrafficFabrique : FabriqueAbstraite
+    {
+        public SimulationTrafficFabrique(string xml)
+            : base(xml)
+        {
+
+        }
+        public SimulationTraffic CreerSimulation()
+        {
+            var simulationTraffic = new SimulationTraffic(xmlContent, Properties.Resources.TrafficMap);
+
+            xmlDoc.LoadXml(xmlContent);
+            var parcFabrique = new ParcFabrique(xmlContent);
+            var parcAuto = parcFabrique.CreerParcAutomobile(simulationTraffic);
+            var parcFeu = parcFabrique.CreerParcFeux();
+
+            parcAuto.ListComposantRoutier().ForEach(P => simulationTraffic.AjoutePersonnage(P));
+            parcFeu.ListComposantRoutier().ForEach(P => simulationTraffic.AjoutePersonnage(P));
+
+            simulationTraffic.parcAuto = parcAuto;
+            simulationTraffic.parcFeu = parcFeu;
+
+            return simulationTraffic;
+        }
+
+        public class ParcFabrique : FabriqueAbstraite
+        {
+            private VehiculeFabrique vehiculeFabrique;
+            private FeuFabrique feuFabrique;
+
+            public ParcFabrique(string xml)
+                : base(xml)
+            {
+                vehiculeFabrique = new VehiculeFabrique(xmlContent);
+                feuFabrique = new FeuFabrique(xmlContent);
+            }
+
+            public ParcAutomobile CreerParcAutomobile(SimulationAbstraite simulation)
+            {
+                xmlDoc.LoadXml(xmlContent);
+                var composantNode = xmlDoc.SelectSingleNode("//Vehicules[1]");
+                var parcAutomobile = new ParcAutomobile();
+                int i = 0;
+                foreach (XmlNode composantRoutierNode in composantNode.ChildNodes)
+                {
+                    Vehicule vehicule = new Vehicule(composantRoutierNode.Attributes["nom"].Value, 
+                                                        composantRoutierNode.Attributes["x"].Value, 
+                                                        composantRoutierNode.Attributes["y"].Value,
+                                                        composantRoutierNode.Attributes["conduite"].Value, simulation);
+                    parcAutomobile.AddComposantRoutier(vehicule);
+                }
+                return parcAutomobile;
+            }
+
+            public ParcFeu CreerParcFeux()
+            {
+                xmlDoc.LoadXml(xmlContent);
+                var composantNode = xmlDoc.SelectSingleNode("//Feux[1]");
+                var parcFeu = new ParcFeu();
+
+                foreach (XmlNode composantRoutierNode in composantNode.ChildNodes)
+                {
+                    Feu feu = new Feu(composantRoutierNode.Attributes["nom"].Value, composantRoutierNode.Attributes["x"].Value, composantRoutierNode.Attributes["y"].Value);
+                    parcFeu.AddComposantRoutier(feu);
+                }
+                return parcFeu;
+            }
+        }
+
+        public class VehiculeFabrique : FabriqueAbstraite
+        {
+            public VehiculeFabrique(string xml)
+                : base(xml)
+            {}
+
+            public Vehicule CreerVehiculeRoutier(int i, SimulationTraffic sim)
+            {
+                xmlDoc.LoadXml(xmlContent);
+
+                var request = String.Format("//vehicules/composantRoutier[{0}]", i);
+                var composantRoutierNode = xmlDoc.SelectSingleNode(request);
+                
+                var nom = composantRoutierNode.Attributes["nom"].Value;
+                var x = composantRoutierNode.Attributes["x"].Value;
+                var y = composantRoutierNode.Attributes["y"].Value;
+                var conduite = composantRoutierNode.Attributes["conduite"].Value;
+
+                return new Vehicule(nom, x, y, conduite, sim);
+            }
+        }
+
+        public class FeuFabrique : FabriqueAbstraite
+        {
+            public FeuFabrique(string xml)
+                : base(xml)
+            {
+
+            }
+
+            public Feu CreerComposantRoutier(string nomComposant, int i, SimulationTraffic sim)
+            {
+                xmlDoc.LoadXml(xmlContent);
+
+                var request = String.Format("//feux/composantRoutier[{0}]", i);
+                var composantRoutierNode = xmlDoc.SelectSingleNode(request);
+
+                var nom = composantRoutierNode.Attributes["nom"].Value;
+                var x = composantRoutierNode.Attributes["x"].Value;
+                var y = composantRoutierNode.Attributes["y"].Value;
+
+                return new Feu(nom, x, y);
+            }
+        }
+    }
+
 
     public class SimulationFootballFabrique : FabriqueAbstraite
     {
