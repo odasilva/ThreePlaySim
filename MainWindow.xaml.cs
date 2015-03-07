@@ -42,7 +42,9 @@ namespace ThreePlaySim
 
         private void btnSimTraffic_Click(object sender, RoutedEventArgs e)
         {
-
+            var fabrique = new SimulationTrafficFabrique(Properties.Resources.SimulationTraffic);
+            var simTraffic = fabrique.CreerSimulation();
+            simTraffic.RenderMap();
         }
     }
 }
