@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace ThreePlaySim
         public SimulationView(SimulationAbstraite sim)
         {
             InitializeComponent();
+            Closing += OnWindowClosing;
             simulation = sim;
         }
 
@@ -41,6 +43,13 @@ namespace ThreePlaySim
                 btnStop.Content = "Pause";
             }
                 
+        }
+
+        void OnWindowClosing(object sender, CancelEventArgs e)
+        {
+            simulation.Timer.Stop();
+            simulation.Timer = null;
+            simulation = null;
         }
     }
 }
