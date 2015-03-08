@@ -9,13 +9,20 @@ namespace ThreePlaySim.TraficPLaySim.model
 {
     public class ComportementVehiculeLent : ComportementVehicule
     {
-
+        public const int VITESSE = 1;
         public ComportementVehiculeLent(Vehicule v) : base(v) { }
         public override void rouler() {
-                if (vehicule.Position.X - 1 > 0)
-                    vehicule.SeDeplacer((vehicule.Position.X - 1), vehicule.Position.Y);
-                else
+            if (vehicule.Position.X - VITESSE >= 0)
+                vehicule.SeDeplacer(vehicule.Position.X - VITESSE, vehicule.Position.Y);
+            else
+            {
+                if (vehicule.Position.Y > 12)
                     vehicule.SeDeplacer(29, vehicule.Position.Y - 12);
+                else
+                {
+                    vehicule.SeDeplacer(0, vehicule.Position.Y);
+                }
+            }
         }
         public override Boolean cederLePassage() {
             return false;

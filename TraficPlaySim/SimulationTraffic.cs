@@ -29,6 +29,9 @@ namespace ThreePlaySim.TraficPlaySim
             foreach (Personnage p in ListPersonnage)
             {
                 p.SeDeplacer(p.Position.X, p.Position.Y);
+                if (p is Feu)  {
+                    ((Feu)p).changerEtat();
+                }
             }
         }
 
@@ -36,43 +39,9 @@ namespace ThreePlaySim.TraficPlaySim
 
         public override void InitObservateurs() {
             base.InitObservateurs();
-            foreach(Personnage p in ListPersonnage) {
-                bool isVehicule = (p is Vehicule);
-                if (!isVehicule) {
-                    // p.Attach(new AlerteurChangementEtatFeu("Infraction", this, (Feu)p));
-                }
-            }
         }
 
-        public override void Routine()
-        {
-
-            if(ListPersonnage.Count == 0 ) {
-                Timer.Stop();
-                SimView.Close();
-                return;
-            }
-
-            foreach (Personnage p in ListPersonnage) {
-                if(((Vehicule)p).quantite_carburant <= 0) {
-                    ListPersonnage.Remove(p);
-                }
-
-                p.Action();
-
-                bool isVehicule = (p is Vehicule);
-                if (!isVehicule)
-                {
-                    if (((Feu)p).etat == Feu.ETAT_ROUGE)
-                    {
-                        Grid[p.Position.X, p.Position.Y].FontColor = Brushes.Red;
-                    }
-                    else { 
-                        Grid[p.Position.X, p.Position.Y].FontColor = Brushes.Green;
-                    }
-                }
-            }
-        }
+        public override void Routine()  {}
 
     }
 }

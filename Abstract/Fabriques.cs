@@ -26,7 +26,7 @@ namespace ThreePlaySim.Abstract
             xmlDoc.LoadXml(xmlContent);
             var parcFabrique = new ParcFabrique(xmlContent);
             var parcAuto = parcFabrique.CreerParcAutomobile(simulationTraffic);
-            var parcFeu = parcFabrique.CreerParcFeux();
+            var parcFeu = parcFabrique.CreerParcFeux(simulationTraffic);
 
             parcAuto.ListComposantRoutier().ForEach(P => simulationTraffic.AjoutePersonnage(P));
             parcFeu.ListComposantRoutier().ForEach(P => simulationTraffic.AjoutePersonnage(P));
@@ -66,7 +66,7 @@ namespace ThreePlaySim.Abstract
                 return parcAutomobile;
             }
 
-            public ParcFeu CreerParcFeux()
+            public ParcFeu CreerParcFeux(SimulationAbstraite simulation)
             {
                 xmlDoc.LoadXml(xmlContent);
                 var composantNode = xmlDoc.SelectSingleNode("//Feux[1]");
@@ -74,7 +74,7 @@ namespace ThreePlaySim.Abstract
 
                 foreach (XmlNode composantRoutierNode in composantNode.ChildNodes)
                 {
-                    Feu feu = new Feu(composantRoutierNode.Attributes["nom"].Value, composantRoutierNode.Attributes["x"].Value, composantRoutierNode.Attributes["y"].Value);
+                    Feu feu = new Feu(composantRoutierNode.Attributes["nom"].Value, composantRoutierNode.Attributes["x"].Value, composantRoutierNode.Attributes["y"].Value, simulation);
                     parcFeu.AddComposantRoutier(feu);
                 }
                 return parcFeu;
@@ -111,7 +111,7 @@ namespace ThreePlaySim.Abstract
 
             }
 
-            public Feu CreerComposantRoutier(string nomComposant, int i, SimulationTraffic sim)
+            public Feu CreerComposantRoutier(string nomComposant, int i, SimulationAbstraite sim)
             {
                 xmlDoc.LoadXml(xmlContent);
 
@@ -122,7 +122,7 @@ namespace ThreePlaySim.Abstract
                 var x = composantRoutierNode.Attributes["x"].Value;
                 var y = composantRoutierNode.Attributes["y"].Value;
 
-                return new Feu(nom, x, y);
+                return new Feu(nom, x, y, sim);
             }
         }
     }

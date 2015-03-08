@@ -40,15 +40,15 @@ namespace ThreePlaySim.TraficPlaySim.model
         {
             if (simulation.Grid[Position.X, Position.Y + 1].Personnage != null && simulation.Grid[Position.X, Position.Y + 1].Personnage is Feu && ((Feu)simulation.Grid[Position.X, Position.Y + 1].Personnage).etat == Feu.ETAT_ROUGE)
             {
-
+                Notify(Nom + "Observateur", "Le Vehicule " + Nom + " attend le feu  " + ((Feu)simulation.Grid[Position.X, Position.Y + 1].Personnage).Nom);
             }
             else if (simulation.Grid[Position.X, Position.Y + 2].Personnage != null && simulation.Grid[Position.X, Position.Y + 2].Personnage is Feu && ((Feu)simulation.Grid[Position.X, Position.Y + 2].Personnage).etat == Feu.ETAT_ROUGE)
             {
-
+                Notify(Nom + "Observateur", "Le Vehicule " + Nom + " attend le feu  " + ((Feu)simulation.Grid[Position.X, Position.Y + 2].Personnage).Nom);
             }
             else if (simulation.Grid[Position.X, Position.Y + 3].Personnage != null && simulation.Grid[Position.X, Position.Y + 3].Personnage is Feu && ((Feu)simulation.Grid[Position.X, Position.Y + 3].Personnage).etat == Feu.ETAT_ROUGE)
             {
-
+                Notify(Nom + "Observateur", "Le Vehicule " + Nom + " attend le feu  " + ((Feu)simulation.Grid[Position.X, Position.Y + 3].Personnage).Nom);
             } else {
                  comportementVehicule.rouler();
             }

@@ -22,7 +22,7 @@ namespace ThreePlaySim.TraficPlaySim
 
         public override void MiseAjour(string message)
         {
-            simulation.SimView.Paragraph.Inlines.Add(String.Format("Une infraction vient d'être comise") + Environment.NewLine);
+            simulation.SimView.Paragraph.Inlines.Add(String.Format("Changement d'etat") + Environment.NewLine);
         }
 
 
